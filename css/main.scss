@@ -1,0 +1,94 @@
+---
+---
+
+@charset "utf-8";
+
+// @import "bootswatch/lumen/variables";
+@import "theme/variables";
+@import "bootstrap";
+// @import "bootswatch/lumen/bootswatch";
+
+@import "theme/nav";
+@import "theme/buttons";
+
+@media (max-width: $screen-xs-max) {
+	.text-center-xs {
+		text-align: center;
+	}
+}
+
+#hc-4a-header {
+	color: #fff;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#79ccd2+0,79ccd2+50,8cd3d7+51,8cd3d7+100 */
+	background: #79ccd2; /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  #79ccd2 0%, #79ccd2 50%, #8cd3d7 51%, #8cd3d7 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg,  #79ccd2 0%,#79ccd2 50%,#8cd3d7 51%,#8cd3d7 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg,  #79ccd2 0%,#79ccd2 50%,#8cd3d7 51%,#8cd3d7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#79ccd2', endColorstr='#8cd3d7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+#hc-4a-left-nav-container {
+	background: #fff;
+	color: #000;
+	margin: 0 15px;
+}
+
+@media (min-width: 768px) {
+	#hc-4a-header {
+		margin-bottom: 0;
+	}
+	#hc-4a-left-nav-container {
+		background: $gray-dark;
+		margin: 0 15px 0 -15px;
+		padding: 15px 0 0 0;
+	}
+	#hc-4a-left-nav {
+		padding: 0;
+		&.affix {
+			position: fixed !important;
+			top: 15px;
+		}
+		li {
+			border-bottom: solid 1px #fff;
+			padding: 1em 0;
+			a {
+				margin-left: 30px;
+				color: #fff;
+				font-weight: bold;
+				background: none;
+				&:hover {
+					color: $brand-info;
+				}
+			}
+			&.active {
+				&::after {
+					content: '';
+					position: absolute;
+					right: -15px;
+					top: 50%;
+					transform: translateY(-50%);
+					-ms-transform: translateY(-50%);
+					-webkit-transform: translateY(-50%);
+					width: 0;
+					height: 0;
+					border-top: 15px solid transparent;
+					border-bottom: 15px solid transparent;
+					border-left: 15px solid $gray-dark;
+				}
+				a {
+					color: $brand-info;
+				}
+			}
+		}
+	}
+}
+
+#hc-footer {
+	padding-top: 15px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#034168+0,034168+50,124c71+51,124c71+100 */
+	background: #034168; /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  #034168 0%, #034168 50%, #124c71 51%, #124c71 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg,  #034168 0%,#034168 50%,#124c71 51%,#124c71 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg,  #034168 0%,#034168 50%,#124c71 51%,#124c71 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#034168', endColorstr='#124c71',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}

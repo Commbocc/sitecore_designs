@@ -1,0 +1,13 @@
+<!-- 16:9 aspect ratio -->
+<div class="embed-responsive embed-responsive-16by9">
+
+	{% if include.type == 'youtube' %}
+	<iframe src="{{ include.src | prepend: 'https://www.youtube.com/embed/' }}" class="embed-responsive-item" frameborder="0" allowfullscreen></iframe>
+	{% else %}
+	<video class="embed-responsive-item" controls>
+		<source src="{{ include.src | prepend: site.baseurl }}" type="video/mp4" />
+		Your browser does not support the video tag.
+	</video>
+	{% endif %}
+
+</div>

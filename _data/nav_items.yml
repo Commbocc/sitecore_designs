@@ -1,0 +1,42 @@
+- title: Residents
+  href: '#'
+  l2s:
+    - title: Animals & Pets
+    - title: Citizens
+    - title: Families
+    - title: Property Owners & Renters
+    - title: Recreation & Culture
+    - title: Social Services
+    - title: Sustainability & Green
+
+- title: Business
+  href: '#'
+  l2s:
+    - title: Business Community
+    - title: Economic Development
+    - title: Land Development
+    - title: Permits & Records
+    - title: Selling to Hillsborough
+    - title: Small Business Support
+    - title: Zoning
+
+- title: Government
+  href: '#'
+  l2s:
+    - title: Administration
+    - title: Agencies
+    - title: Board of County Commissioners
+    - title: Boards & Committees
+    - title: Codes & Ordinances
+    - title: County Projects
+    - title: Departments
+    - title: Leadership
+    - title: Meeting Information
+
+- title: About Hillsborough
+  href: '#'
+  l2s:
+    - title: Calendar
+    - title: Charter
+    - title: History
+    - title: Jobs

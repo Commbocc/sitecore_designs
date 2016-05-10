@@ -1,0 +1,28 @@
+<footer id="hc-footer" class="container-fluid">
+	<div class="row text-center">
+		<div class="col-sm-4 col-sm-push-4">
+			<div class="well well-lg">
+				site links
+			</div>
+		</div>
+		<div class="col-sm-4 col-sm-push-4">
+			<div class="well well-lg">
+				social links
+			</div>
+		</div>
+		<div class="col-sm-4 col-sm-pull-8">
+			<div class="well well-lg">
+				logo
+			</div>
+		</div>
+	</div>
+</footer>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+{% for asset in site.data.assets.js %}
+{% if asset.remote %}
+<script src="{{asset.src}}"></script>
+{% else %}
+<script src="{{site.baseurl}}/js/{{asset.src}}"></script>
+{% endif %}
+{% endfor %}

@@ -1,0 +1,11 @@
+# will load from "{{site.baseurl}}/js/{{asset.src}}"
+js:
+  - src: https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js
+    remote: true
+  - src: bootstrap-3.3.6.min.js
+  # - src: jquery.mobile.touch.min.js
+  - src: theme.js
+
+# will load from "{{site.baseurl}}/css/{{asset.src}}.css"
+css:
+   #  - src: wow-animate.min.css

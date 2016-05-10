@@ -1,0 +1,88 @@
+<nav id="hc-main-nav" class="navbar navbar-default">
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-image" href="/">
+				<img src="{{ '/images/logo.png' | prepend: site.baseurl }}" alt="" />
+			</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<form class="navbar-form navbar-right" role="search">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Search">
+				</div>
+			</form>
+
+			<ul id="hc-main-nav-sections" class="nav navbar-nav navbar-right">
+
+				{% for item in site.data.nav_items %}
+				{% if item.title %}
+				<li class="nav-primary-link">
+					<a href="{{ item.href | prepend: site.baseurl }}" class="">
+						{{ item.title }}
+					</a>
+
+					{% if item.l2s %}
+					<div class="service-group container">
+						<h2 class="service-group-title">{{ item.title }}</h2>
+						<div class="row">
+							<div class="col-sm-6">
+
+								<ul id="service-sections" class="nav nav-pills nav-stacked">
+									{% for subitem in item.l2s %}
+									<li class="service-section">
+										<a href="#">
+											{{ subitem.title }}
+										</a>
+									</li>
+									{% endfor %}
+								</ul>
+
+							</div>
+
+							<div class="col-sm-6">
+
+								<div class="row">
+									<div class="col-xs-7 col-sm-6">
+										<h3 class="service-group-featured">
+											{{ item.title }}
+										</h3>
+										<p>
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+										</p>
+										<p>
+											<a href="#" class="btn btn-secondary">Learn More</a>
+										</p>
+									</div>
+									<div class="col-xs-5 col-sm-4">
+										<p>
+											<img src="https://pbs.twimg.com/profile_images/562466745340817408/_nIu8KHX.jpeg" alt="{{ item.title }}" class="img-thumbnail img-circle">
+										</p>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+					{% endif %}
+
+				</li>
+				{% endif %}
+				{% endfor %}
+
+
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</div><!-- /.container-fluid -->
+</nav>
+
+<section id="navSpacer"></section>

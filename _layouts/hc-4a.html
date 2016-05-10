@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<header id="hc-4a-header" class="jumbotron">
+	<div class="container-fluid">
+		<h1>{{ page.title }}</h1>
+		<p>{{ page.subtitle }}</p>
+	</div>
+</header>
+
+<div class="container-fluid">
+
+	<nav id="hc-4a-left-nav-container" class="col-sm-4 col-md-3">
+
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#hc-4a-left-nav" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<i class="fa fa-bars"></i>
+			</button>
+		</div>
+
+		<ul id="hc-4a-left-nav" class="nav nav-pills nav-stacked collapse navbar-collapse">
+			<li role="presentation"><a href="#overview">Overview</a></li>
+			<li role="presentation"><a href="#how-to">How To</a></li>
+			<li role="presentation"><a href="#profile">Profile</a></li>
+			<li role="presentation"><a href="#look-here">Look Here</a></li>
+		</ul>
+
+	</nav>
+
+	<div class="col-sm-8 col-md-9">
+		{{ content }}
+	</div>
+</div>
