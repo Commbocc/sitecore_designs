@@ -7,11 +7,11 @@ $ ->
 	# .service-groups
 
 	$('.nav-primary-link').hover (->
-		$elem = $(this).find('.service-group')
+		$elem = $(this).find('.hc-dropdown')
 		$('#navSpacer').stop().animate { height: $elem.outerHeight(true) }, 500
 		return
 	), ->
-		# $elem = $(this).find('.service-group')
+		# $elem = $(this).find('.hc-dropdown')
 		$('#navSpacer').finish().animate { height: 0 }, 500
 		return
 

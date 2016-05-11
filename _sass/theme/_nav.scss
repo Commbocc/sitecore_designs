@@ -1,90 +1,69 @@
-#navSpacer {
-	border-bottom: solid 2px $brand-primary;
+#hc-l3-left-nav a {
+	color: #044169;
 }
 
-#hc-main-nav {
+#hc-l3-left-nav li {
+	padding: 1em 0;
+}
 
-	margin-bottom: 0;
-	position: relative;
-	background: #fff;
-	border-radius: 0;
+#hc-l3-left-nav > li {
+	font-weight: bold;
 
-	.navbar-image img { margin-top: 10px;}
-
-	#hc-main-nav-sections {
-
-		> li > a {
-			font-weight: bold;
-			border-bottom: solid 3px transparent;
-			color: $link-color;
-		}
-
-		position: static;
-
-		.service-group-title {
-			color: $brand-info;
-			text-transform: uppercase;
-		}
-		.service-group-featured {
-			color: $brand-primary;
-		}
-
-		> li {
-
-			position: static;
-
-			.service-section a:hover {
-				background: none;
-				color: $brand-info;
-			}
-
-			.service-group {
-				display: none;
-				position: absolute;
-				width: 100%;
-				left: 0;
-				right: 0;
-				background: $body-bg;
-				z-index: 50;
-			}
-			&:hover {
-				> a {
-					color: $brand-info;
-					border-bottom: solid 3px $brand-info;
-				}
-				.service-group {
-					display: block;
-				}
-			}
-		}
+	&.active > a {
+		color: $brand-primary;
 	}
 
-	#service-sections {
+	border-bottom: solid 1px #A2D9DE;
+}
 
-		-webkit-column-count: 2; /* Chrome, Safari, Opera */
-		-moz-column-count: 2; /* Firefox */
-		column-count: 2;
+#hc-l3-left-nav ul {
+	padding-left: 2em;
+	font-weight: normal;
+}
+#hc-l3-left-nav ul > li {
+	padding: 8px 0;
+}
 
-		background: $body-bg;
+.nav-stacked {
 
-		padding-bottom: 15px;
+	// li {
+	// 	a {
+	// 		padding: 1em 0;
+	// 		border-bottom: solid 1px $link-color;
+	// 	}
+	// 	a:hover {
+	// 		background: none;
+	// 		text-decoration: underline;
+	// 	}
+	// }
+	//
+	// > li.active {
+	// 	a {
+	// 		background: none !important;
+	// 		color: $brand-primary !important;
+	// 		&:hover {
+	// 		}
+	// 	}
+	// }
 
-		.service-section {
-			-webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
-			page-break-inside: avoid; /* Firefox */
-			break-inside: avoid; /* IE 10+ */
-			border-bottom: 1px solid $brand-info;
-		}
-
-		&::after {
-			content:'';
-			width:100%;
-			height: 15px;
-			position:absolute;
-			background-color:inherit;
-			bottom:0;
-			left:0;
-		}
-	}
+	// ul
 
 }
+
+
+// #hc-l3-left-nav li {
+// 	padding: 1em 0;
+// }
+//
+// #hc-l3-left-nav > li {
+// 	font-weight: bold;
+// 	border-bottom: solid 1px #A2D9DE;
+// }
+//
+// #hc-l3-left-nav ul {
+// 	padding-left: 2em;
+// 	font-weight: normal;
+// }
+// #hc-l3-left-nav ul > li {
+// 	padding: 8px 0;
+// }

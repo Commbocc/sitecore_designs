@@ -1,3 +1,8 @@
+.btn {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
 .btn-primary {
 	&:hover,
 	&:focus,
@@ -10,31 +15,58 @@
 }
 
 .btn-secondary {
-	background-color: #fff;
-	color: $brand-primary;
-	border-color: $brand-primary;
+	@include button-variant($brand-primary, #fff, $brand-primary);
 }
 .btn-secondary:hover,
 .btn-secondary:focus,
 .btn-secondary:active,
 .btn-secondary.active {
-		color: #fff;
-		background-color: $brand-secondary;
-		border-color: $brand-secondary;
+	color: #fff;
+	background-color: $brand-secondary;
+	border-color: $brand-secondary;
 }
-// .btn-secondary.disabled:hover,
-// .btn-secondary.disabled:focus,
-// .btn-secondary.disabled:active,
-// .btn-secondary.disabled.active,
-// .btn-secondary[disabled]:hover,
-// .btn-secondary[disabled]:focus,
-// .btn-secondary[disabled]:active,
-// .btn-secondary[disabled].active,
-// fieldset[disabled] .btn-secondary:hover,
-// fieldset[disabled] .btn-secondary:focus,
-// fieldset[disabled] .btn-secondary:active,
-// fieldset[disabled] .btn-secondary.active {
-// 	color: #fff;
-// 	background-color: $brand-secondary;
-// 	border-color: $brand-secondary;
+
+// @mixin button-line-variant($lines) {
+// 	position: relative;
+// 	white-space: normal !important;
+// 	> span {
+// 		position: absolute;
+// 		width: 100%;
+// 		padding: inherit;
+// 		top: 50%;
+// 		left: 50%;
+// 		transform: translateX(-50%) translateY(-50%);
+// 		-ms-transform: translateX(-50%) translateY(-50%);
+// 		-webkit-transform: translateX(-50%) translateY(-50%);
+// 	}
 // }
+
+.btn-2-line, .btn-3-line {
+	position: relative;
+	white-space: normal !important;
+	> span {
+		position: absolute;
+		width: 100%;
+		padding: inherit;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		-ms-transform: translateX(-50%) translateY(-50%);
+		-webkit-transform: translateX(-50%) translateY(-50%);
+	}
+}
+
+.btn-2-line {
+	height: 4em; /* (n*2) number of lines multiplied by 2 */
+	@media (min-width: $screen-sm-min) {
+		font-size: 1vw;
+	}
+}
+
+.btn-3-line {
+	height: 3em; /* (n*2) number of lines multiplied by 2 */
+	@media (min-width: $screen-sm-min) {
+		height: 6em;
+		font-size: 1.5vw;
+	}
+}

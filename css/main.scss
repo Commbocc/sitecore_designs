@@ -8,8 +8,7 @@
 @import "bootstrap";
 // @import "bootswatch/lumen/bootswatch";
 
-@import "theme/nav";
-@import "theme/buttons";
+@import "theme";
 
 @media (max-width: $screen-xs-max) {
 	.text-center-xs {
