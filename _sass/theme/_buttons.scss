@@ -58,7 +58,7 @@
 
 .btn-2-line {
 	height: 4em; /* (n*2) number of lines multiplied by 2 */
-	@media (min-width: $screen-sm-min) {
+	@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
 		font-size: 1vw;
 	}
 }
@@ -67,6 +67,8 @@
 	height: 3em; /* (n*2) number of lines multiplied by 2 */
 	@media (min-width: $screen-sm-min) {
 		height: 6em;
+	}
+	@media (min-width: $screen-md-min) and (max-width: $screen-lg-min) {
 		font-size: 1.5vw;
 	}
 }
