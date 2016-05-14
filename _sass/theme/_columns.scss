@@ -1,0 +1,39 @@
+@mixin clear-n-size($n, $min, $max) {
+	@if $max {
+		@media (min-width: $min) and (max-width: $max) {
+			&:nth-child(#{$n}n+1) {
+				clear: left;
+			}
+		}
+	} @else {
+		@media (min-width: $min) {
+			&:nth-child(#{$n}n+1) {
+				clear: left;
+			}
+		}
+	}
+}
+
+.clear-2-sm { @include clear-n-size(2, $screen-sm-min, null); }
+.clear-3-sm { @include clear-n-size(3, $screen-sm-min, null); }
+.clear-4-sm { @include clear-n-size(4, $screen-sm-min, null); }
+.clear-6-sm { @include clear-n-size(6, $screen-sm-min, null); }
+.clear-12-sm { @include clear-n-size(12, $screen-sm-min, null); }
+
+.clear-2-sm-max { @include clear-n-size(2, $screen-sm-min, $screen-sm-max); }
+.clear-3-sm-max { @include clear-n-size(3, $screen-sm-min, $screen-sm-max); }
+.clear-4-sm-max { @include clear-n-size(4, $screen-sm-min, $screen-sm-max); }
+.clear-6-sm-max { @include clear-n-size(6, $screen-sm-min, $screen-sm-max); }
+.clear-12-sm-max { @include clear-n-size(12, $screen-sm-min, $screen-sm-max); }
+
+.clear-2-md { @include clear-n-size(2, $screen-md-min, null); }
+.clear-3-md { @include clear-n-size(3, $screen-md-min, null); }
+.clear-4-md { @include clear-n-size(4, $screen-md-min, null); }
+.clear-6-md { @include clear-n-size(6, $screen-md-min, null); }
+.clear-12-md { @include clear-n-size(12, $screen-md-min, null); }
+
+.clear-2-md-max { @include clear-n-size(2, $screen-md-min, $screen-md-max); }
+.clear-3-md-max { @include clear-n-size(3, $screen-md-min, $screen-md-max); }
+.clear-4-md-max { @include clear-n-size(4, $screen-md-min, $screen-md-max); }
+.clear-6-md-max { @include clear-n-size(6, $screen-md-min, $screen-md-max); }
+.clear-12-md-max { @include clear-n-size(12, $screen-md-min, $screen-md-max); }

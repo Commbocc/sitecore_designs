@@ -23,7 +23,16 @@ li#nav-i-want-to {
 	background: #fff;
 	border-radius: 0;
 
-	.navbar-image img { margin-top: 10px;}
+	.navbar-image img {
+		margin-top: 10px;
+		@media (max-width: $screen-xs-max) {
+			padding-left: 15px;
+		}
+		@media (max-width: $screen-sm-max) {
+			margin-top: 20px;
+			width: 174px;
+		}
+	}
 
 	.navbar-form {
 		input {
@@ -33,12 +42,11 @@ li#nav-i-want-to {
 
 	#hc-main-nav-sections {
 
-
 		> li > a {
 			font-weight: bold;
 			border-bottom: solid 3px transparent;
 			color: $link-color;
-			@media (min-width: $screen-sm-min) and (max-width: $screen-md-max) { font-size: 1vw; }
+			@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { font-size: 0.7em; }
 		}
 
 		position: static;

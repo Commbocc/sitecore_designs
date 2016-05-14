@@ -2,14 +2,14 @@
 layout: default
 ---
 
-<header id="hc-l3-header" class="jumbotron">
+<header id="hc-l3-header" class="jumbotron" style="margin-bottom: 0;">
 	<div class="container">
 		<h2 class="text-center-xs">{{ page.title }}</h2>
 		{{ content }}
 	</div>
 </header>
 
-<section style="background: #fff; margin-top: -30px; padding: 25px 0 15px 0;">
+<section style="background: #fff; padding: 25px 0 15px 0;">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-4 col-md-3">
@@ -49,4 +49,24 @@ layout: default
 			</div>
 		</div>
 	</div>
+</section>
+
+<section class="container">
+
+	<h4>
+		Related News &amp; Events
+	</h4>
+
+	<div class="row">
+		<div class="col-sm-4">
+			{% include card_news.html %}
+		</div>
+		<div class="col-sm-4">
+			{% include card_news.html %}
+		</div>
+		<div class="col-sm-4">
+			{% include card_news.html %}
+		</div>
+	</div>
+
 </section>

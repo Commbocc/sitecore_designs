@@ -5,7 +5,14 @@ layout: default
 <header id="hc-4a-header" class="jumbotron">
 	<div class="container-fluid">
 		<h1>{{ page.title }}</h1>
-		<p>{{ page.subtitle }}</p>
+		<div class="row">
+			<p class="col-xs-8 col-sm-5 col-md-4">
+				<a href="#" class="btn btn-lg btn-primary btn-block">
+					{{ page.action }}
+					<i class="fa fa-fw fa-external-link"></i>
+				</a>
+			</p>
+		</div>
 	</div>
 </header>
 
