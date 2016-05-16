@@ -13,6 +13,11 @@
 	.text-center-xs { text-align: center; }
 }
 
+// default heading colors
+h1, h2, h3, h4, h5, h6 {
+	color: $link-color;
+}
+
 // jumbotron - http://getbootstrap.com/components/#jumbotron
 .jumbotron {
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#79ccd2+0,79ccd2+50,8cd3d7+51,8cd3d7+100 */
@@ -27,6 +32,13 @@
 	h1, h2, h3, h4, h5, h6 {
 		color: #fff;
 	}
+}
+
+// full-width white container to accomodate margins of sibling elements
+.hc-container-white {
+	background: #fff;
+	margin: -($grid-gutter-width) auto ($grid-gutter-width / 2);
+	padding: 25px 0 15px 0;
 }
 
 // lead text - http://getbootstrap.com/css/#lead-body-copy

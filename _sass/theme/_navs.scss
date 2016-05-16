@@ -1,3 +1,36 @@
+// tabs-split-page
+.tabs-split-page {
+
+	@media (min-width: $screen-xs-min) {
+
+		position: relative;
+
+		.nav-tabs {
+
+			position: absolute;
+			bottom: -48px;
+
+			li a {
+				background: $link-color;
+				background: rgba($link-color, 0.75);
+				color: $body-bg;
+				border-bottom: none !important;
+				&:hover {
+					border-color: $body-bg;
+					border-color: rgba($body-bg, 0.85);
+				}
+			}
+			li.active a {
+				background: $body-bg;
+				color: $link-color;
+			}
+		}
+	}
+
+}
+
+
+// h3
 #hc-l3-left-nav a {
 	color: #044169;
 }
