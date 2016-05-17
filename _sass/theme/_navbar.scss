@@ -1,3 +1,15 @@
+// search bar
+#hc-nav-search-bar {
+	color: $link-color;
+	border-color: rgba($link-color, 0.7);
+	border-radius: 2em;
+	@media (min-width: $screen-sm-min) {
+		width: 75px;
+	}
+	// @media (min-width: $screen-sm-min) and (max-width: $screen-md-max) {  }
+}
+
+// nav spacer for jquery manipulation on hovers
 #navSpacer {
 	border-bottom: solid 1px $link-color;
 }
@@ -23,6 +35,13 @@ li#nav-i-want-to {
 	background: #fff;
 	border-radius: 0;
 
+	.navbar-form {
+		@media (max-width: $screen-xs-max) {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	}
+
 	.navbar-image img {
 		margin-top: 10px;
 		@media (max-width: $screen-xs-max) {
@@ -31,12 +50,6 @@ li#nav-i-want-to {
 		@media (max-width: $screen-sm-max) {
 			margin-top: 20px;
 			width: 174px;
-		}
-	}
-
-	.navbar-form {
-		input {
-			@media (min-width: $screen-sm-min) and (max-width: $screen-md-max) { width: 9vw; }
 		}
 	}
 
