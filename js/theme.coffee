@@ -4,7 +4,7 @@
 $ ->
 
 	# nav spacer animation
-	$('#hc-main-nav-sections li').hover (->
+	$('#hc-main-nav-sections > li').hover (->
 		$elem = $(this).find('.hc-nav-dropdown')
 		$('#navSpacer').stop().animate { height: $elem.outerHeight(true) }, 500 unless $('#hc-main-nav-collapse').hasClass('in')
 		return
