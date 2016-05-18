@@ -3,26 +3,14 @@
 
 $ ->
 
-	# nav hover collapse
-	# .service-groups
-
-	$('.nav-primary-link').hover (->
-		$elem = $(this).find('.hc-dropdown')
-		$('#navSpacer').stop().animate { height: $elem.outerHeight(true) }, 500
+	# nav spacer animation
+	$('#hc-main-nav-sections li').hover (->
+		$elem = $(this).find('.hc-nav-dropdown')
+		$('#navSpacer').stop().animate { height: $elem.outerHeight(true) }, 500 unless $('#hc-main-nav-collapse').hasClass('in')
 		return
 	), ->
-		# $elem = $(this).find('.hc-dropdown')
 		$('#navSpacer').finish().animate { height: 0 }, 500
 		return
-
-	# $('.nav-hover a').hover (->
-	# 	$( $(this).data('target') ).collapse 'show', ->
-	# 		$('#navDropdowns .collapse').collapse 'hide'
-	# 		return
-	# 	return
-	# ), ->
-	# 	$('#navDropdowns .collapse').collapse 'hide'
-	# 	return
 
 	# 4a affix
 	$(window).on 'load resize', ->

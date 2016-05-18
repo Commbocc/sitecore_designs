@@ -37,3 +37,15 @@
 .clear-4-md-max { @include clear-n-size(4, $screen-md-min, $screen-md-max); }
 .clear-6-md-max { @include clear-n-size(6, $screen-md-min, $screen-md-max); }
 .clear-12-md-max { @include clear-n-size(12, $screen-md-min, $screen-md-max); }
+
+// 5 column support
+.col-xs-20, .col-sm-20, .col-md-20, .col-lg-20 {
+	position: relative;
+	min-height: 1px;
+	padding: 0 10px;
+	width: 20%;
+	float: left;
+}
+@media (max-width: $screen-xs-max) { .col-sm-20 { width: 100%; } }
+@media (max-width: $screen-sm-max) { .col-md-20 { width: 100%; } }
+@media (max-width: $screen-md-max) { .col-lg-20 { width: 100%; } }

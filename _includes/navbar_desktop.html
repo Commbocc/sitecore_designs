@@ -2,7 +2,7 @@
 	<div class="container-fluid">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#hc-main-nav-collapse" aria-expanded="false">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
@@ -14,7 +14,7 @@
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="hc-main-nav-collapse">
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<form class="navbar-form navbar-right" role="search">
 				<div class="form-group">
 					<input id="hc-nav-search-bar" type="text" class="form-control input-sm" placeholder="&#xf002; Search">
@@ -24,28 +24,32 @@
 			<ul id="hc-main-nav-sections" class="nav navbar-nav navbar-right">
 
 				{% for item in site.data.nav_items %}
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+				{% if item.title %}
+				<li class="nav-primary-link">
+					<a href="{{ item.href | prepend: site.baseurl }}" class="">
 						{{ item.title }}
-						<span class="caret visible-xs-inline-block pull-right"></span>
 					</a>
-					<div class="dropdown-menu hc-nav-dropdown">
 
-						<h3 class="hc-dropdown-title hidden-xs">{{ item.title }}</h3>
-
+					{% if item.l2s %}
+					<div class="hc-dropdown container">
+						<h2 class="hc-dropdown-title">{{ item.title }}</h2>
 						<div class="row">
 							<div class="col-sm-6">
+
 								<ul class="nav nav-pills nav-stacked nav-service-sections">
 									{% for subitem in item.l2s %}
-									<li>
+									<li class="service-section">
 										<a href="#">
 											{{ subitem.title }}
 										</a>
 									</li>
 									{% endfor %}
 								</ul>
+
 							</div>
-							<div class="col-sm-6 hidden-xs">
+
+							<div class="col-sm-6">
+
 								<div class="row">
 									<div class="col-xs-7 col-sm-6">
 										<h3 class="hc-dropdown-featured">
@@ -64,59 +68,42 @@
 										</p>
 									</div>
 								</div>
+
 							</div>
 
 						</div>
 					</div>
+					{% endif %}
+
 				</li>
+				{% endif %}
 				{% endfor %}
 
-				<li id="nav-i-want-to" class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-						I Want To<span class="visible-xs-inline-block">...</span>
+				<li id="nav-i-want-to" class="nav-primary-link">
+					<a href="#">
+						I Want To
 					</a>
-
-					<div class="dropdown-menu hc-nav-dropdown">
-						<div class="row">
-							<div class="col-sm-20">
-								<h3>
-									<a href="#">
-										<i class="fa fa-pencil"></i>
-										Apply
-									</a>
-								</h3>
+					<div class="hc-dropdown container">
+						<div class="row text-center">
+							<div class="col-sm-3">
+								<div class="embed-responsive embed-responsive-16by9">
+									Apply
+								</div>
 							</div>
-							<div class="col-sm-20">
-								<h3>
-									<a href="#">
-										<i class="fa fa-pencil"></i>
-										Register
-									</a>
-								</h3>
+							<div class="col-sm-3">
+								<div class="embed-responsive embed-responsive-16by9">
+									Apply
+								</div>
 							</div>
-							<div class="col-sm-20">
-								<h3>
-									<a href="#">
-										<i class="fa fa-pencil"></i>
-										Report
-									</a>
-								</h3>
+							<div class="col-sm-3">
+								<div class="embed-responsive embed-responsive-16by9">
+									Apply
+								</div>
 							</div>
-							<div class="col-sm-20">
-								<h3>
-									<a href="#">
-										<i class="fa fa-pencil"></i>
-										Request
-									</a>
-								</h3>
-							</div>
-							<div class="col-sm-20">
-								<h3>
-									<a href="#">
-										<i class="fa fa-pencil"></i>
-										Pay
-									</a>
-								</h3>
+							<div class="col-sm-3">
+								<div class="embed-responsive embed-responsive-16by9">
+									Apply
+								</div>
 							</div>
 						</div>
 					</div>
