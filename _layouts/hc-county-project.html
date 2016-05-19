@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<style media="screen">
+.col-sm-8.col-md-9 > h3 {
+	color: #ff6f59;
+}
+</style>
+
+<header id="hc-4a-header" class="jumbotron">
+	<div class="container-fluid">
+		<h1>{{ page.title }}</h1>
+	</div>
+</header>
+
+<div class="container-fluid">
+
+	<nav id="hc-4a-left-nav-container" class="col-sm-4 col-md-3">
+
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#hc-4a-left-nav" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<i class="fa fa-bars"></i>
+			</button>
+		</div>
+
+		<ul id="hc-4a-left-nav" class="nav nav-pills nav-stacked collapse navbar-collapse">
+			<li role="presentation"><a href="#number">Number</a></li>
+			<li role="presentation"><a href="#description">Description</a></li>
+			<li role="presentation"><a href="#what-to-expect">What to Expect</a></li>
+			<li role="presentation"><a href="#cost--funding">Cost & Funding</a></li>
+			<li role="presentation"><a href="#timeline">Timeline</a></li>
+			<li role="presentation"><a href="#contact">Contact</a></li>
+			<li role="presentation"><a href="#additional-information">Additional Information</a></li>
+			<li role="presentation"><a href="#public-meeting">Public Meeting</a></li>
+		</ul>
+
+	</nav>
+
+	<div class="col-sm-8 col-md-9">
+		{{ content }}
+	</div>
+</div>
