@@ -12,3 +12,7 @@
 // @import "bootswatch/lumen/bootswatch";
 
 @import "theme";
+
+#hc-home-header {
+	background-image: url("{{ '/images/bg-home.png' | prepend: site.baseurl }}");
+}
