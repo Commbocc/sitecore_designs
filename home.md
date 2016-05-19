@@ -1,9 +1,9 @@
 ---
 layout: home
-title: Visit a Park
+title: Our New Website
 permalink: /layouts/home/
 ---
 
-Springtime is here and the parks are waiting for you!
+Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 
-[Find Your park](#){: .btn.btn-lg.btn-primary}
+[Lorem Ipsum](#){: .btn.btn-lg.btn-primary}

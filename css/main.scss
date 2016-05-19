@@ -14,5 +14,5 @@
 @import "theme";
 
 #hc-home-header {
-	background-image: url("{{ '/images/bg-home.png' | prepend: site.baseurl }}");
+	background-image: url("{{ '/images/news-website-anim.gif' | prepend: site.baseurl }}");
 }
