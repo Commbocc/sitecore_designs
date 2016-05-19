@@ -48,9 +48,10 @@ h1, h2, h3, h4, h5, h6 {
 		color: #fff;
 	}
 
-	background: url('/images/bg-home.png');
 	background-position: center center;
+	background-repeat: no-repeat;
 	background-size: cover;
+	// background-attachment: fixed;
 
 	text-shadow: 1px 1px #000;
 }
@@ -103,7 +104,7 @@ h1, h2, h3, h4, h5, h6 {
 
 	.flickity-page-dots {
 		bottom: -10px;
-		
+
 		li.dot {
 			background: none;
 			border: 2px solid $brand-info;
