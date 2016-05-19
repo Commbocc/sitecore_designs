@@ -32,6 +32,27 @@ h1, h2, h3, h4, h5, h6 {
 	h1, h2, h3, h4, h5, h6 {
 		color: #fff;
 	}
+
+	p {
+		font-weight: 400;
+	}
+
+	// extra padding for jumbotrons housing tabs
+	&.hc-jumbotron-tabs {
+		padding-bottom: 60px;
+	}
+}
+
+#hc-home-header {
+	> .container:first-of-type {
+		color: #fff;
+	}
+
+	background: url('/images/bg-home.png');
+	background-position: center center;
+	background-size: cover;
+
+	text-shadow: 1px 1px #000;
 }
 
 // full-width white container to accomodate margins of sibling elements
@@ -58,5 +79,39 @@ h1, h2, h3, h4, h5, h6 {
 	background: linear-gradient(135deg,  #034168 0%,#034168 50%,#124c71 51%,#124c71 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#034168', endColorstr='#124c71',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
-	padding-top: 15px;
+	padding-top: 30px;
+	color: #fff;
+
+	a {
+		color: #fff;
+		text-decoration: none;
+	}
+
+}
+
+// flickety - carousel
+.hc-flickity-gallery {
+	&:after {
+		content: 'flickity';
+		display: none;
+		@media (min-width: $screen-sm-min) { content: ''; }
+	}
+
+	.flickity-viewport {
+		margin-bottom: 25px;
+	}
+
+	.flickity-page-dots {
+		bottom: -10px;
+		
+		li.dot {
+			background: none;
+			border: 2px solid $brand-info;
+			width: 15px;
+			height: 15px;
+			&.is-selected {
+				background: $brand-info;
+			}
+		}
+	}
 }
