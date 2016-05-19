@@ -1,6 +1,7 @@
 ---
 layout: hc-county-project
 title: West Bearss Avenue Drainage Improvements
+type: transportation
 ---
 
 ### Project Number

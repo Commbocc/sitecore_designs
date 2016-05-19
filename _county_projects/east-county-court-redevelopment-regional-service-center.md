@@ -1,6 +1,6 @@
 ---
 layout: hc-county-project
-title: Bell Shoals Road Widening
+title: "East County Court Redevelopment / Regional Service Center"
 type: 
 ---
 

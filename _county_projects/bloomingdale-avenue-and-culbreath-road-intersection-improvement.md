@@ -1,6 +1,7 @@
 ---
 layout: hc-county-project
 title: Bloomingdale Avenue and Culbreath Road Intersection Improvement
+type: transportation
 ---
 
 ### Project Number

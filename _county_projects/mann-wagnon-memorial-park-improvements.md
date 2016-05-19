@@ -1,6 +1,6 @@
 ---
 layout: hc-county-project
-title: Bell Shoals Road Widening
+title: "Mann-Wagnon Memorial Park Improvements"
 type: 
 ---
 

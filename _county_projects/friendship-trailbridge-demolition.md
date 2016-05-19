@@ -1,6 +1,7 @@
 ---
 layout: hc-county-project
 title: Friendship Trailbridge Demolition
+type: transportation
 ---
 
 ### Project Number

@@ -1,6 +1,6 @@
 ---
 layout: hc-county-project
-title: Bell Shoals Road Widening
+title: "Sundance Fire Station #8 Expansion & Renovation"
 type: 
 ---
 

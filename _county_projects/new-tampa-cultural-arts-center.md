@@ -1,6 +1,6 @@
 ---
 layout: hc-county-project
-title: Bell Shoals Road Widening
+title: "New Tampa Cultural Arts Center"
 type: 
 ---
 

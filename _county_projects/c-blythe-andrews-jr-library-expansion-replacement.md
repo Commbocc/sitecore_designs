@@ -1,6 +1,6 @@
 ---
 layout: hc-county-project
-title: Bell Shoals Road Widening
+title: "C. Blythe Andrews, Jr. Library Expansion / Replacement"
 type: 
 ---
 

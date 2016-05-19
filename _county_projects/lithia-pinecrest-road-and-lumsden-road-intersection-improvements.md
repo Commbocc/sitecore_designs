@@ -1,6 +1,7 @@
 ---
 layout: hc-county-project
 title: Lithia Pinecrest Road and Lumsden Road Intersection Improvements
+type: transportation
 ---
 
 ### Project Number

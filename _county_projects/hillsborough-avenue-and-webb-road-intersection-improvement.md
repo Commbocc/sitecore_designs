@@ -1,6 +1,7 @@
 ---
 layout: hc-county-project
 title: Hillsborough Avenue and Webb Road Intersection Improvement
+type: transportation
 ---
 
 ### Project Number

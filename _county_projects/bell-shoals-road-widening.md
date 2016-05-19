@@ -1,6 +1,7 @@
 ---
 layout: hc-county-project
 title: Bell Shoals Road Widening
+type: transportation
 ---
 
 ### Project Number
