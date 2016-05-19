@@ -36,7 +36,7 @@ Construction is expected to begin in 2016 and be finished within 36 months.
 
 ### Additional Information
 
-* [Project Area Map](#)
-* [Draft Exhibits of Community Entrances in Bell Shoals Project Area](#)
+* [Project Area Map](http://www.hillsboroughcounty.org/DocumentCenter/View/14975)
+* [Draft Exhibits of Community Entrances in Bell Shoals Project Area](http://www.hillsboroughcounty.org/DocumentCenter/View/14971)
 
 ### Public Meeting
