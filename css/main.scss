@@ -12,6 +12,7 @@
 // @import "bootswatch/lumen/bootswatch";
 
 @import "theme";
+@import "theme/map";
 
 #hc-home-header {
 	background-image: url("{{ '/images/news-website-anim.gif' | prepend: site.baseurl }}");
