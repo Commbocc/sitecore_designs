@@ -1,0 +1,84 @@
+---
+layout: default
+---
+
+<header id="hc-l3-header" class="jumbotron">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8 col-sm-push-4 col-md-9 col-md-push-3">
+			</div>
+			<div class="col-sm-4 col-sm-pull-8 col-md-3 col-md-pull-9">
+				<h3 class="text-center">
+					<a href="#">
+						<i class="fa fa-fw fa-chevron-left"></i>
+						{{ page.back }}
+					</a>
+				</h3>
+			</div>
+		</div>
+	</div>
+</header>
+
+<div class="container">
+
+	<div class="row">
+
+		<div class="col-sm-8 col-sm-push-4 col-md-9 col-md-push-3">
+
+			<div class="embed-responsive embed-responsive-4by3">
+				<img src="{{ '/images/news-pets.jpg' | prepend: site.baseurl }}" class="img-responsive center-block" />
+			</div>
+
+			<div class="">
+				Posted date / share
+			</div>
+
+			<hr>
+
+			<h2 class="text-primary">
+				{{ page.title }}
+			</h2>
+
+			<div class="">
+				{{ content }}
+			</div>
+		</div>
+
+		<aside id="" class="col-sm-4 col-sm-pull-8 col-md-3 col-md-pull-9">
+
+			<div class="panel panel-default">
+				<header class="panel-heading">
+					<h4 class="panel-title">
+						Tagged
+					</h4>
+				</header>
+				<div class="panel-body">
+					<ul class="list-inline">
+						<li><a href="#">Story</a></li>
+						<li><a href="#">Animals</a></li>
+						<li><a href="#">Pets</a></li>
+						<li><a href="#">Lorem Ipsum</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<header class="panel-heading">
+					<h4 class="panel-title">
+						Related Articles
+					</h4>
+				</header>
+				<div class="panel-body">
+					<ul class="list-unstyled">
+						<li><a href="#">Lorem Ipsum</a></li>
+						<li><a href="#">Lorem ipsum dolor sit amet</a></li>
+						<li><a href="#">Lorem Ipsum</a></li>
+						<li><a href="#">Lorem ipsum dolor sit amet</a></li>
+					</ul>
+				</div>
+			</div>
+
+		</aside>
+
+	</div>
+</div>
