@@ -8,11 +8,69 @@
 	height: 350px;
 }
 
-#home-map { position: absolute; top:0; bottom:0; width:100%; }
+#home-map {
+	position: absolute;
+	top:0;
+	bottom:0;
+	width:100%;
+
+	.leaflet-top.leaflet-left {
+		@media (max-width: $screen-xs-max) {
+			bottom: 10px;
+			top: auto;
+		}
+	}
+}
 
 #btn-map-overlays {
 	position: absolute;
 	top: 10px;
-	right:10px;
+	right: 10px;
 	z-index: 500;
+	margin: 0 0;
+
+	@media (max-width: $screen-xs-max) {
+		left: 10px;
+	}
+
+	@media (min-width: $screen-sm-min) {
+		min-width: 310px;
+	}
+
+	.panel-heading {
+		display: block;
+		background: #fff;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-weight: 600;
+		color: $link-color;
+	}
+}
+
+#map-overlay-toggles {
+
+	-webkit-column-count: 2; /* Chrome, Safari, Opera */
+	-moz-column-count: 2; /* Firefox */
+	column-count: 2;
+
+	-webkit-column-gap: 4px; /* Chrome, Safari, Opera */
+	-moz-column-gap: 4px; /* Firefox */
+	column-gap: 4px;
+
+	> a.map-overlay-toggle {
+		display: block;
+		background: #f4f7f8;
+		padding: 15px;
+		border-bottom: 2px solid #fff;
+		border-top: 2px solid #fff;
+		text-decoration: none;
+
+		&.active {
+			background-color: lighten($brand-info, 25%);
+		}
+
+		-webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+		page-break-inside: avoid; /* Firefox */
+		break-inside: avoid; /* IE 10+ */
+	}
 }

@@ -3,47 +3,72 @@
 
 $ ->
 
-	# layer toggle container
-	layers = document.getElementById 'nav-mapbox'
-
-	# add Layer function
-	addFeatureLayer = (layer, name, zIndex) ->
-		layer.addTo map
-		link = document.createElement('a')
-		link.href = '#'
-		link.className = 'list-group-item'
-		link.innerHTML = '<i class="fa fa-check-square fa-fw"></i>&nbsp;' + name
-		# layer toggle function
-		link.onclick = (e) ->
-			e.preventDefault()
-			e.stopPropagation()
-			if map.hasLayer(layer)
-				map.removeLayer layer
-				@innerHTML = '<i class="fa fa-square fa-fw"></i>&nbsp;' + name
-			else
-				map.addLayer layer
-				@innerHTML = '<i class="fa fa-check-square fa-fw"></i>&nbsp;' + name
-			return
-		layers.appendChild link
-		return
-
 	# init map
 	map = L.map('home-map').setView([27.988945, -82.507324], 10);
 	L.control.locate().addTo map
 	L.esri.basemapLayer('Streets').addTo map
 
+	# layer toggle container
+	overlay_toggles_elem = document.getElementById 'map-overlay-toggles'
+
 	# layers
-	hospitals = L.esri.featureLayer
-		url: 'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/County_Webmap/MapServer/0'
-		pointToLayer: (esriFeature, latlng) ->
-			L.marker latlng, icon: L.icon
-				iconUrl: 'https://cdn4.iconfinder.com/data/icons/medical-14/512/7-512.png'
-				iconRetinaUrl: 'https://cdn4.iconfinder.com/data/icons/medical-14/512/7-512.png'
-				iconSize: [25 ,25]
-				popupAnchor: [0, -15]
+	layers = [
+		{
+			name: 'Hospitals'
+			visible: false
+			url: 'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/County_Webmap/MapServer/0'
+			iconUrl: 'https://cdn4.iconfinder.com/data/icons/medical-14/512/7-512.png'
+			popupTemplate: '<h4>{NAME}</h4>{ADDRESS}'
+		}
+		{
+			name: 'Senior Centers'
+			visible: true
+			url: 'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/County_Webmap/MapServer/1'
+			iconUrl: 'http://12991002.sites.myregisteredsite.com/files/108152360.png'
+			popupTemplate: '<h4>{NAME}</h4>{ADDRESS}'
+		}
+		{
+			name: 'Fire Stations'
+			visible: false
+			url: 'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/County_Webmap/MapServer/2'
+			iconUrl: 'http://www.ifssgroup.com/wp-content/uploads/2016/01/fire-icon-287x300.png'
+			popupTemplate: '<h4>{NAME}</h4>{ADDRESS}'
+		}
+	]
 
-	hospitalTemplate = '<h4>{NAME}</h4>{ADDRESS}'
-	hospitals.bindPopup (e) ->
-		L.Util.template hospitalTemplate, e.feature.properties
+	# add Layer function
+	addFeatureLayer = (layer, obj) ->
+		toggle = document.createElement('a')
+		toggle.href = '#'
+		toggle.className = 'map-overlay-toggle'
+		toggle.innerHTML = '<img src="'+obj.iconUrl+'" alt="'+obj.name+'" width="25" /> ' + obj.name
+		if obj.visible
+			layer.addTo map
+			toggle.className = 'map-overlay-toggle active'
+		toggle.onclick = (e) ->
+			e.preventDefault()
+			e.stopPropagation()
+			if map.hasLayer(layer)
+				map.removeLayer layer
+				@className = 'map-overlay-toggle'
+			else
+				map.addLayer layer
+				@className = 'map-overlay-toggle active'
+			return
+		overlay_toggles_elem.appendChild toggle
+		return
 
-	addFeatureLayer hospitals, 'Hospitals', 1
+	# iterate layers
+	$.each layers, (index, layer) ->
+		new_layer = L.esri.featureLayer
+			url: layer.url
+			pointToLayer: (esriFeature, latlng) ->
+				L.marker latlng, icon: L.icon
+					iconUrl: layer.iconUrl
+					# iconRetinaUrl:
+					iconSize: [25 ,25]
+					popupAnchor: [0, -15]
+		new_layer.bindPopup (e) ->
+			L.Util.template layer.popupTemplate, e.feature.properties
+		addFeatureLayer new_layer, layer
+		return
