@@ -82,7 +82,7 @@
 	> a.map-overlay-toggle {
 		display: block;
 		background: #f4f7f8;
-		padding: 15px;
+		padding: 10px;
 		border-bottom: 2px solid #fff;
 		border-top: 2px solid #fff;
 		text-decoration: none;
@@ -107,13 +107,13 @@
 }
 
 .hc-map-icon {
+	font-family: FontAwesome;
 	display: inline-block;
 	width: 30px !important;
 	height: 30px !important;
 	left: -10px;
 	border-radius: 50%;
 	text-align: center;
-	font-family: FontAwesome;
 	padding-top: 2px;
 	border: 1px solid #fff;
 	&::after {
