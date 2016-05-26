@@ -31,10 +31,13 @@
 	{% include footer.html %}
 
 	<!-- map scripts -->
-	<script src="https://cdn.jsdelivr.net/leaflet/1.0.0-rc.1/leaflet-src.js"></script>
-	<script src="https://cdn.jsdelivr.net/leaflet.esri/2.0.0/esri-leaflet.js"></script>
-	<script src="https://domoritz.github.io/leaflet-locatecontrol/dist/L.Control.Locate.min.js"></script>
-	<script src="{{ '/js/map-config.js' | prepend: site.baseurl }}"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/leaflet/1.0.0-rc.1/leaflet-src.js"></script> -->
+	<!-- <script src="https://cdn.jsdelivr.net/leaflet.esri/2.0.0/esri-leaflet.js"></script> -->
+	<!-- <script src="https://domoritz.github.io/leaflet-locatecontrol/dist/L.Control.Locate.min.js"></script> -->
+	<script src="{{ '/js/leaflet.min.js' | prepend: site.baseurl }}"></script>
+	<script src="{{ '/js/leaflet-locate.min.js' | prepend: site.baseurl }}"></script>
+	<script src="{{ '/js/leaflet-esri.min.js' | prepend: site.baseurl }}"></script>
+	<script src="{{ '/js/hc-map-config.js' | prepend: site.baseurl }}"></script>
 
 </body>
 </html>

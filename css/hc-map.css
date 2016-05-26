@@ -1,0 +1,108 @@
+
+#home-map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%; }
+  @media (max-width: 767px) {
+    #home-map .leaflet-top.leaflet-left {
+      bottom: 10px;
+      top: auto; } }
+  #home-map .leaflet-popup-content-wrapper, #home-map .leaflet-popup-content {
+    padding: 0;
+    margin: 0;
+    border-radius: 4px; }
+    #home-map .leaflet-popup-content-wrapper a.btn, #home-map .leaflet-popup-content a.btn {
+      color: #ff6f59; }
+      #home-map .leaflet-popup-content-wrapper a.btn:hover, #home-map .leaflet-popup-content a.btn:hover {
+        color: #fff; }
+  #home-map .leaflet-popup-close-button {
+    color: #fff;
+    top: 8px;
+    right: 5px; }
+  #home-map .popover-title {
+    background: #9bd63c;
+    color: #fff;
+    padding: 10px 40px 10px 10px; }
+
+#btn-map-overlays {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 500;
+  margin: 0 0; }
+  @media (max-width: 767px) {
+    #btn-map-overlays {
+      left: 10px; } }
+  @media (min-width: 768px) {
+    #btn-map-overlays {
+      min-width: 310px; } }
+  #btn-map-overlays .panel-heading {
+    display: block;
+    background: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #044169; }
+
+#map-overlay-toggles {
+  -webkit-column-count: 2;
+  /* Chrome, Safari, Opera */
+  -moz-column-count: 2;
+  /* Firefox */
+  column-count: 2;
+  -webkit-column-gap: 4px;
+  /* Chrome, Safari, Opera */
+  -moz-column-gap: 4px;
+  /* Firefox */
+  column-gap: 4px; }
+  #map-overlay-toggles > a.map-overlay-toggle {
+    display: block;
+    background: #f4f7f8;
+    padding: 10px;
+    border-bottom: 2px solid #fff;
+    border-top: 2px solid #fff;
+    text-decoration: none;
+    -webkit-column-break-inside: avoid;
+    /* Chrome, Safari, Opera */
+    page-break-inside: avoid;
+    /* Firefox */
+    break-inside: avoid;
+    /* IE 10+ */ }
+    #map-overlay-toggles > a.map-overlay-toggle.active {
+      background-color: #d8f0f2; }
+
+.hc-map-icon {
+  font-family: FontAwesome;
+  display: inline-block;
+  width: 30px !important;
+  height: 30px !important;
+  left: -10px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 2px;
+  border: 1px solid #fff; }
+  .hc-map-icon::after {
+    font-size: 16px;
+    color: #fff; }
+
+.map-overlay-toggle .hc-map-icon {
+  padding-top: 4px; }
+
+.hc-map-icon-hospital {
+  background: #4f2d84;
+  box-shadow: 0 0 0 1px #4f2d84; }
+  .hc-map-icon-hospital::after {
+    content: ""; }
+
+.hc-map-icon-senior-center {
+  background: #e34c84;
+  box-shadow: 0 0 0 1px #e34c84; }
+  .hc-map-icon-senior-center::after {
+    content: ""; }
+
+.hc-map-icon-fire-station {
+  background: #f0463c;
+  box-shadow: 0 0 0 1px #f0463c; }
+  .hc-map-icon-fire-station::after {
+    content: ""; }
