@@ -1,4 +1,7 @@
-
+#map-container {
+	position: relative;
+	height: 350px;
+}
 #home-map {
   position: absolute;
   top: 0;

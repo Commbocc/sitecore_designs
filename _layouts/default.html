@@ -7,6 +7,8 @@
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<title>Bootstrap 101 Template</title>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
 	<!-- Bootstrap -->
 	<link href="{{ site.baseurl }}/css/main.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -21,15 +23,6 @@
 	<link rel="stylesheet" href="https://npmcdn.com/flickity@1.2/dist/flickity.min.css">
 	<script src="https://npmcdn.com/flickity@1.2/dist/flickity.pkgd.min.js"></script>
 
-</head>
-<body data-spy="scroll">
-
-	{% include navbar.html %}
-
-	{{ content }}
-
-	{% include footer.html %}
-
 	<!-- map scripts -->
 	<!-- <script src="https://cdn.jsdelivr.net/leaflet/1.0.0-rc.1/leaflet-src.js"></script> -->
 	<!-- <script src="https://cdn.jsdelivr.net/leaflet.esri/2.0.0/esri-leaflet.js"></script> -->
@@ -38,6 +31,15 @@
 	<script src="{{ '/js/leaflet-locate.min.js' | prepend: site.baseurl }}"></script>
 	<script src="{{ '/js/leaflet-esri.min.js' | prepend: site.baseurl }}"></script>
 	<script src="{{ '/js/hc-map-config.js' | prepend: site.baseurl }}"></script>
+
+</head>
+<body data-spy="scroll">
+
+	{% include navbar.html %}
+
+	{{ content }}
+
+	{% include footer.html %}
 
 </body>
 </html>
