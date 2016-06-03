@@ -26,7 +26,7 @@ $ ->
 		layers = [
 			{
 				name: 'Hospitals'
-				visible: true
+				visible: false
 				url: 'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/County_Webmap/MapServer/0'
 				iconClass: 'hc-map-icon-hospital'
 			}
@@ -41,6 +41,18 @@ $ ->
 				visible: false
 				url: 'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/County_Webmap/MapServer/2'
 				iconClass: 'hc-map-icon-fire-station'
+			}
+			{
+				name: 'Fire Stations (Alias)'
+				visible: true
+				url: 'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CoinMap_working_alias_gda_20160601/MapServer/2'
+				iconClass: 'hc-map-icon-fire-station'
+			}
+			{
+				name: 'CIP Lines'
+				visible: false
+				url: 'https://maps.hillsboroughcounty.org/arcgis/rest/services/InfoLayers/CIP_Layers/MapServer/1'
+				iconClass: 'hc-map-icon-road'
 			}
 		]
 
