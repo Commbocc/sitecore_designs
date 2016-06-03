@@ -1,0 +1,58 @@
+$card-news-resting-height: 170px;
+$card-news-hover-height: 225px;
+
+.card-news {
+
+	background-color: #fff;
+
+	&:hover {
+		.caption-slider {
+			height: $card-news-hover-height;
+		}
+	}
+
+
+	.caption {
+		position: relative;
+		height: $card-news-resting-height - 35;
+		margin-bottom: 15px;
+	}
+
+	.caption-category {
+		display: inline-block;
+		padding: 5px 10px;
+		color: #fff;
+		background: $brand-info;
+		background: rgba($brand-info, .85);
+	}
+
+	.caption-slider {
+		overflow: hidden;
+
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: $card-news-resting-height;
+
+		-webkit-transition: height 500ms; /* For Safari 3.1 to 6.0 */
+		transition: height 500ms;
+	}
+
+	.caption-body {
+		background-color: #fff;
+		padding: 5px;
+		margin-bottom: 10px;
+		overflow: hidden;
+
+		height: $card-news-resting-height - 20;
+		-webkit-transition: height 500ms; /* For Safari 3.1 to 6.0 */
+		transition: height 500ms;
+
+	}
+
+	footer {
+		padding: 0 5px;
+	}
+
+}
