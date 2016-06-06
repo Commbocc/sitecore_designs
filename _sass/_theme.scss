@@ -96,6 +96,24 @@ h1, h2, h3, h4, h5, h6 {
 		color: #fff;
 		text-decoration: none;
 	}
+
+	> .row .col-sm-4 {
+		padding: 10px 0;
+	}
+
+	@media (min-width: $screen-sm-min) {
+		display: table;
+		width: 100%;
+		> .row {
+			display: table-row;
+			width: 100%;
+			.col-sm-4 {
+				float: none;
+				display: table-cell;
+				vertical-align: middle;
+			}
+		}
+	}
 }
 
 // featured links section
