@@ -1,16 +1,19 @@
 $card-news-resting-height: 170px;
 $card-news-hover-height: 225px;
 
-.card-news {
+.card {
 
 	background-color: #fff;
+
+	.thumbnail-image {
+		@include gradient-background-info;
+	}
 
 	&:hover {
 		.caption-slider {
 			height: $card-news-hover-height;
 		}
 	}
-
 
 	.caption {
 		position: relative;
@@ -22,8 +25,20 @@ $card-news-hover-height: 225px;
 		display: inline-block;
 		padding: 5px 10px;
 		color: #fff;
-		background: $brand-info;
-		background: rgba($brand-info, .85);
+	}
+
+	&.card-news {
+		.caption-category {
+			background: $brand-info;
+			background: rgba($brand-info, .85);
+		}
+	}
+
+	&.card-event {
+		.caption-category {
+			background: $brand-secondary;
+			background: rgba($brand-secondary, .85);
+		}
 	}
 
 	.caption-slider {

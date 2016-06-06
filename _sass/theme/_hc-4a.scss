@@ -1,3 +1,7 @@
+.heading-4a:not(:first-child) {
+	padding-top: 100px;
+}
+
 #hc-4a-left-nav-container {
 	background: #fff;
 	color: #000;
@@ -35,7 +39,7 @@
 				&::after {
 					content: '';
 					position: absolute;
-					right: -15px;
+					right: 0;
 					top: 50%;
 					transform: translateY(-50%);
 					-ms-transform: translateY(-50%);
@@ -44,7 +48,7 @@
 					height: 0;
 					border-top: 15px solid transparent;
 					border-bottom: 15px solid transparent;
-					border-left: 15px solid $gray-dark;
+					border-right: 15px solid $body-bg;
 				}
 				a {
 					color: $brand-info;

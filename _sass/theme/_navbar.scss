@@ -17,7 +17,7 @@
 li#nav-i-want-to {
 
 	@media (max-width: $screen-xs-max) {
-		background: $link-color;
+		background: $brand-secondary;
 
 		> .dropdown-menu {
 			padding-right: 15px;
@@ -37,12 +37,13 @@ li#nav-i-want-to {
 		> a { border-bottom-color: $brand-primary !important; }
 	}
 	.hc-nav-dropdown {
-		background: $link-color;
+		background: $brand-secondary;
 		color: #fff;
 		border-radius: 0;
 
 		@media (min-width: $screen-sm-min) {
 			padding: 30px !important;
+			@include gradient-background-secondary;
 		}
 
 		a {

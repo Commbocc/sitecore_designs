@@ -1,20 +1,28 @@
 .btn {
-	text-transform: uppercase;
 	font-weight: bold;
 }
 
+.btn-uppercase {
+	text-transform: uppercase;
+}
+
 .btn-primary {
+
+	text-transform: uppercase;
+
 	&:hover,
 	&:focus,
 	&.focus {
 		color: #fff;
-		background: $brand-secondary;
-		border-color: $brand-secondary;
+		background: $brand-primary-dark;
+		border-color: $brand-primary-dark;
 		text-decoration: none;
 	}
 }
 
 .btn-secondary {
+	text-transform: uppercase;
+
 	@include button-variant($brand-primary, #fff, $brand-primary);
 }
 .btn-secondary:hover,
@@ -22,8 +30,8 @@
 .btn-secondary:active,
 .btn-secondary.active {
 	color: #fff;
-	background-color: $brand-secondary;
-	border-color: $brand-secondary;
+	background-color: $brand-primary-dark;
+	border-color: $brand-primary-dark;
 }
 
 // @mixin button-line-variant($lines) {
