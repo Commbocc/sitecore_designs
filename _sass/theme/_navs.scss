@@ -15,6 +15,9 @@
 		bottom: -60px;
 	}
 
+	font-weight: 600;
+	text-transform: uppercase;
+
 	li {
 		display: table-cell;
 		width: 1%;
@@ -26,7 +29,7 @@
 			border-bottom-left-radius: 0 !important;
 			border-bottom-right-radius: 0 !important;
 			&:hover, &:focus {
-				border-color: $link-color;
+				border-color: $brand-secondary;
 				border-color: rgba($brand-primary, .5);
 				background-color: rgba($link-color, .85);
 			}
@@ -35,7 +38,7 @@
 	}
 	li.active a {
 		background: $body-bg;
-		color: $link-color;
+		color: $brand-secondary;
 		text-shadow: 0 0 $body-bg;
 	}
 
