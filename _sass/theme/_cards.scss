@@ -1,5 +1,6 @@
 $card-news-resting-height: 170px;
 $card-news-hover-height: 225px;
+$card-category-height: 35px;
 
 .hc-card {
 
@@ -19,17 +20,14 @@ $card-news-hover-height: 225px;
 		font-weight: 600;
 	}
 
-	&:hover {
-		.caption-slider {
-			height: $card-news-hover-height;
-		}
-	}
-
 	.caption {
 		position: relative;
-		height: $card-news-resting-height - 35;
 		margin-bottom: 15px;
+		height: $card-news-hover-height - $card-category-height;
 
+		@media (min-width: $screen-sm-min) {
+			height: $card-news-resting-height - $card-category-height;
+		}
 	}
 
 	.caption-category {
@@ -54,15 +52,26 @@ $card-news-hover-height: 225px;
 
 	.caption-slider {
 		overflow: hidden;
-
 		position: absolute;
 		bottom: 0;
 		left: 0;
 		right: 0;
-		height: $card-news-resting-height;
+		height: $card-news-hover-height;
+
+		@media (min-width: $screen-sm-min) {
+			height: $card-news-resting-height;
+		}
 
 		-webkit-transition: height 500ms; /* For Safari 3.1 to 6.0 */
 		transition: height 500ms;
+	}
+
+	@media (min-width: $screen-sm-min) {
+		&:hover {
+			.caption-slider {
+				height: $card-news-hover-height;
+			}
+		}
 	}
 
 	.caption-body {
