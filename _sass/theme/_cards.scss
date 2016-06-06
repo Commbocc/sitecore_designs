@@ -1,7 +1,7 @@
 $card-news-resting-height: 170px;
 $card-news-hover-height: 225px;
 
-.card {
+.hc-card {
 
 	@extend .thumbnail;
 
@@ -10,11 +10,11 @@ $card-news-hover-height: 225px;
 	border-radius: 0;
 	background-color: #fff;
 
-	.card-image {
+	.hc-card-image {
 		@include gradient-background-info;
 	}
 
-	.card-title {
+	.hc-card-title {
 		color: $brand-primary;
 		font-weight: 600;
 	}
@@ -38,14 +38,14 @@ $card-news-hover-height: 225px;
 		color: #fff;
 	}
 
-	&.card-news {
+	&.hc-card-news {
 		.caption-category {
 			background: $brand-info;
 			background: rgba($brand-info, .85);
 		}
 	}
 
-	&.card-event {
+	&.hc-card-event {
 		.caption-category {
 			background: $brand-secondary;
 			background: rgba($brand-secondary, .85);
