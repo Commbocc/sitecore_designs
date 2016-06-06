@@ -6,7 +6,19 @@
 	@media (min-width: $screen-sm-min) {
 		width: 75px;
 	}
-	// @media (min-width: $screen-sm-min) and (max-width: $screen-md-max) {  }
+
+	&::-webkit-input-placeholder {
+		color: $brand-secondary;
+	}
+	&:-moz-placeholder { /* Firefox 18- */
+		color: $brand-secondary;
+	}
+	&::-moz-placeholder {  /* Firefox 19+ */
+		color: $brand-secondary;
+	}
+	&:-ms-input-placeholder {
+		color: $brand-secondary;
+	}
 }
 
 // nav spacer for jquery manipulation on hovers
