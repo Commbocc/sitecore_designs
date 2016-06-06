@@ -1,9 +1,9 @@
 ---
 layout: home
-title: Our New Website
+title: County Launches New Website
 permalink: /layouts/home/
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+The new service-centric website makes life easier for Hillsborough County Residents
 
-[Lorem Ipsum](#){: .btn.btn-lg.btn-primary}
+[Learn More](#){: .btn.btn-lg.btn-primary}
