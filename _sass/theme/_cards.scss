@@ -68,7 +68,7 @@ $card-category-height: 35px;
 	}
 
 	@media (min-width: $screen-sm-min) {
-		&:hover {
+		&:hover, *:focus, *:active {
 			.caption-slider {
 				height: $card-news-hover-height;
 			}
