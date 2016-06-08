@@ -74,16 +74,6 @@ li#nav-i-want-to {
 	background: #fff;
 	border-radius: 0;
 
-	// .navbar-collapse.collapse.in {
-	// 	background: $body-bg;
-	// 	padding: 0 $grid-gutter-width;
-	// 	position: absolute;
-	// 	top: 0;
-	// 	left: 0;
-	// 	right: 0;
-	// 	z-index: 51;
-	// }
-
 	.navbar-form {
 		@media (max-width: $screen-xs-max) {
 			margin-top: 0;
@@ -98,7 +88,7 @@ li#nav-i-want-to {
 		}
 		@media (max-width: $screen-sm-max) {
 			margin-top: 20px;
-			width: 174px;
+			width: 160px;
 		}
 	}
 
