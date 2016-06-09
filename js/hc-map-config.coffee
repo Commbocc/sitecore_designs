@@ -93,12 +93,14 @@ $ ->
 
 		# default popup template
 		defaultPopupTemplate = (properties) ->
+			directions_str = [properties.WEB_ADDRESS, properties.WEB_CITY, 'FL', properties.WEB_ZIP].join('+').replace(/[^0-9a-z]/gi, '+').replace(' ', '+')
 			out = """
 			<h4 class="popover-title">{WEB_NAME}</h4>
 			<div class="popover-content">
 				<p>
 					{WEB_ADDRESS}<br>
-					{WEB_CITY}, FL {WEB_ZIP}
+					{WEB_CITY}, FL {WEB_ZIP}<br>
+					<a href="https://www.google.com/maps/dir//"""+directions_str+"""" target="_blank" class="small pull-right">Directions</a>
 				</p>
 			"""
 			if properties.WEB_URL != null && properties.WEB_URL != ''
