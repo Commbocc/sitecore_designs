@@ -127,7 +127,13 @@
 	}
 }
 
-.hc-map-icon-hospital { @include hc-map-icon('', #4f2d84); }
+.hc-map-icon-public-office { @include hc-map-icon('', #fd9407); }
+.hc-map-icon-collection-center { @include hc-map-icon('', #975ab9); }
 .hc-map-icon-senior-center { @include hc-map-icon('', #e34c84); }
+.hc-map-icon-park { @include hc-map-icon('', #9bd543); }
+.hc-map-icon-const-office { @include hc-map-icon('', #bbbcbe); }
 .hc-map-icon-fire-station { @include hc-map-icon('', #f0463c); }
+.hc-map-icon-library { @include hc-map-icon('', #1e95c0); }
+
 .hc-map-icon-road { @include hc-map-icon('', #a8a8a8); }
+.hc-map-icon-hospital { @include hc-map-icon('', #4f2d84); }

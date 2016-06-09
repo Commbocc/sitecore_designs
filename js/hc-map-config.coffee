@@ -19,54 +19,92 @@ $ ->
 				map.scrollWheelZoom.enable()
 			return
 
-		# layer toggle container
-		overlay_toggles_elem = document.getElementById 'map-overlay-toggles'
-
 		# layers
 		layers = [
 			{
-				name: 'Hospitals'
+				name: 'County Public Offices'
+				visible: true
+				urls: [
+					'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/2' # Community Resource Centers
+					'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/3' # Consumer Protection Offices
+					'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/12' # Customer Service Center for Public Utilities
+					'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/10' # Pet Resource Center
+					'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/4' # County Center
+					'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/16' # Veterans Services Offices
+				]
+				iconClass: 'hc-map-icon-public-office'
+			}
+			{
+				name: 'Community Collection Centers'
 				visible: false
-				url: 'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/County_Webmap/MapServer/0'
-				iconClass: 'hc-map-icon-hospital'
+				urls: [
+					'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/1' # Community Collection Centers
+				]
+				iconClass: 'hc-map-icon-collection-center'
 			}
 			{
 				name: 'Senior Centers'
 				visible: false
-				url: 'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/County_Webmap/MapServer/1'
+				urls: [
+					'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/13' # Community Collection Centers
+				]
 				iconClass: 'hc-map-icon-senior-center'
+			}
+			{
+				name: 'Parks and Recreation Sites'
+				visible: false
+				urls: [
+					'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/9' # Parks
+				]
+				iconClass: 'hc-map-icon-park'
+			}
+			{
+				name: 'Constitutional Offices'
+				visible: false
+				urls: [
+					'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/15' # Tax Collector Locations
+					'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/0' # Clerk of Court Locations
+					'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/14' # Supervisor of Elections Locations
+					'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/6' # Hillsborough County Sheriff Office Locations
+					'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/11' # Property Appraiser Locations
+				]
+				iconClass: 'hc-map-icon-const-office'
 			}
 			{
 				name: 'Fire Stations'
 				visible: false
-				url: 'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/County_Webmap/MapServer/2'
+				urls: [
+					'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/5' # Fire Stations
+				]
 				iconClass: 'hc-map-icon-fire-station'
 			}
 			{
-				name: 'Fire Stations (Alias)'
-				visible: true
-				url: 'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CoinMap_working_alias_gda_20160601/MapServer/2'
-				iconClass: 'hc-map-icon-fire-station'
-			}
-			{
-				name: 'CIP Lines'
+				name: 'Libraries'
 				visible: false
-				url: 'https://maps.hillsboroughcounty.org/arcgis/rest/services/InfoLayers/CIP_Layers/MapServer/1'
-				iconClass: 'hc-map-icon-road'
+				urls: [
+					'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/8' # Libraries
+				]
+				iconClass: 'hc-map-icon-library'
 			}
 		]
 
+		# layer toggle container
+		overlay_toggles_elem = document.getElementById 'map-overlay-toggles'
+
 		# default popup template
-		defaultPopupTemplate = (attr) ->
+		defaultPopupTemplate = (properties) ->
 			out = """
-			<h4 class="popover-title">{NAME}</h4>
+			<h4 class="popover-title">{WEB_NAME}</h4>
 			<div class="popover-content">
-				<p>{ADDRESS}</p>
+				<p>
+					{WEB_ADDRESS}<br>
+					{WEB_CITY}, FL {WEB_ZIP}
+				</p>
 			"""
-			if attr
+			if properties.WEB_URL != null && properties.WEB_URL != ''
 				out += """
 				<p>
-					<a href="#" class="btn btn-secondary btn-sm btn-block">Learn More</a>
+					<a href="{WEB_URL}" class="btn btn-secondary btn-sm btn-block">Learn More</a>
 				</p>
 				"""
 			out += "</div>"
@@ -96,14 +134,22 @@ $ ->
 
 		# iterate layers
 		$.each layers, (index, layer) ->
-			new_layer = L.esri.featureLayer
-				url: layer.url
-				pointToLayer: (esriFeature, latlng) ->
-					L.marker latlng, icon: L.divIcon className: 'hc-map-icon '+layer.iconClass
 
-			new_layer.bindPopup (e) ->
-				properties = e.feature.properties
-				L.Util.template defaultPopupTemplate(true), properties
+			layer_group = L.layerGroup();
 
-			addFeatureLayer new_layer, layer
+			$.each layer.urls, (l_index, url) ->
+				new_layer = L.esri.featureLayer
+					url: url
+					pointToLayer: (esriFeature, latlng) ->
+						L.marker latlng, icon: L.divIcon className: 'hc-map-icon '+layer.iconClass
+
+				new_layer.bindPopup (e) ->
+					properties = e.feature.properties
+					L.Util.template defaultPopupTemplate(properties), properties
+
+				layer_group.addLayer new_layer
+
+				return
+
+			addFeatureLayer layer_group, layer
 			return
