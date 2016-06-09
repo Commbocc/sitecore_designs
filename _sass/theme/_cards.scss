@@ -1,5 +1,5 @@
-$card-news-resting-height: 170px;
-$card-news-hover-height: 225px;
+$card-news-resting-height: 175px;
+$card-news-hover-height: 230px;
 $card-category-height: 35px;
 
 .hc-card {
@@ -18,6 +18,10 @@ $card-category-height: 35px;
 	.hc-card-title {
 		color: $brand-primary;
 		font-weight: 600;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		word-wrap: break-word;
+		max-height: 2.25em; // n lines * element's line-height
 	}
 
 	.caption {
@@ -80,8 +84,10 @@ $card-category-height: 35px;
 		padding: 5px 10px;
 		margin-bottom: 10px;
 		overflow: hidden;
+		text-overflow: ellipsis;
+		word-wrap: break-word;
 
-		height: $card-news-resting-height - 20;
+		height: $card-news-resting-height - 25;
 		-webkit-transition: height 500ms; /* For Safari 3.1 to 6.0 */
 		transition: height 500ms;
 
