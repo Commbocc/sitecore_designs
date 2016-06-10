@@ -3,6 +3,15 @@
 
 $ ->
 
+	# force footer to bottom
+	$(document).ready ->
+		contentHeight = $(window).height()
+		footerHeight = $('#hc-footer').innerHeight()
+		footerTop = $('#hc-footer').position().top + footerHeight
+		if footerTop < contentHeight
+			$('#hc-footer').css 'margin-top', contentHeight - footerTop + 'px'
+		return
+
 	# nav spacer animation
 	$('#hc-main-nav-sections > li').hover (->
 		$elem = $(this).find('.hc-nav-dropdown')
