@@ -33,13 +33,18 @@ body {
   }
 }
 
+.hc-main-text-header {
+	padding: 0;
+}
+
 .hc-main-text {
-	padding: 0 inherit;
+	padding: 0 !important;
 	@extend .lead;
 }
 
 .hc-main-text-content {
 	font-size: $font-size-base;
+	line-height: 1.5;
 	margin-bottom: 1.5em;
 
 	/* headings */
