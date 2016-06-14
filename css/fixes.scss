@@ -22,7 +22,7 @@ body {
 	// font-size: $font-size-base;
 }
 
-.btn:not(.btn-primary), .btn:not(.btn-secondary), .btn:not(.btn-default)  {
+.btn:not(.btn-primary):not(.btn-secondary):not(.btn-default)  {
 	color: #fff;
 	&:hover {
 		color: #fff;
