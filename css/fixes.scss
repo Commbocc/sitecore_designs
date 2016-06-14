@@ -22,10 +22,10 @@ body {
 	// font-size: $font-size-base;
 }
 
-.btn:not(.btn-primary):not(.btn-secondary):not(.btn-default)  {
-	color: #fff;
+.btn:not(.btn-secondary):not(.btn-default)  {
+	color: #fff !important;
 	&:hover {
-		color: #fff;
+		color: #fff !important;
 	}
 }
 
