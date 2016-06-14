@@ -22,6 +22,13 @@ body {
 	// font-size: $font-size-base;
 }
 
+.btn:not(.btn-primary), .btn:not(.btn-secondary), .btn:not(.btn-default)  {
+	color: #fff;
+	&:hover {
+		color: #fff;
+	}
+}
+
 .lead {
   margin-bottom: $line-height-computed;
   font-size: floor(($font-size-base * 1.15));
