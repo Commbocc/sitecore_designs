@@ -2,12 +2,12 @@
 // @import "https://cdn.jsdelivr.net/leaflet/1.0.0-rc.1/leaflet.css";
 // @import "https://domoritz.github.io/leaflet-locatecontrol/dist/L.Control.Locate.min.css";
 
-#map-container {
+#map-container, .map-container {
 	position: relative;
 	height: 350px;
 }
 
-#home-map {
+#home-map, .hc-map {
 	position: absolute;
 	top:0;
 	bottom:0;
@@ -120,6 +120,7 @@
 		font-size: 16px;
 		color: #fff;
 	}
+	@include hc-map-icon('', $brand-primary);
 }
 
 .map-overlay-toggle {

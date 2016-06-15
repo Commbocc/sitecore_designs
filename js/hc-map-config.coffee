@@ -1,16 +1,37 @@
 ---
 ---
 
+# default popup template
+defaultPopupTemplate = (properties) ->
+	directions_str = [properties.WEB_ADDRESS, properties.WEB_CITY, 'FL', properties.WEB_ZIP].join('+').replace(/[^0-9a-z]/gi, '+').replace(' ', '+')
+	out = """
+	<h4 class="popover-title">{WEB_NAME}</h4>
+	<div class="popover-content">
+		<p>
+			{WEB_ADDRESS}<br>
+			{WEB_CITY}, FL {WEB_ZIP}<br>
+			<a href="https://www.google.com/maps/dir//"""+directions_str+"""" target="_blank" class="small pull-right">Directions</a>
+		</p>
+	"""
+	if properties.WEB_URL != null && properties.WEB_URL != ''
+		out += """
+		<p>
+			<a href="{WEB_URL}" class="btn btn-secondary btn-sm btn-block">Learn More</a>
+		</p>
+		"""
+	out += "</div>"
+	return out
+
 $ ->
 
 	# init map
 	$mapElem = $('#home-map')
 
-	if (typeof($mapElem) != 'undefined' && $mapElem != null)
+	$mapElem.each ->
 
-		map = L.map($mapElem.attr('id'), {scrollWheelZoom: false}).setView([27.988945, -82.507324], 10);
+		map = L.map($(this).attr('id'), {scrollWheelZoom: false}).setView([27.988945, -82.507324], 10);
 		L.control.locate().addTo map
-		L.esri.basemapLayer('Streets').addTo map
+		L.esri.basemapLayer('Topographic').addTo map
 
 		map.on 'click', ->
 			if map.scrollWheelZoom.enabled()
@@ -91,27 +112,6 @@ $ ->
 		# layer toggle container
 		overlay_toggles_elem = document.getElementById 'map-overlay-toggles'
 
-		# default popup template
-		defaultPopupTemplate = (properties) ->
-			directions_str = [properties.WEB_ADDRESS, properties.WEB_CITY, 'FL', properties.WEB_ZIP].join('+').replace(/[^0-9a-z]/gi, '+').replace(' ', '+')
-			out = """
-			<h4 class="popover-title">{WEB_NAME}</h4>
-			<div class="popover-content">
-				<p>
-					{WEB_ADDRESS}<br>
-					{WEB_CITY}, FL {WEB_ZIP}<br>
-					<a href="https://www.google.com/maps/dir//"""+directions_str+"""" target="_blank" class="small pull-right">Directions</a>
-				</p>
-			"""
-			if properties.WEB_URL != null && properties.WEB_URL != ''
-				out += """
-				<p>
-					<a href="{WEB_URL}" class="btn btn-secondary btn-sm btn-block">Learn More</a>
-				</p>
-				"""
-			out += "</div>"
-			return out
-
 		# add Layer function
 		addFeatureLayer = (layer, obj) ->
 			toggle = document.createElement('a')
@@ -155,3 +155,5 @@ $ ->
 
 			addFeatureLayer layer_group, layer
 			return
+
+		return # end each
