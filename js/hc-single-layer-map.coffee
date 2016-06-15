@@ -25,13 +25,15 @@ defaultPopupTemplate = (properties) ->
 $ ->
 
 	# init map
-	$mapElem = $('.hc-map')
 
+	$mapElem = $('.hc-map')
 	$mapElem.each ->
 		map = L.map $(this).attr('id'), {scrollWheelZoom: false}
 		map.setView [27.988945, -82.507324], 10
 		L.control.locate().addTo map
 		L.esri.basemapLayer('Topographic').addTo map
+
+		map_service = 'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/'
 
 		map.on 'click', ->
 			if map.scrollWheelZoom.enabled()
@@ -40,9 +42,10 @@ $ ->
 				map.scrollWheelZoom.enable()
 			return
 
-		if $(this).data('layer')
+		unless $(this).data('layer') == undefined || $(this).data('layer') == ''
 			layer = L.esri.featureLayer
-				url: $(this).data('layer')
+				# url: $(this).data('layer')
+				url: map_service + $(this).data('layer')
 				# where: "WEB_NAME LIKE '%main street%'"
 				pointToLayer: (esriFeature, latlng) ->
 					L.marker latlng, icon: L.divIcon className: 'hc-map-icon'
