@@ -88,29 +88,12 @@ $ ->
 			}
 		]
 
-		# layer toggle container
-		overlay_toggles_elem = document.getElementById 'map-overlay-toggles'
-
-		# add Layer function
-		addFeatureLayer = (layer, obj) ->
-			toggle = document.createElement('a')
-			toggle.href = '#'
-			toggle.className = 'map-overlay-toggle'
-			toggle.innerHTML = '<div class="hc-map-icon '+obj.iconClass+'"></div> ' + obj.name
-			if obj.visible
-				layer.addTo map
-				toggle.className = 'map-overlay-toggle active'
-			toggle.onclick = (e) ->
-				e.preventDefault()
-				e.stopPropagation()
-				if map.hasLayer(layer)
-					map.removeLayer layer
-					@className = 'map-overlay-toggle'
-				else
-					map.addLayer layer
-					@className = 'map-overlay-toggle active'
-				return
-			overlay_toggles_elem.appendChild toggle
+		# close map overlays on any other click
+		$(document).click (event) ->
+			# clickover = $(event.target)
+			_opened = $('#map-overlays').hasClass('in')
+			if _opened == true
+				$('#map-overlays').removeClass('in')
 			return
 
 		# iterate layers
@@ -130,10 +113,10 @@ $ ->
 				layer_group.addLayer new_layer
 				return
 
-			addFeatureLayer layer_group, layer
+			addLayerToMapAndMapOverlaysPanel map, layer_group, layer
 			return
 
-		return # end each
+		return # end #home-map each
 
 	# single layer maps
 	$('.hc-map').each ->
@@ -194,4 +177,28 @@ toggleScrollWheel = (map) ->
 		else
 			map.scrollWheelZoom.enable()
 		return
+	return
+
+# function that adds a layer to map and map overlays panel
+addLayerToMapAndMapOverlaysPanel = (map, layer, obj) ->
+	$toggle = $('<a href="#" class="map-overlay-toggle"></a>')
+	$toggle.html '<span class="hc-map-icon '+obj.iconClass+'"></span> ' + obj.name
+
+	if obj.visible
+		layer.addTo map
+		$toggle.appendTo('#map-overlay-toggles').addClass('active')
+	else
+		$toggle.appendTo('#map-overlay-toggles')
+
+	$toggle.on 'click', (e) ->
+		e.preventDefault()
+		e.stopPropagation()
+		if map.hasLayer(layer)
+			map.removeLayer layer
+			$(this).removeClass 'active'
+		else
+			map.addLayer layer
+			$(this).addClass 'active'
+		return
+
 	return
