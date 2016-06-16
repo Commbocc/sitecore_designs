@@ -3,6 +3,9 @@
 
 $ ->
 
+	# map service with correct WEB_* fields
+	map_service = 'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/'
+
 	# map initializer
 	$.fn.initHcMap = ->
 		map = L.map $(this).attr('id'), {scrollWheelZoom: false}
@@ -11,9 +14,6 @@ $ ->
 		L.esri.basemapLayer('Topographic').addTo map
 		toggleScrollWheel map
 		return map
-
-	# map service with correct WEB_* fields
-	map_service = 'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/'
 
 	# home page map
 	$('#home-map').each ->
