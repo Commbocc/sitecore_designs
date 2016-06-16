@@ -15,6 +15,7 @@
 		bottom: -60px;
 	}
 
+	font-size: 1.1em;
 	font-weight: 600;
 	text-transform: uppercase;
 
@@ -24,11 +25,12 @@
 		a {
 			background: $link-color;
 			background: rgba($link-color, 0.75);
-			color: $body-bg;
+			color: rgba($body-bg, 0.75);
 			border-bottom: none !important;
 			border-bottom-left-radius: 0 !important;
 			border-bottom-right-radius: 0 !important;
 			&:hover, &:focus {
+				color: $body-bg;
 				border-color: $brand-secondary;
 				border-color: rgba($brand-primary, .5);
 				background-color: rgba($link-color, .85);
@@ -40,6 +42,8 @@
 		background: $body-bg;
 		color: $brand-secondary;
 		text-shadow: 0 0 $body-bg;
+		&:hover, &:focus { color: $brand-secondary; }
+		padding-top: .8em;
 	}
 
 }
