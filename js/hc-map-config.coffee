@@ -9,10 +9,14 @@ $ ->
 	# map initializer
 	$.fn.initHcMap = ->
 		map = L.map $(this).attr('id'), {scrollWheelZoom: false}
-		map.setView [27.988945, -82.507324], 10
-		L.control.locate().addTo map
-		L.esri.basemapLayer('Topographic').addTo map
+		map.setView [0,0], 10
 		toggleScrollWheel map
+		L.esri.basemapLayer('Topographic').addTo map
+		L.control.locate().addTo map
+		# Hillsborough County Boundaries
+		northWest = L.latLng(28.173379, -82.823669)
+		southEast = L.latLng(27.57055, -82.054012)
+		map.fitBounds L.latLngBounds(northWest, southEast)
 		return map
 
 	# home page map
