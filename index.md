@@ -10,5 +10,6 @@ layout: page
 * [L2]({{ '/layouts/l2/' | prepend: site.baseurl }})
 * [L3]({{ '/layouts/l3/' | prepend: site.baseurl }})
 * [4a]({{ '/layouts/4a/' | prepend: site.baseurl }})
+* [Location]({{ '/layouts/location/' | prepend: site.baseurl }})
 * [County Projects]({{ '/county_projects/' | prepend: site.baseurl }})
 * [Media Directory Listing]({{ '/layouts/media-dir/' | prepend: site.baseurl }})

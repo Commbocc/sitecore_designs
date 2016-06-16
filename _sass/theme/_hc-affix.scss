@@ -1,23 +1,46 @@
-.heading-4a:not(:first-child) {
-	padding-top: 100px;
+#hc-affix-content {
+	max-width: 800px;
 }
 
-#hc-4a-left-nav-container {
+.hc-affix-heading {
+	color: $brand-primary;
+	&:not(:first-child) {
+		@media (min-width: $screen-sm-min) {
+			padding-top: 2em;
+		}
+	}
+}
+
+#hc-location-map-container {
+	padding-bottom: 56.25%;
+	@media (min-width: $screen-md-min) {
+		padding-bottom: 75%;
+	}
+}
+
+#hc-affix-left-nav-container {
 	background: #fff;
 	color: #000;
 	margin: 0 15px;
 }
 
-@media (min-width: 768px) {
-	#hc-4a-header {
+#hc-affix-left-nav-xs-toggle {
+	padding: 0;
+	color: $brand-primary;
+	font-weight: 600;
+}
+
+@media (min-width: $screen-sm-min) {
+
+	#hc-affix-header {
 		margin-bottom: 0;
 	}
-	#hc-4a-left-nav-container {
+	#hc-affix-left-nav-container {
 		background: $gray-dark;
 		margin: 0 15px 0 -15px;
 		padding: 15px 0 0 0;
 	}
-	#hc-4a-left-nav {
+	#hc-affix-left-nav {
 		padding: 0;
 		&.affix {
 			position: fixed !important;
@@ -25,7 +48,7 @@
 		}
 		li {
 			border-bottom: solid 1px #fff;
-			padding: 1em 0;
+			padding: 0.5em 0;
 			a {
 				margin-left: 30px;
 				color: #fff;

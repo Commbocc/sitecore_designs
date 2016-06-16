@@ -22,9 +22,8 @@
 @import "theme/columns";
 @import "theme/cards";
 
-// affix styling
-// NEEDS CLEANUP
-@import "theme/hc-4a";
+// affix layout
+@import "theme/hc-affix";
 
 // xs (mobile) only
 @media (max-width: $screen-xs-max) {

@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+<header id="hc-affix-header" class="jumbotron">
+	<div class="container-fluid">
+		<h1>{{ page.title }}</h1>
+		{% if page.action %}
+		<div class="row">
+			<p class="col-xs-8 col-sm-5 col-md-4">
+				<a href="#" class="btn btn-lg btn-primary btn-block">
+					{{ page.action }}
+					<i class="fa fa-fw fa-external-link"></i>
+				</a>
+			</p>
+		</div>
+		{% endif %}
+	</div>
+</header>
+
+<div class="container-fluid">
+	<div class="row">
+		<nav id="hc-affix-left-nav-container" class="col-sm-4 col-md-3">
+			<a id="hc-affix-left-nav-xs-toggle" class="navbar-header visible-xs-block" data-toggle="collapse" data-target="#hc-affix-left-nav" aria-expanded="false">
+				<button type="button" class="navbar-toggle">
+					<span class="sr-only">Toggle navigation</span>
+					<i class="fa fa-fw fa-chevron-down"></i>
+				</button>
+				<span class="navbar-brand" >
+					Jump to:
+				</span>
+			</a>
+
+			<ul id="hc-affix-left-nav" class="nav nav-pills nav-stacked collapse navbar-collapse">
+				<!-- Child Action Folder list items -->
+				<li role="presentation"><a href="#overview">Overview</a></li>
+				<li role="presentation"><a href="#how-to">How To</a></li>
+				<li role="presentation"><a href="#profile">Profile</a></li>
+				<li role="presentation"><a href="#look-here">Look Here</a></li>
+			</ul>
+		</nav>
+
+		<section id="hc-affix-content" class="col-sm-8 col-md-9">
+			<!-- rendered Child Action Folder items -->
+			{{ content }}
+		</section>
+	</div>
+</div>
