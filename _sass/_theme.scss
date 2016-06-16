@@ -32,6 +32,9 @@
 	.text-center-xs { text-align: center; }
 }
 
+.text-white { color: #fff; }
+.text-shadowed { text-shadow: 1px 1px #000; }
+
 // default heading colors
 h1, h2, h3, h4, h5, h6 {
 	color: $link-color;
@@ -51,23 +54,20 @@ h1, h2, h3, h4, h5, h6 {
 		font-weight: 400;
 	}
 
+	&.jumbotron-no-margin {
+		margin-bottom: 0;
+	}
+
 	// extra padding for jumbotrons housing tabs
 	&.hc-jumbotron-tabs {
+		overflow: hidden;
 		padding-bottom: 60px;
 	}
-}
 
-#hc-home-header {
-	> .container:first-of-type {
-		color: #fff;
+	&.hc-jumbotron-tabs-no-padding {
+		padding-top: 0;
+		margin-bottom: 0;
 	}
-
-	// background-position: center center;
-	// background-repeat: no-repeat;
-	// background-size: cover;
-	// background-attachment: fixed;
-
-	text-shadow: 1px 1px #000;
 }
 
 // full-width white container to accomodate margins of sibling elements
