@@ -2,6 +2,9 @@
 
 __Actions (4a) & Locations__
 
+* [Action Demo](http://commbocc.github.io/sitecore_designs/layouts/4a/)
+* [Location Demo](http://commbocc.github.io/sitecore_designs/layouts/location/)
+
 ## HTML
 
 ```HTML
