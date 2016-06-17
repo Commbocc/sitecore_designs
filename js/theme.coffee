@@ -31,7 +31,7 @@ $ ->
 				top: ->
 					@top = $('#hc-main-nav').outerHeight(true) + $('#hc-affix-header').outerHeight(true)
 				bottom: ->
-					@bottom = $('#hc-footer').outerHeight(true) + 15
+					@bottom = $('#hc-footer').outerHeight(true)
 		else
 			$(this).off '.affix'
 			$('#hc-affix-left-nav').removeData('affix').removeClass 'affix affix-top affix-bottom'

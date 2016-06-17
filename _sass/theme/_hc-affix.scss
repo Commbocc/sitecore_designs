@@ -2,7 +2,7 @@
 	max-width: $screen-lg-min;
 }
 
-.hc-affix-heading {
+.hc-affix-content-heading {
 	color: $brand-primary;
 	&:not(:first-child) {
 		@media (min-width: $screen-sm-min) {

@@ -50,7 +50,7 @@ body {
 	@extend .lead;
 }
 
-.hc-main-text-content, .hc-left-slide-partner-content {
+.hc-main-text-content /*, .hc-left-slide-partner-content */ {
 	font-size: $font-size-base;
 	line-height: 1.5;
 	margin-bottom: 1.5em;
@@ -104,9 +104,9 @@ body {
 	h6, .h6 { font-size: 14px; }
 }
 
-.hc-left-slide-partner-content-section-header {
-	h1,h2,h3,h4,h5,h6 { color: $brand-primary; }
-}
+// .hc-left-slide-partner-content-section-header {
+// 	h1,h2,h3,h4,h5,h6 { color: $brand-primary; }
+// }
 
 .hc-dual-tab-content {
 	padding-top: 0;
