@@ -57,6 +57,7 @@ __Actions (4a) & Locations__
 #### Location 'Rendered Items' Block
 
 ```HTML
+<h2 class="hc-affix-content-heading" id="location-hours">Location and Hours</h2>
 <div class="row">
 	<div class="col-md-6">
 		<!-- location details -->
