@@ -3,6 +3,7 @@
 ## Current Issues
 
 * No containing element to limit either minimum or maximum width (white)
+* Duplicated Nav: one for desktop, another for mobile (orange)
 * Absolute Positioning (orange, blue)
 * Unresponsive map sizing (green)
 
