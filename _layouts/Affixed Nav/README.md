@@ -1,11 +1,21 @@
 # Affixed Left Nav Template
 
+## Current Issues
+
+* No containing element to limit either minimum or maximum width (white)
+* Absolute Positioning (orange, blue)
+* Unresponsive map sizing (green)
+
+![Current Template](https://raw.githubusercontent.com/Commbocc/sitecore_designs/gh-pages/_layouts/Affixed%20Nav/hc-affix.png)
+
+## Solution
+
 __Actions (4a) & Locations__
 
 * [Action Demo](http://commbocc.github.io/sitecore_designs/layouts/4a/)
 * [Location Demo](http://commbocc.github.io/sitecore_designs/layouts/location/)
 
-## HTML
+### HTML
 
 ```HTML
 <body data-spy="scroll">
@@ -44,7 +54,7 @@ __Actions (4a) & Locations__
 </body>
 ```
 
-## Javascript
+### Javascript
 
 ```Javascript
 $(window).on('load resize', function() {
@@ -77,6 +87,6 @@ __Do not just copy and paste.__ The offset option's top and bottom functions req
 
 * The same is true for the `bottom` function, however use the sum of the elements below; in the example only `#hc-footer` is needed.
 
-## CSS
+### CSS
 
 Use the [css file](https://raw.githubusercontent.com/Commbocc/sitecore_designs/gh-pages/_layouts/Affixed%20Nav/hc-affix.css) above to apply the needed styling.
