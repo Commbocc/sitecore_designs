@@ -73,3 +73,7 @@ __Do not just copy and paste.__ The offset option's top and bottom functions req
 * The `top` function requires the sum of the heights of the elements above `#hc-affix-left-nav-container`, seen in the example above as `#hc-main-nav` & `#hc-affix-header`.
 
 * The same is true for the `bottom` function, however use the sum of the elements below; in the example only `#hc-footer` is needed.
+
+## CSS
+
+Use the [css file](https://raw.githubusercontent.com/Commbocc/sitecore_designs/gh-pages/_layouts/Affixed%20Nav/hc-affix.css) above to apply the needed styling.
