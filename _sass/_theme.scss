@@ -31,11 +31,6 @@
 	.text-center-xs { text-align: center; }
 }
 
-// default heading colors
-h1, h2, h3, h4, h5, h6 {
-	color: $link-color;
-}
-
 // jumbotron - http://getbootstrap.com/components/#jumbotron
 .jumbotron {
 	@include gradient-background-info;
