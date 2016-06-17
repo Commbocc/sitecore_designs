@@ -54,6 +54,21 @@ __Actions (4a) & Locations__
 </body>
 ```
 
+#### Location 'Rendered Items' Block
+
+```HTML
+<div class="row">
+	<div class="col-md-6">
+		<!-- location details -->
+	</div>
+	<div class="col-md-6">
+		<div id="hc-location-map-container" class="embed-responsive thumbnail">
+			<iframe class="embed-responsive-item" src="..." frameborder="0" allowfullscreen></iframe>
+		</div>
+	</div>
+</div>
+```
+
 ### Javascript
 
 ```Javascript
