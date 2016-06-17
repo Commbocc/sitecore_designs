@@ -6,8 +6,8 @@ __Actions (4a) & Locations__
 
 ```HTML
 <body data-spy="scroll">
-	<!-- navigation -->
-	<!-- header -->
+	<!-- navigation: #hc-main-nav -->
+	<!-- header: #hc-affix-header -->
 	<div class="container-fluid">
 		<div class="row">
 			<nav id="hc-affix-left-nav-container" class="col-sm-4 col-md-3">
@@ -37,7 +37,7 @@ __Actions (4a) & Locations__
 			</section>
 		</div>
 	</div>
-	<!-- footer -->
+	<!-- footer: #hc-footer -->
 </body>
 ```
 
