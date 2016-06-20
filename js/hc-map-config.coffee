@@ -127,9 +127,14 @@ $ ->
 		map = $(this).initHcMap()
 
 		unless $(this).data('layer') == undefined || $(this).data('layer') == ''
+
+			if $(this).data('layer').toString().indexOf("http") != -1
+				layer_str = $(this).data('layer')
+			else
+				layer_str = map_service + $(this).data('layer')
+
 			layer = L.esri.featureLayer
-				# url: $(this).data('layer')
-				url: map_service + $(this).data('layer')
+				url: layer_str
 				# where: "WEB_NAME LIKE '%main street%'"
 				pointToLayer: (esriFeature, latlng) ->
 					L.marker latlng, icon: L.divIcon className: 'hc-map-icon'
@@ -143,7 +148,8 @@ $ ->
 				$.each $(this)[0]._layers, (index, marker) ->
 					bounds.push marker._latlng
 					return
-				map.fitBounds bounds
+				unless $.inArray(bounds, undefined)
+					map.fitBounds bounds
 				return
 
 			map.addLayer layer

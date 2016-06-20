@@ -74,11 +74,22 @@ Place HTML on page.
 
 Place HTML on page.
 
-__Requires a unique id and an integer from the [Acceptable Layers](#acceptable-layers) list below in the layer data attribute__
+__Requires a unique id and one of the following formats in the layer data attribute:__
+
+* An integer from the [Acceptable Layers](#acceptable-layers) list
+* A full URL of a MapService Layers
+
+See examples below.
 
 ```HTML
+<!-- Integer -->
 <div class="embed-responsive embed-responsive-16by9 thumbnail">
 	<div id="aUniqueIdentifier" class="hc-map hc-map-layer" data-layer="2"></div>
+</div>
+
+<!-- URL -->
+<div class="embed-responsive embed-responsive-16by9 thumbnail">
+	<div id="anotherLayer" class="hc-map hc-map-layer" data-layer="https://maps.hillsboroughcounty.org/arcgis/rest/services/InfoLayers/CIP_Layers/MapServer/1"></div>
 </div>
 ```
 
