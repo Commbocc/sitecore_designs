@@ -153,7 +153,7 @@ $ ->
 	# geo lookup maps
 	$('.hc-map-geo').each ->
 		map = $(this).initHcMap()
-		setGeoMarker $(this).data('address'), map
+		setGeoMarker $(this).data('name'), $(this).data('address'), map
 		return
 
 # shared functions
@@ -176,6 +176,20 @@ defaultPopupTemplate = (properties) ->
 			<a href="{WEB_URL}" class="btn btn-secondary btn-sm btn-block">Learn More</a>
 		</p>
 		"""
+	out += "</div>"
+	return out
+
+# geo popup template
+geoPopupTemplate = (title, address) ->
+	directions_str = [address].join('+').replace(/[^0-9a-z]/gi, '+').replace(' ', '+')
+	out = """
+	<h4 class="popover-title">"""+title+"""</h4>
+	<div class="popover-content">
+		<p>
+			"""+address+"""<br>
+			<a href="https://www.google.com/maps/dir//"""+directions_str+"""" target="_blank" class="small pull-right">Directions</a>
+		</p>
+	"""
 	out += "</div>"
 	return out
 
@@ -214,12 +228,13 @@ addLayerToMapAndMapOverlaysPanel = (map, layer, obj) ->
 	return
 
 # add esri geosearch marker to map
-setGeoMarker = (searchStr, map) ->
+setGeoMarker = (title, searchStr, map) ->
 	client = new L.GeoSearch.Provider.Esri()
 	json_url = client.GetServiceUrl searchStr
 	$.get json_url, (data) ->
 		coordinates = client.ParseJSON(data)[0]
-		L.marker([coordinates.Y, coordinates.X], icon: L.divIcon className: 'hc-map-icon').addTo(map)
+		marker = L.marker([coordinates.Y, coordinates.X], icon: L.divIcon className: 'hc-map-icon').addTo(map)
+		marker.bindPopup geoPopupTemplate(title, searchStr)
 		map.fitBounds [[coordinates.Y, coordinates.X]]
 		return
 	, 'json'
