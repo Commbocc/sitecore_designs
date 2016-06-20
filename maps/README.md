@@ -77,7 +77,7 @@ Place HTML on page.
 __Requires a unique id and one of the following formats in the layer data attribute:__
 
 * An integer from the [Acceptable Layers](#acceptable-layers) list
-* A full URL of a MapService Layers
+* A full URL of a MapService Layer
 
 See examples below.
 
