@@ -65,7 +65,7 @@ __Actions (4a) & Locations__
 	</div>
 	<div class="col-md-6">
 		<div id="hc-location-map-container" class="embed-responsive thumbnail">
-			<iframe class="embed-responsive-item" src="..." frameborder="0" allowfullscreen></iframe>
+			<div id="geoSearch" class="hc-map hc-map-geo" data-name="County Center" data-address="601 E Kennedy Blvd, Tampa, FL 33602"></div>
 		</div>
 	</div>
 </div>

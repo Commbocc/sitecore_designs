@@ -7,4 +7,4 @@ permalink: /maps/
 
 * [Home]({{ '/layouts/home/' | prepend: site.baseurl }})
 * [Single Layer]({{ '/maps/single-layer/' | prepend: site.baseurl }})
-* [Geosearch]({{ '/maps/geosearch/' | prepend: site.baseurl }})
+* [Geosearch (Location)]({{ '/layouts/location/' | prepend: site.baseurl }})
