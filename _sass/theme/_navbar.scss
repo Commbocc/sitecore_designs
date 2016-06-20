@@ -1,7 +1,7 @@
 // search bar
 #hc-nav-search-bar {
-	color: $link-color;
-	border-color: rgba($link-color, 0.7);
+	color: $brand-secondary;
+	border-color: rgba($brand-secondary, 0.7);
 	border-radius: 2em;
 	@media (min-width: $screen-sm-min) {
 		width: 75px;
@@ -23,7 +23,7 @@
 
 // nav spacer for jquery manipulation on hovers
 #navSpacer {
-	border-bottom: solid 1px $link-color;
+	border-bottom: solid 1px $brand-secondary;
 }
 
 li#nav-i-want-to {

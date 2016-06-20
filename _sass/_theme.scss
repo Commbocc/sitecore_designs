@@ -35,7 +35,7 @@
 .jumbotron {
 	@include gradient-background-info;
 
-	color: $link-color;
+	color: $brand-secondary;
 
 	h1, h2, h3, h4, h5, h6 {
 		color: #fff;
@@ -73,7 +73,7 @@
 
 // lead text - http://getbootstrap.com/css/#lead-body-copy
 .lead {
-	color: $link-color;
+	color: $brand-secondary;
 	a {
 		color: $brand-primary;
 	}
