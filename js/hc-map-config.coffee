@@ -123,7 +123,7 @@ $ ->
 		return # end #home-map each
 
 	# single layer maps
-	$('.hc-map').each ->
+	$('.hc-map-layer').each ->
 		map = $(this).initHcMap()
 
 		unless $(this).data('layer') == undefined || $(this).data('layer') == ''
@@ -148,6 +148,12 @@ $ ->
 
 			map.addLayer layer
 
+		return
+
+	# geo lookup maps
+	$('.hc-map-geo').each ->
+		map = $(this).initHcMap()
+		GetGeoLocation $(this).data('address'), map
 		return
 
 # shared functions
@@ -205,4 +211,15 @@ addLayerToMapAndMapOverlaysPanel = (map, layer, obj) ->
 			$(this).addClass 'active'
 		return
 
+	return
+
+GetGeoLocation = (searchStr, map) ->
+	client = new L.GeoSearch.Provider.Esri()
+	json_url = client.GetServiceUrl searchStr
+	$.get json_url, (data) ->
+		coordinates = client.ParseJSON(data)[0]
+		L.marker([coordinates.Y, coordinates.X], icon: L.divIcon className: 'hc-map-icon').addTo(map)
+		map.fitBounds [[coordinates.Y, coordinates.X]]
+		return
+	, 'json'
 	return
