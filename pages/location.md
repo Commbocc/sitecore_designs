@@ -1,6 +1,7 @@
 ---
 layout: hc-affix
-title: A Location
+title: County Center
+address: 601 E Kennedy Blvd, Tampa, FL 33602
 permalink: /layouts/location/
 ---
 
