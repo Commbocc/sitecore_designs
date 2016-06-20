@@ -153,7 +153,7 @@ $ ->
 	# geo lookup maps
 	$('.hc-map-geo').each ->
 		map = $(this).initHcMap()
-		GetGeoLocation $(this).data('address'), map
+		setGeoMarker $(this).data('address'), map
 		return
 
 # shared functions
@@ -213,7 +213,8 @@ addLayerToMapAndMapOverlaysPanel = (map, layer, obj) ->
 
 	return
 
-GetGeoLocation = (searchStr, map) ->
+# add esri geosearch marker to map
+setGeoMarker = (searchStr, map) ->
 	client = new L.GeoSearch.Provider.Esri()
 	json_url = client.GetServiceUrl searchStr
 	$.get json_url, (data) ->
