@@ -70,10 +70,6 @@ Place HTML on page.
 
 [Demo](http://commbocc.github.io/sitecore_designs/maps/single-layer/) | [jsFiddle](https://jsfiddle.net/ey092t64/1/)
 
-### Single Layer Configuration
-
-Place HTML on page.
-
 __Requires a unique id and one of the following formats in the layer data attribute:__
 
 * An integer from the [Acceptable Layers](#acceptable-layers) list
