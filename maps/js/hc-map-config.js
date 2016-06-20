@@ -92,11 +92,16 @@
       });
     });
     $('.hc-map-layer').each(function() {
-      var layer, map;
+      var layer, layer_str, map;
       map = $(this).initHcMap();
       if (!($(this).data('layer') === void 0 || $(this).data('layer') === '')) {
+        if ($(this).data('layer').toString().indexOf("http") !== -1) {
+          layer_str = $(this).data('layer');
+        } else {
+          layer_str = map_service + $(this).data('layer');
+        }
         layer = L.esri.featureLayer({
-          url: map_service + $(this).data('layer'),
+          url: layer_str,
           pointToLayer: function(esriFeature, latlng) {
             return L.marker(latlng, {
               icon: L.divIcon({
@@ -116,7 +121,9 @@
           $.each($(this)[0]._layers, function(index, marker) {
             bounds.push(marker._latlng);
           });
-          map.fitBounds(bounds);
+          if (!$.inArray(bounds, void 0)) {
+            map.fitBounds(bounds);
+          }
         });
         map.addLayer(layer);
       }
