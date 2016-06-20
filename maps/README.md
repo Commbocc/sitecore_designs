@@ -78,7 +78,7 @@ __Requires a unique id and an integer from the [Acceptable Layers](#acceptable-l
 
 ```HTML
 <div class="embed-responsive embed-responsive-16by9 thumbnail">
-	<div id="aUniqueIdentifier" class="hc-map" data-layer="2"></div>
+	<div id="aUniqueIdentifier" class="hc-map hc-map-layer" data-layer="2"></div>
 </div>
 ```
 
