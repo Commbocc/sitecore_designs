@@ -7,7 +7,7 @@
 * Absolute Positioning (orange, blue)
 * Unresponsive map sizing (green)
 
-![Current Template](https://raw.githubusercontent.com/Commbocc/sitecore_designs/gh-pages/_layouts/Affixed%20Nav/hc-affix.png)
+![Current Template](http://commbocc.github.io/sitecore_designs/images/hc-affix.png)
 
 ## Solution
 
