@@ -77,6 +77,7 @@ __Requires a unique id and one of the following formats in the layer data attrib
 
 * An integer from the [Acceptable Layers](#acceptable-layers) list
 * A full URL of a MapService Layer
+	* *Popups will most likely NOT work properly with this method if a URL outside of [this Map Service](https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer) is provided.*
 
 See examples below.
 
