@@ -1,5 +1,12 @@
 # Hillsborough County Maps
 
+## Table of Contents
+
+* [Prerequisites](#prerequisites)
+* [Home Map](#home-map)
+* [Single Layer Maps](#single-layer)
+* [Geosearch Maps](#geosearch)
+
 ## *Prerequisites*
 
 Assumes jQuery is included.
@@ -41,7 +48,7 @@ __Place stylesheets and scripts in layout.__
 <script src="/js/leaflet-geosearch-esri.min.js"></script>
 ```
 
-## Home
+## Home Map
 
 [Demo](http://commbocc.github.io/sitecore_designs/layouts/home/) | [jsFiddle](https://jsfiddle.net/oanrfxt0/2/)
 
