@@ -71,7 +71,7 @@ __Place stylesheets and scripts in layout.__
 
 ## Single Layer
 
-[Demo](http://commbocc.github.io/sitecore_designs/maps/single-layer/) | [jsFiddle](https://jsfiddle.net/ey092t64/2/)
+[Demo](http://commbocc.github.io/sitecore_designs/maps/single-layer/) | [jsFiddle](https://jsfiddle.net/ey092t64/3/)
 
 __Requires a unique id and one of the following formats in the layer data attribute:__
 
