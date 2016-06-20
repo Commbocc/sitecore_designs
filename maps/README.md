@@ -43,7 +43,7 @@ __Place stylesheets and scripts in layout.__
 
 ## Home
 
-[Demo](http://commbocc.github.io/sitecore_designs/layouts/home/) | [jsFiddle](https://jsfiddle.net/ev1rvsa5/1/)
+[Demo](http://commbocc.github.io/sitecore_designs/layouts/home/) | [jsFiddle](https://jsfiddle.net/oanrfxt0/2/)
 
 ### Home Configuration
 
@@ -68,7 +68,7 @@ Place HTML on page.
 
 ## Single Layer
 
-[Demo](http://commbocc.github.io/sitecore_designs/maps/single-layer/) | [jsFiddle](https://jsfiddle.net/ne5144u9/1/)
+[Demo](http://commbocc.github.io/sitecore_designs/maps/single-layer/) | [jsFiddle](https://jsfiddle.net/ey092t64/1/)
 
 ### Single Layer Configuration
 
@@ -106,7 +106,7 @@ __Requires a unique id and an integer from the [Acceptable Layers](#acceptable-l
 
 ## Geosearch
 
-[Demo](http://commbocc.github.io/sitecore_designs/layouts/location/) | [jsFiddle](https://jsfiddle.net/eb5fyneb/2/)
+[Demo](http://commbocc.github.io/sitecore_designs/layouts/location/) | [jsFiddle](https://jsfiddle.net/eb5fyneb/3/)
 
 __Requires [Geosearch files](#geosearch-files)__
 
