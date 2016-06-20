@@ -45,10 +45,6 @@ __Place stylesheets and scripts in layout.__
 
 [Demo](http://commbocc.github.io/sitecore_designs/layouts/home/) | [jsFiddle](https://jsfiddle.net/oanrfxt0/2/)
 
-### Home Configuration
-
-Place HTML on page.
-
 ```HTML
 <section id="map-container">
   <div id="btn-map-overlays" class="panel-group">
