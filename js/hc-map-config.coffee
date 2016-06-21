@@ -50,7 +50,7 @@ $ ->
 				name: 'Senior Centers'
 				visible: false
 				urls: [
-					map_service + '13' # Community Collection Centers
+					map_service + '13' # Senior Centers
 				]
 				iconClass: 'hc-map-icon-senior-center'
 			}
