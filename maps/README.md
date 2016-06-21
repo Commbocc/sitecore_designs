@@ -85,13 +85,13 @@ See examples below.
 <!-- Senior Centers -->
 <!-- this is the same as putting the entire url from the web-approved map service in the layer attribute -->
 <div class="embed-responsive embed-responsive-16by9 thumbnail">
-	<div id="aUniqueIdentifier" class="hc-map hc-map-layer" data-layer="13"></div>
+	<div id="seniorCenters" class="hc-map hc-map-layer" data-layer="13"></div>
 </div>
 
 <!-- Senior Centers -->
 <!-- Layers outside of the web-approved map service popups will most likely not work) -->
 <div class="embed-responsive embed-responsive-16by9 thumbnail">
-	<div id="anotherLayer" class="hc-map hc-map-layer" data-layer="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/County_Webmap/MapServer/1"></div>
+	<div id="seniorCentersCoin" class="hc-map hc-map-layer" data-layer="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/County_Webmap/MapServer/1"></div>
 </div>
 ```
 
@@ -126,7 +126,7 @@ The following are acceptable in the `data-popup-template` attribute:
 ```HTML
 <!-- CIP -->
 <div class="embed-responsive embed-responsive-16by9 thumbnail">
-	<div id="anotherLayer" class="hc-map hc-map-layer" data-popup-template="cip" data-layer="https://maps.hillsboroughcounty.org/arcgis/rest/services/InfoLayers/CIP_Layers/MapServer/1"></div>
+	<div id="CIP" class="hc-map hc-map-layer" data-popup-template="cip" data-layer="https://maps.hillsboroughcounty.org/arcgis/rest/services/InfoLayers/CIP_Layers/MapServer/1"></div>
 </div>
 ```
 
