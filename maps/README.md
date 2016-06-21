@@ -71,7 +71,7 @@ __Place stylesheets and scripts in layout.__
 
 ## Single Layer
 
-[Demo](http://commbocc.github.io/sitecore_designs/maps/single-layer/) | [jsFiddle](https://jsfiddle.net/ey092t64/3/)
+[Demo](http://commbocc.github.io/sitecore_designs/maps/single-layer/) | [jsFiddle](https://jsfiddle.net/ey092t64/4/)
 
 __Requires a unique id and one of the following formats in the layer data attribute:__
 
@@ -82,14 +82,16 @@ __Requires a unique id and one of the following formats in the layer data attrib
 See examples below.
 
 ```HTML
-<!-- Integer -->
+<!-- Senior Centers -->
+<!-- this is the same as putting the entire url from the web-approved map service in the layer attribute -->
 <div class="embed-responsive embed-responsive-16by9 thumbnail">
-	<div id="aUniqueIdentifier" class="hc-map hc-map-layer" data-layer="2"></div>
+	<div id="aUniqueIdentifier" class="hc-map hc-map-layer" data-layer="13"></div>
 </div>
 
-<!-- URL -->
+<!-- Senior Centers -->
+<!-- Layers outside of the web-approved map service popups will most likely not work) -->
 <div class="embed-responsive embed-responsive-16by9 thumbnail">
-	<div id="anotherLayer" class="hc-map hc-map-layer" data-layer="https://maps.hillsboroughcounty.org/arcgis/rest/services/InfoLayers/CIP_Layers/MapServer/1"></div>
+	<div id="anotherLayer" class="hc-map hc-map-layer" data-layer="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/County_Webmap/MapServer/1"></div>
 </div>
 ```
 
@@ -110,10 +112,23 @@ See examples below.
 * 10 - Pet Resource Center
 * 11 - Property Appraiser Locations
 * 12 - Customer Service Center for Public Utilities
-* 13 - Community Collection Centers
+* 13 - Senior Centers
 * 14 - Supervisor of Elections Locations
 * 15 - Tax Collector Locations
 * 16 - Veterans Services Offices
+
+### Popup Templates
+
+The following are acceptable in the `data-popup-template` attribute:
+
+* cip
+
+```HTML
+<!-- CIP -->
+<div class="embed-responsive embed-responsive-16by9 thumbnail">
+	<div id="anotherLayer" class="hc-map hc-map-layer" data-popup-template="cip" data-layer="https://maps.hillsboroughcounty.org/arcgis/rest/services/InfoLayers/CIP_Layers/MapServer/1"></div>
+</div>
+```
 
 ## Geosearch
 

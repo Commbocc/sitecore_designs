@@ -1,5 +1,5 @@
 (function() {
-  var addLayerToMapAndMapOverlaysPanel, defaultPopupTemplate, geoPopupTemplate, setGeoMarker, toggleScrollWheel;
+  var addLayerToMapAndMapOverlaysPanel, cipPopupTemplate, defaultPopupTemplate, geoPopupTemplate, setGeoMarker, toggleScrollWheel;
 
   $(function() {
     var map_service;
@@ -92,13 +92,14 @@
       });
     });
     $('.hc-map-layer').each(function() {
-      var layer, layer_str, map;
-      map = $(this).initHcMap();
-      if (!($(this).data('layer') === void 0 || $(this).data('layer') === '')) {
-        if ($(this).data('layer').toString().indexOf("http") !== -1) {
-          layer_str = $(this).data('layer');
+      var $mapElem, layer, layer_str, map;
+      $mapElem = $(this);
+      map = $mapElem.initHcMap();
+      if (!($mapElem.data('layer') === void 0 || $mapElem.data('layer') === '')) {
+        if ($mapElem.data('layer').toString().indexOf("http") !== -1) {
+          layer_str = $mapElem.data('layer');
         } else {
-          layer_str = map_service + $(this).data('layer');
+          layer_str = map_service + $mapElem.data('layer');
         }
         layer = L.esri.featureLayer({
           url: layer_str,
@@ -113,7 +114,12 @@
         layer.bindPopup(function(e) {
           var properties;
           properties = e.feature.properties;
-          return L.Util.template(defaultPopupTemplate(properties), properties);
+          switch ($mapElem.data('popup-template')) {
+            case 'cip':
+              return L.Util.template(cipPopupTemplate(properties), properties);
+            default:
+              return L.Util.template(defaultPopupTemplate(properties), properties);
+          }
         });
         layer.on('createfeature', function() {
           var bounds;
@@ -150,6 +156,13 @@
     var directions_str, out;
     directions_str = [address].join('+').replace(/[^0-9a-z]/gi, '+').replace(' ', '+');
     out = "<h4 class=\"popover-title\">" + title + "</h4>\n<div class=\"popover-content\">\n	<p>" + address + "<br>\n<a href=\"https://www.google.com/maps/dir//" + directions_str + "\" target=\"_blank\" class=\"small pull-right\">Directions</a>\n</p>";
+    out += "</div>";
+    return out;
+  };
+
+  cipPopupTemplate = function(properties) {
+    var out;
+    out = "<h4 class=\"popover-title\">{Project_Name}</h4>\n<div class=\"popover-content\">\n	<p>\n		{Project_Description}\n	</p>\n	<p class=\"small\">\n		<strong>Timeline:</strong><br>\n		{Construction_Start_Date} to {Construction_End_Date}\n	</p>";
     out += "</div>";
     return out;
   };

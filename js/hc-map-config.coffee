@@ -124,14 +124,15 @@ $ ->
 
 	# single layer maps
 	$('.hc-map-layer').each ->
-		map = $(this).initHcMap()
+		$mapElem = $(this)
+		map = $mapElem.initHcMap()
 
-		unless $(this).data('layer') == undefined || $(this).data('layer') == ''
+		unless $mapElem.data('layer') == undefined || $mapElem.data('layer') == ''
 
-			if $(this).data('layer').toString().indexOf("http") != -1
-				layer_str = $(this).data('layer')
+			if $mapElem.data('layer').toString().indexOf("http") != -1
+				layer_str = $mapElem.data('layer')
 			else
-				layer_str = map_service + $(this).data('layer')
+				layer_str = map_service + $mapElem.data('layer')
 
 			layer = L.esri.featureLayer
 				url: layer_str
@@ -141,7 +142,11 @@ $ ->
 
 			layer.bindPopup (e) ->
 				properties = e.feature.properties
-				L.Util.template defaultPopupTemplate(properties), properties
+				switch $mapElem.data('popup-template')
+					when 'cip'
+						L.Util.template cipPopupTemplate(properties), properties
+					else
+						L.Util.template defaultPopupTemplate(properties), properties
 
 			layer.on 'createfeature', ->
 				bounds = []
@@ -196,6 +201,28 @@ geoPopupTemplate = (title, address) ->
 			<a href="https://www.google.com/maps/dir//"""+directions_str+"""" target="_blank" class="small pull-right">Directions</a>
 		</p>
 	"""
+	out += "</div>"
+	return out
+
+# cip popup template
+cipPopupTemplate = (properties) ->
+	out = """
+	<h4 class="popover-title">{Project_Name}</h4>
+	<div class="popover-content">
+		<p>
+			{Project_Description}
+		</p>
+		<p class="small">
+			<strong>Timeline:</strong><br>
+			{Construction_Start_Date} to {Construction_End_Date}
+		</p>
+	"""
+	# if properties.WEB_URL != null && properties.WEB_URL != ''
+	# 	out += """
+	# 	<p>
+	# 		<a href="{WEB_URL}" class="btn btn-secondary btn-sm btn-block">Learn More</a>
+	# 	</p>
+	# 	"""
 	out += "</div>"
 	return out
 

@@ -22,9 +22,9 @@
       #home-map .leaflet-popup-content-wrapper a.btn:hover, #home-map .leaflet-popup-content a.btn:hover, .hc-map .leaflet-popup-content-wrapper a.btn:hover, .hc-map .leaflet-popup-content a.btn:hover {
         color: #fff; }
   #home-map .leaflet-popup-close-button, .hc-map .leaflet-popup-close-button {
-    color: #fff;
-    top: 8px;
-    right: 5px; }
+    color: #fff !important;
+    top: 8px !important;
+    right: 5px !important; }
   #home-map .popover-title, .hc-map .popover-title {
     background: #9bd63c;
     color: #fff;
