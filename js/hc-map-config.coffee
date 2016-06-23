@@ -8,7 +8,7 @@ $ ->
 
 	# map initializer
 	$.fn.initHcMap = ->
-		map = L.map $(this).attr('id'), {scrollWheelZoom: false}
+		map = L.map $(this).get(0), {scrollWheelZoom: false}
 		map.setView [0,0], 10
 		toggleScrollWheel map
 		L.esri.basemapLayer('Topographic').addTo map
@@ -145,6 +145,8 @@ $ ->
 				switch $mapElem.data('popup-template')
 					when 'cip'
 						L.Util.template cipPopupTemplate(properties), properties
+					when 'fema'
+						L.Util.template femaPopupTemplate(properties), properties
 					else
 						L.Util.template defaultPopupTemplate(properties), properties
 
@@ -223,6 +225,30 @@ cipPopupTemplate = (properties) ->
 	# 		<a href="{WEB_URL}" class="btn btn-secondary btn-sm btn-block">Learn More</a>
 	# 	</p>
 	# 	"""
+	out += "</div>"
+	return out
+
+# FEMA Flood zone popup template
+femaPopupTemplate = (properties) ->
+	effectiveDate = new Date(properties.EFF_DATE).toUTCString()
+	out = """
+	<h4 class="popover-title">FIRM Panel: {FIRM_PAN}</h4>
+	<div class="popover-content">
+		<p>
+			Map Effective Date: """+effectiveDate+"""
+		</p>
+		<p>
+			Map is {PANEL_TYP}
+		</p>
+		<p>
+			<a href="http://msc.fema.gov/portal/downloadProduct?productID={FIRM_PAN}" target="_blank">Download</a>
+			a graphic of the map (available if map panel is printed)
+		</p>
+		<p>
+			<a href="http://msc.fema.gov/portal/downloadProduct?productID=NFHL_{DFIRM_ID}" target="_blank">Download</a>
+			county GIS data
+		</p>
+	"""
 	out += "</div>"
 	return out
 
