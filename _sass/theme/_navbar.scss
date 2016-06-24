@@ -55,7 +55,7 @@ li#nav-i-want-to {
 
 		@media (min-width: $screen-sm-min) {
 			padding: 30px !important;
-			@include gradient-background-secondary;
+			// @include gradient-background-secondary;
 		}
 
 		a {
