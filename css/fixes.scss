@@ -141,8 +141,8 @@ body {
 
 .hc-map-sm {
 	@extend .embed-responsive;
-	padding-bottom: 75%;
+	padding-bottom: 56.25%;
 	@media (min-width: $screen-sm-min) {
-		padding-bottom: 56.25%;
+		padding-bottom: 75%;
 	}
 }
