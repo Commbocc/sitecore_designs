@@ -21,20 +21,20 @@ $ ->
 		$('#navSpacer').finish().animate { height: 0 }, 500
 		return
 
-	# 4a affix
+	# affix template
 	$(window).on 'load resize', ->
 		if $(this).width() > 752
 			$(this).on '.affix'
-			$('#hc-4a-left-nav').width $('#hc-4a-left-nav-container').width()
-			$('#hc-4a-left-nav-container').height $('#hc-4a-left-nav-container').parent().height()
-			$('#hc-4a-left-nav').affix offset:
+			$('#hc-affix-left-nav').width $('#hc-affix-left-nav-container').width()
+			$('#hc-affix-left-nav-container').height $('#hc-affix-left-nav-container').parent().height()
+			$('#hc-affix-left-nav').affix offset:
 				top: ->
-					@top = $('#hc-main-nav').outerHeight(true) + $('#hc-4a-header').outerHeight(true)
+					@top = $('#hc-main-nav').outerHeight(true) + $('#hc-affix-header').outerHeight(true)
 				bottom: ->
-					@bottom = $('#hc-footer').outerHeight(true) + 15
+					@bottom = $('#hc-footer').outerHeight(true)
 		else
 			$(this).off '.affix'
-			$('#hc-4a-left-nav').removeData('affix').removeClass 'affix affix-top affix-bottom'
-			$('#hc-4a-left-nav').width 'auto'
-			$('#hc-4a-left-nav-container').height 'auto'
+			$('#hc-affix-left-nav').removeData('affix').removeClass 'affix affix-top affix-bottom'
+			$('#hc-affix-left-nav').width 'auto'
+			$('#hc-affix-left-nav-container').height 'auto'
 		return

@@ -32,9 +32,9 @@
 	}
 
 	.leaflet-popup-close-button {
-		color: #fff;
-		top: 8px;
-		right: 5px;
+		color: #fff !important;
+		top: 8px !important;
+		right: 5px !important;
 	}
 
 	.popover-title {
@@ -65,7 +65,7 @@
 		text-decoration: none;
 		text-transform: uppercase;
 		font-weight: 600;
-		color: $link-color;
+		color: $brand-secondary;
 	}
 }
 

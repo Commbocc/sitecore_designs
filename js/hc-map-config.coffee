@@ -8,7 +8,7 @@ $ ->
 
 	# map initializer
 	$.fn.initHcMap = ->
-		map = L.map $(this).attr('id'), {scrollWheelZoom: false}
+		map = L.map $(this).get(0), {scrollWheelZoom: false}
 		map.setView [0,0], 10
 		toggleScrollWheel map
 		L.esri.basemapLayer('Topographic').addTo map
@@ -50,7 +50,7 @@ $ ->
 				name: 'Senior Centers'
 				visible: false
 				urls: [
-					map_service + '13' # Community Collection Centers
+					map_service + '13' # Senior Centers
 				]
 				iconClass: 'hc-map-icon-senior-center'
 			}
@@ -123,31 +123,50 @@ $ ->
 		return # end #home-map each
 
 	# single layer maps
-	$('.hc-map').each ->
-		map = $(this).initHcMap()
+	$('.hc-map-layer').each ->
+		$mapElem = $(this)
+		map = $mapElem.initHcMap()
 
-		unless $(this).data('layer') == undefined || $(this).data('layer') == ''
+		unless $mapElem.data('layer') == undefined || $mapElem.data('layer') == ''
+
+			if $mapElem.data('layer').toString().indexOf("http") != -1
+				layer_str = $mapElem.data('layer')
+			else
+				layer_str = map_service + $mapElem.data('layer')
+
 			layer = L.esri.featureLayer
-				# url: $(this).data('layer')
-				url: map_service + $(this).data('layer')
+				url: layer_str
 				# where: "WEB_NAME LIKE '%main street%'"
 				pointToLayer: (esriFeature, latlng) ->
 					L.marker latlng, icon: L.divIcon className: 'hc-map-icon'
 
 			layer.bindPopup (e) ->
 				properties = e.feature.properties
-				L.Util.template defaultPopupTemplate(properties), properties
+				switch $mapElem.data('popup-template')
+					when 'cip'
+						L.Util.template cipPopupTemplate(properties), properties
+					when 'fema'
+						L.Util.template femaPopupTemplate(properties), properties
+					else
+						L.Util.template defaultPopupTemplate(properties), properties
 
 			layer.on 'createfeature', ->
 				bounds = []
 				$.each $(this)[0]._layers, (index, marker) ->
 					bounds.push marker._latlng
 					return
-				map.fitBounds bounds
+				unless $.inArray(bounds, undefined)
+					map.fitBounds bounds
 				return
 
 			map.addLayer layer
 
+		return
+
+	# geo lookup maps
+	$('.hc-map-geo').each ->
+		map = $(this).initHcMap()
+		setGeoMarker $(this).data('name'), $(this).data('address'), map
 		return
 
 # shared functions
@@ -170,6 +189,66 @@ defaultPopupTemplate = (properties) ->
 			<a href="{WEB_URL}" class="btn btn-secondary btn-sm btn-block">Learn More</a>
 		</p>
 		"""
+	out += "</div>"
+	return out
+
+# geo popup template
+geoPopupTemplate = (title, address) ->
+	directions_str = [address].join('+').replace(/[^0-9a-z]/gi, '+').replace(' ', '+')
+	out = """
+	<h4 class="popover-title">"""+title+"""</h4>
+	<div class="popover-content">
+		<p>
+			"""+address+"""<br>
+			<a href="https://www.google.com/maps/dir//"""+directions_str+"""" target="_blank" class="small pull-right">Directions</a>
+		</p>
+	"""
+	out += "</div>"
+	return out
+
+# cip popup template
+cipPopupTemplate = (properties) ->
+	out = """
+	<h4 class="popover-title">{Project_Name}</h4>
+	<div class="popover-content">
+		<p>
+			{Project_Description}
+		</p>
+		<p class="small">
+			<strong>Timeline:</strong><br>
+			{Construction_Start_Date} to {Construction_End_Date}
+		</p>
+	"""
+	# if properties.WEB_URL != null && properties.WEB_URL != ''
+	# 	out += """
+	# 	<p>
+	# 		<a href="{WEB_URL}" class="btn btn-secondary btn-sm btn-block">Learn More</a>
+	# 	</p>
+	# 	"""
+	out += "</div>"
+	return out
+
+# FEMA Flood zone popup template
+femaPopupTemplate = (properties) ->
+	effectiveDate = new Date(properties.EFF_DATE).toUTCString()
+	out = """
+	<h4 class="popover-title">FIRM Panel: {FIRM_PAN}</h4>
+	<div class="popover-content">
+		<p>
+			Map is {PANEL_TYP}
+		</p>
+		<p>
+			<a href="http://msc.fema.gov/portal/downloadProduct?productID={FIRM_PAN}" target="_blank">Download</a>
+			a graphic of the map (available if map panel is printed)
+		</p>
+		<p>
+			<a href="http://msc.fema.gov/portal/downloadProduct?productID=NFHL_{DFIRM_ID}" target="_blank">Download</a>
+			county GIS data
+		</p>
+		<p class="small">
+			Effective """+effectiveDate+"""
+		</p>
+	"""
 	out += "</div>"
 	return out
 
@@ -205,4 +284,17 @@ addLayerToMapAndMapOverlaysPanel = (map, layer, obj) ->
 			$(this).addClass 'active'
 		return
 
+	return
+
+# add esri geosearch marker to map
+setGeoMarker = (title, searchStr, map) ->
+	client = new L.GeoSearch.Provider.Esri()
+	json_url = client.GetServiceUrl searchStr
+	$.get json_url, (data) ->
+		coordinates = client.ParseJSON(data)[0]
+		marker = L.marker([coordinates.Y, coordinates.X], icon: L.divIcon className: 'hc-map-icon').addTo(map)
+		marker.bindPopup geoPopupTemplate(title, searchStr)
+		map.fitBounds [[coordinates.Y, coordinates.X]]
+		return
+	, 'json'
 	return

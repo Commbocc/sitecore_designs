@@ -22,9 +22,8 @@
 @import "theme/columns";
 @import "theme/cards";
 
-// affix styling
-// NEEDS CLEANUP
-@import "theme/hc-4a";
+// affix layout
+@import "theme/hc-affix";
 
 // xs (mobile) only
 @media (max-width: $screen-xs-max) {
@@ -35,16 +34,11 @@
 .text-white { color: #fff; }
 .text-shadowed { text-shadow: 1px 1px #000; }
 
-// default heading colors
-h1, h2, h3, h4, h5, h6 {
-	color: $link-color;
-}
-
 // jumbotron - http://getbootstrap.com/components/#jumbotron
 .jumbotron {
 	@include gradient-background-info;
 
-	color: $link-color;
+	color: $brand-secondary;
 
 	h1, h2, h3, h4, h5, h6 {
 		color: #fff;
@@ -79,7 +73,7 @@ h1, h2, h3, h4, h5, h6 {
 
 // lead text - http://getbootstrap.com/css/#lead-body-copy
 .lead {
-	color: $link-color;
+	color: $brand-secondary;
 	a {
 		color: $brand-primary;
 	}
@@ -98,7 +92,7 @@ h1, h2, h3, h4, h5, h6 {
 	}
 
 	> .row .col-sm-4 {
-		padding: 10px 0;
+		padding: 10px 15px;
 	}
 
 	@media (min-width: $screen-sm-min) {

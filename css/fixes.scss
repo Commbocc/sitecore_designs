@@ -6,6 +6,7 @@
 // fonts
 // @import "theme/freight_sans_pro";
 @import "theme/variables";
+@import "bootstrap/responsive-embed";
 
 
 /* Small devices (tablets, 768px and up) */
@@ -49,7 +50,7 @@ body {
 	@extend .lead;
 }
 
-.hc-main-text-content {
+.hc-main-text-content /*, .hc-left-slide-partner-content */ {
 	font-size: $font-size-base;
 	line-height: 1.5;
 	margin-bottom: 1.5em;
@@ -101,8 +102,11 @@ body {
 	h4, .h4 { font-size: 18px; }
 	h5, .h5 { font-size: $font-size-base; }
 	h6, .h6 { font-size: 14px; }
-
 }
+
+// .hc-left-slide-partner-content-section-header {
+// 	h1,h2,h3,h4,h5,h6 { color: $brand-primary; }
+// }
 
 .hc-dual-tab-content {
 	padding-top: 0;
@@ -126,4 +130,11 @@ body {
 
 .hc-apply-category-link {
 	font-size: 16px;
+}
+
+.hc-green-header.bg-image-center-fill {
+	.hc-green-header-desc {
+		color: #fff;
+		text-shadow: 2px 2px 1px #000;
+	}
 }
