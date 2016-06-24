@@ -235,9 +235,6 @@ femaPopupTemplate = (properties) ->
 	<h4 class="popover-title">FIRM Panel: {FIRM_PAN}</h4>
 	<div class="popover-content">
 		<p>
-			Map Effective Date: """+effectiveDate+"""
-		</p>
-		<p>
 			Map is {PANEL_TYP}
 		</p>
 		<p>
@@ -247,6 +244,9 @@ femaPopupTemplate = (properties) ->
 		<p>
 			<a href="http://msc.fema.gov/portal/downloadProduct?productID=NFHL_{DFIRM_ID}" target="_blank">Download</a>
 			county GIS data
+		</p>
+		<p class="small">
+			Effective """+effectiveDate+"""
 		</p>
 	"""
 	out += "</div>"
