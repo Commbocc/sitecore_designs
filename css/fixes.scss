@@ -138,3 +138,11 @@ body {
 		text-shadow: 2px 2px 1px #000;
 	}
 }
+
+.hc-map-sm {
+	@extend .embed-responsive;
+	padding-bottom: 75%;
+	@media (min-width: $screen-sm-min) {
+		padding-bottom: 56.25%;
+	}
+}
