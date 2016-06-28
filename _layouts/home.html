@@ -2,33 +2,29 @@
 layout: default
 ---
 
-<header id="hc-home-header" class="jumbotron hc-jumbotron-tabs">
+<header id="hc-home-header" class="jumbotron jumbotron-hc-tabs">
 	<div class="container">
 		<div class="text-white text-shadowed">
 			<h1 class="">{{ page.title }}</h1>
 			{{ content }}
 		</div>
 	</div>
-
-	<div class="container">
-		<section class="tabs-split-page">
-			<!-- Nav tabs -->
-			<ul class="nav nav-tabs nav-justified hc-nav-tabs">
-				<li class="active"><a href="#default">News</a></li>
-				<li><a href="#secondary">Calendar</a></li>
-			</ul>
-		</section>
-	</div>
 </header>
 
 <section class="container">
+	<div class="hc-nav-tabs">
+		<ul class="nav nav-tabs nav-justified">
+			<li class="active"><a href="#default">News</a></li>
+			<li><a href="#secondary">Calendar</a></li>
+		</ul>
+	</div>
+</section>
 
+<section class="container">
 	{% include carousel.html %}
-
 	<p class="text-center">
 		<a href="{{ '/layouts/newsroom/' | prepend: site.baseurl }}" class="btn btn-lg btn-primary">Visit Newsroom</a>
 	</p>
-
 </section>
 
 <section id="hc-home-featured-links" class="jumbotron">

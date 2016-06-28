@@ -13,6 +13,8 @@
 	<link href="{{ site.baseurl }}/css/main.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
+	<link href="{{ site.baseurl }}/css/vendor.css" rel="stylesheet">
+
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -20,13 +22,10 @@
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
-	<link rel="stylesheet" href="https://npmcdn.com/flickity@1.2/dist/flickity.min.css">
-	<script src="https://npmcdn.com/flickity@1.2/dist/flickity.pkgd.min.js"></script>
+	<!-- flickity scripts -->
+	<script src="{{ '/js/vendor/flickity.min.js' | prepend: site.baseurl }}"></script>
 
 	<!-- map scripts -->
-	<!-- <script src="https://cdn.jsdelivr.net/leaflet/1.0.0-rc.1/leaflet-src.js"></script> -->
-	<!-- <script src="https://cdn.jsdelivr.net/leaflet.esri/2.0.0/esri-leaflet.js"></script> -->
-	<!-- <script src="https://domoritz.github.io/leaflet-locatecontrol/dist/L.Control.Locate.min.js"></script> -->
 	<script src="{{ '/js/leaflet.min.js' | prepend: site.baseurl }}"></script>
 	<script src="{{ '/js/leaflet-locate.min.js' | prepend: site.baseurl }}"></script>
 	<script src="{{ '/js/leaflet-esri.min.js' | prepend: site.baseurl }}"></script>
@@ -42,7 +41,7 @@
 	{{ content }}
 
 	{% include footer.html %}
-	
+
 	{% include default-modal.html %}
 
 </body>

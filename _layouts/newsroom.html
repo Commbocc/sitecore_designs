@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<header class="jumbotron">
+<header class="jumbotron jumbotron-less-padding">
 	<div class="container">
 		<h2 class="">{{ page.title }}</h2>
 		{{ content }}
@@ -10,7 +10,6 @@ layout: default
 </header>
 
 <section class="container">
-
 	<div class="row">
 		<div class="col-sm-4 col-sm-offset-4">
 			<h4 class="text-center">
@@ -23,23 +22,21 @@ layout: default
 			</h5>
 		</div>
 	</div>
-
 	{% include carousel.html %}
 </section>
 
-<section class="jumbotron hc-jumbotron-tabs hc-jumbotron-tabs-no-padding">
-	<div class="container">
-		<section class="tabs-split-page">
-			<!-- Nav tabs -->
-			<ul class="nav nav-tabs nav-justified hc-nav-tabs">
-				<li class="active"><a href="#default">HTV</a></li>
-				<li><a href="#secondary">Media Center</a></li>
-			</ul>
-		</section>
+<div class="jumbotron jumbotron-hc-tabs-empty"></div>
+
+<section class="container">
+	<div class="hc-nav-tabs hc-nav-tabs-no-margin">
+		<ul class="nav nav-tabs nav-justified">
+			<li class="active"><a href="#default">HTV</a></li>
+			<li><a href="#secondary">Media Center</a></li>
+		</ul>
 	</div>
 </section>
 
-<section id="hc-newsroom-banner" class="jumbotron jumbotron-no-margin">
+<section id="hc-newsroom-banner" class="jumbotron jumbotron-hc-tabs">
 	<div class="container">
 		<div class="text-white text-shadowed">
 			<h2>Hillsborough Television</h2>

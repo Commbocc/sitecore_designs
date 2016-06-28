@@ -1,51 +1,49 @@
-// tabs-split-page
-.tabs-split-page {
-	position: relative;
-	@media (min-width: $screen-xs-min) {
-	}
-}
-
-//
+// hc-nav-tabs
 .hc-nav-tabs {
 
-	position: absolute;
-	// bottom: -36px;
-	bottom: -65px;
-	@media (min-width: $screen-sm-min) {
-		bottom: -60px;
+	position: relative;
+	margin-bottom: $grid-gutter-width;
+
+	&.hc-nav-tabs-no-margin {
+		margin-bottom: 0;
 	}
 
-	font-size: 1.1em;
-	font-weight: 600;
-	text-transform: uppercase;
+	> .nav.nav-tabs {
 
-	li {
-		display: table-cell;
-		width: 1%;
-		a {
-			background: $link-color;
-			background: rgba($link-color, 0.75);
-			color: rgba($body-bg, 0.75);
-			border-bottom: none !important;
-			border-bottom-left-radius: 0 !important;
-			border-bottom-right-radius: 0 !important;
-			&:hover, &:focus {
-				color: $body-bg;
-				border-color: $brand-secondary;
-				border-color: rgba($brand-primary, .5);
-				background-color: rgba($brand-secondary, .85);
+		position: absolute;
+		bottom: -100%;
+
+		font-weight: 600;
+		text-transform: uppercase;
+
+		li {
+			display: table-cell;
+			width: 1%;
+			a {
+				background: $link-color;
+				background: rgba($link-color, 0.75);
+				color: rgba($body-bg, 0.75);
+				border-bottom: none !important;
+				border-bottom-left-radius: 0 !important;
+				border-bottom-right-radius: 0 !important;
+				&:hover, &:focus {
+					color: $body-bg;
+					border-color: $brand-secondary;
+					border-color: rgba($brand-primary, .5);
+					background-color: rgba($brand-secondary, .85);
+				}
 			}
+
+		}
+		li.active a {
+			background: $body-bg;
+			color: $brand-secondary;
+			text-shadow: 0 0 $body-bg;
+			&:hover, &:focus { color: $brand-secondary; }
+			padding-top: .8em;
 		}
 
 	}
-	li.active a {
-		background: $body-bg;
-		color: $brand-secondary;
-		text-shadow: 0 0 $body-bg;
-		&:hover, &:focus { color: $brand-secondary; }
-		padding-top: .8em;
-	}
-
 }
 
 
@@ -105,21 +103,3 @@
 	// ul
 
 }
-
-
-// #hc-l3-left-nav li {
-// 	padding: 1em 0;
-// }
-//
-// #hc-l3-left-nav > li {
-// 	font-weight: bold;
-// 	border-bottom: solid 1px #A2D9DE;
-// }
-//
-// #hc-l3-left-nav ul {
-// 	padding-left: 2em;
-// 	font-weight: normal;
-// }
-// #hc-l3-left-nav ul > li {
-// 	padding: 8px 0;
-// }

@@ -1,9 +1,8 @@
-$card-news-resting-height: 175px;
-$card-news-hover-height: 230px;
+$card-news-hover-height: 255px;
+$card-news-resting-height: $card-news-hover-height - 60; // 195
 $card-category-height: 35px;
 
 .hc-card {
-
 	@extend .thumbnail;
 
 	padding: 0;
@@ -21,7 +20,7 @@ $card-category-height: 35px;
 		overflow: hidden;
 		text-overflow: ellipsis;
 		word-wrap: break-word;
-		max-height: 2.25em; // n lines * element's line-height
+		max-height: 2.25em; // n lines + 0.25
 	}
 
 	.caption {
@@ -39,6 +38,11 @@ $card-category-height: 35px;
 		padding: 5px 10px;
 		color: #fff;
 		white-space: nowrap;
+	}
+
+	.btn-hc-event {
+		@extend .btn-sm;
+		font-size: 13px;
 	}
 
 	&.hc-card-news {
@@ -87,7 +91,7 @@ $card-category-height: 35px;
 		text-overflow: ellipsis;
 		word-wrap: break-word;
 
-		height: $card-news-resting-height - 25;
+		height: $card-news-resting-height - 38;
 		-webkit-transition: height 500ms; /* For Safari 3.1 to 6.0 */
 		transition: height 500ms;
 
