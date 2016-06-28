@@ -146,3 +146,15 @@ body {
 		padding-bottom: 75%;
 	}
 }
+
+// news items
+.news-item {
+	font-size: 16px;
+
+	h3 {
+		font-size: 1.3em;
+		font-weight: 600;
+		margin: 20px 0 15px;
+		color: $brand-secondary;
+	}
+}
