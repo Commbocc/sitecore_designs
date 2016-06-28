@@ -139,7 +139,8 @@ li#nav-i-want-to {
 					border-bottom: solid 3px transparent;
 				}
 
-				@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { font-size: 1.3932vw; }
+				@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { font-size: 1.35vw; }
+				@media (min-width: $screen-md-min) and (max-width: $screen-md-max) { font-size: 0.90em; }
 			}
 
 			@media (min-width: $screen-sm-min) {
