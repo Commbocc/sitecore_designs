@@ -99,3 +99,30 @@ $card-category-height: 35px;
 	}
 
 }
+
+// flickity - carousel
+.hc-flickity-gallery {
+	&:after {
+		content: 'flickity';
+		display: none;
+		@media (min-width: $screen-sm-min) { content: ''; }
+	}
+
+	.flickity-viewport {
+		margin-bottom: 25px;
+	}
+
+	.flickity-page-dots {
+		bottom: -10px;
+
+		li.dot {
+			background: none;
+			border: 2px solid $brand-info;
+			width: 15px;
+			height: 15px;
+			&.is-selected {
+				background: $brand-info;
+			}
+		}
+	}
+}
