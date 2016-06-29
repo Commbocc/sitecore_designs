@@ -34,11 +34,25 @@ layout: default
 			<li role="presentation"><a href="#contact">Contact</a></li>
 			<li role="presentation"><a href="#additional-information">Additional Information</a></li>
 			<li role="presentation"><a href="#public-meeting">Public Meeting</a></li>
+
+			<li role="presentation" class="hidden-xs text-center" style="border: none;">
+				<a href="#" title="Back to top" style="margin: 0;">
+					<i class="fa fa-fw fa-2x fa-angle-up text-primary"></i>
+				</a>
+			</li>
 		</ul>
 
 	</nav>
 
 	<div class="hc-content col-sm-8 col-md-9">
+
+		<ol class="breadcrumb text-right small">
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Animals & Pets</a></li>
+			<li><a href="#">Lost Pets</a></li>
+			<li class="active">{{ page.title }}</li>
+		</ol>
+
 		{{ content }}
 	</div>
 </div>

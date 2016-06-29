@@ -37,10 +37,24 @@ layout: default
 				<li role="presentation"><a href="#how-to">How To</a></li>
 				<li role="presentation"><a href="#get-help">Get Help</a></li>
 				<li role="presentation"><a href="#look-here">Look Here</a></li>
+				<li role="presentation" class="hidden-xs text-center small" style="border: none;">
+					<a href="#" title="" style="margin: 0;">
+						Back to top
+					</a>
+				</li>
 			</ul>
+
 		</nav>
 
 		<section id="hc-affix-content" class="hc-content col-sm-8 col-md-9">
+
+			<ol class="breadcrumb text-right small">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Animals & Pets</a></li>
+				<li><a href="#">Lost Pets</a></li>
+				<li class="active">{{ page.title }}</li>
+			</ol>
+
 			<!-- rendered Child items -->
 			{{ content }}
 		</section>
