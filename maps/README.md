@@ -147,8 +147,8 @@ You can filter results of a layer using the `where` data attribute. See the foll
 </div>
 ```
 
-[ESRI FeatureLayer Options](https://esri.github.io/esri-leaflet/api-reference/layers/feature-layer.html#options)
-[MySQL Operators](http://dev.mysql.com/doc/refman/5.7/en/non-typed-operators.html)
+* [ESRI FeatureLayer Options](https://esri.github.io/esri-leaflet/api-reference/layers/feature-layer.html#options)
+* [MySQL Operators](http://dev.mysql.com/doc/refman/5.7/en/non-typed-operators.html)
 
 ## Geosearch
 
