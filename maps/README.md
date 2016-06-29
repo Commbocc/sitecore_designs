@@ -136,7 +136,7 @@ The following are acceptable in the `popup-template` data attribute:
 </div>
 ```
 
-### MySQL Where Statements
+### SQL Where Statements
 
 You can filter results of a layer using the `where` data attribute. See the following example to show only Dog Parks:
 
@@ -147,6 +147,7 @@ You can filter results of a layer using the `where` data attribute. See the foll
 </div>
 ```
 
+[ESRI FeatureLayer Options](https://esri.github.io/esri-leaflet/api-reference/layers/feature-layer.html#options)
 [MySQL Operators](http://dev.mysql.com/doc/refman/5.7/en/non-typed-operators.html)
 
 ## Geosearch
