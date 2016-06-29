@@ -47,7 +47,7 @@
 		font-weight: 400;
 	}
 
-	&.jumbotron-less-padding {
+	&.jumbotron-sm {
 		padding: $grid-gutter-width / 2;
 	}
 }
@@ -62,8 +62,11 @@
 	padding: $grid-gutter-width 0;
 }
 
-.hc-l3-left-border {
-	@media (min-width: $screen-sm-min) {
+@media (min-width: $screen-sm-min) {
+	.hc-l3-jumbo-separator-right {
+		border-right: solid 1px #fff;
+	}
+	.hc-l3-jumbo-separator-left {
 		border-left: solid 1px #fff;
 	}
 }
