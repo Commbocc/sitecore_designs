@@ -159,3 +159,9 @@ body {
 		text-transform: none !important;
 	}
 }
+
+// striped tables
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #E3EAEE;
+    background-color: rgba(4, 65, 105, 0.075);
+}
