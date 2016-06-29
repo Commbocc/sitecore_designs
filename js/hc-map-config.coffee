@@ -134,9 +134,15 @@ $ ->
 			else
 				layer_str = map_service + $mapElem.data('layer')
 
+			unless $mapElem.data('where') == undefined || $mapElem.data('where') == ''
+				where_str = $mapElem.data('where')
+			else
+				where_str = ""
+
 			layer = L.esri.featureLayer
 				url: layer_str
 				# where: "WEB_NAME LIKE '%main street%'"
+				where: where_str
 				pointToLayer: (esriFeature, latlng) ->
 					L.marker latlng, icon: L.divIcon className: 'hc-map-icon'
 

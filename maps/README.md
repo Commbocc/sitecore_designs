@@ -73,11 +73,11 @@ __Place stylesheets and scripts in layout.__
 
 [Demo](http://commbocc.github.io/sitecore_designs/maps/single-layer/) | [jsFiddle](https://jsfiddle.net/ey092t64/4/)
 
-__Requires a unique id and one of the following formats in the layer data attribute:__
+__Requires one of the following formats in the `layer` data attribute:__
 
 * An integer from the [Acceptable Layers](#acceptable-layers) list
 * A full URL of a MapService Layer
-	* *Popups will most likely NOT work properly with this method if a URL outside of [this Map Service](https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer) is provided.*
+	* _Popups will most likely NOT work properly with this method if a URL outside of [this Map Service](https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer) is provided._
 
 See examples below.
 
@@ -85,13 +85,13 @@ See examples below.
 <!-- Senior Centers -->
 <!-- this is the same as putting the entire url from the web-approved map service in the layer attribute -->
 <div class="embed-responsive embed-responsive-16by9 thumbnail">
-	<div id="seniorCenters" class="hc-map hc-map-layer" data-layer="13"></div>
+	<div class="hc-map hc-map-layer" data-layer="13"></div>
 </div>
 
 <!-- Senior Centers -->
-<!-- Layers outside of the web-approved map service popups will most likely not work) -->
+<!-- Layers outside of the web-approved map service popup's will most likely not work) -->
 <div class="embed-responsive embed-responsive-16by9 thumbnail">
-	<div id="seniorCentersCoin" class="hc-map hc-map-layer" data-layer="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/County_Webmap/MapServer/1"></div>
+	<div class="hc-map hc-map-layer" data-layer="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/County_Webmap/MapServer/1"></div>
 </div>
 ```
 
@@ -119,16 +119,35 @@ See examples below.
 
 ### Popup Templates
 
-The following are acceptable in the `data-popup-template` attribute:
+The following are acceptable in the `popup-template` data attribute:
 
 * cip
+* fema
 
 ```HTML
 <!-- CIP -->
 <div class="embed-responsive embed-responsive-16by9 thumbnail">
-	<div id="CIP" class="hc-map hc-map-layer" data-popup-template="cip" data-layer="https://maps.hillsboroughcounty.org/arcgis/rest/services/InfoLayers/CIP_Layers/MapServer/1"></div>
+	<div class="hc-map hc-map-layer" data-popup-template="cip" data-layer="https://maps.hillsboroughcounty.org/arcgis/rest/services/InfoLayers/CIP_Layers/MapServer/1"></div>
+</div>
+
+<!-- Flood Hazard Map -->
+<div class="embed-responsive embed-responsive-16by9 thumbnail">
+	<div class="hc-map hc-map-layer" data-popup-template="fema" data-layer="http://hazards.fema.gov/gis/nfhl/rest/services/public/NFHL/MapServer/3"></div>
 </div>
 ```
+
+### MySQL Where Statements
+
+You can filter results of a layer using the `where` data attribute. See the following example to show only Dog Parks:
+
+```HTML
+<!-- Dog Parks -->
+<div class="embed-responsive embed-responsive-16by9 thumbnail">
+	<div class="hc-map hc-map-layer" data-where="DogPark <> ''" data-layer="9"></div>
+</div>
+```
+
+[MySQL Operators](http://dev.mysql.com/doc/refman/5.7/en/non-typed-operators.html)
 
 ## Geosearch
 
@@ -138,8 +157,8 @@ __Requires [Geosearch files](#geosearch-files)__
 
 ```HTML
 <div class="embed-responsive embed-responsive-16by9 thumbnail">
-	<div id="geoSearch" class="hc-map hc-map-geo" data-name="County Center" data-address="601 E Kennedy Blvd, Tampa, FL 33602"></div>
+	<div class="hc-map hc-map-geo" data-name="County Center" data-address="601 E Kennedy Blvd, Tampa, FL 33602"></div>
 </div>
 ```
 
-The map will generate a marker at the address in the *address* data attribute. Once the marker is clicked the popup title will take the *name* attribute.
+The map will generate a marker at the address in the `address` data attribute. Once the marker is clicked the popup title will take the `name` attribute.
