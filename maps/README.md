@@ -130,6 +130,14 @@ The following are acceptable in the `data-popup-template` attribute:
 </div>
 ```
 
+### MySQL Where Statements
+
+You can filter results of a layer using a `where` data attribute. See the following example to show only Dog Parks:
+
+```HTML
+<div class="hc-map hc-map-layer" data-where="DogPark <> ''" data-layer="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/9"></div>
+```
+
 ## Geosearch
 
 [Demo](http://commbocc.github.io/sitecore_designs/layouts/location/) | [jsFiddle](https://jsfiddle.net/eb5fyneb/3/)
