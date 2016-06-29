@@ -1,166 +1,60 @@
 <div class="panel-group" role="tablist" aria-multiselectable="true">
 	<div class="panel panel-info">
 		<div class="panel-heading" role="tab" id="headingOne">
-			<h4 class="panel-title">
+			<h2 class="panel-title">
 				<a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 					Collapsible Group Item #1
 				</a>
-			</h4>
+			</h2>
 		</div>
 		<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 			<div class="panel-body">
 
-				<div class="row">
-					<div class="col-sm-6 col-md-4 clear-2-sm-max clear-3-md">
-						<h3 class="text-primary">
-							<i class="fa fa-fw fa-bar-chart"></i>
-							Apply
-						</h3>
-						<ul class="nav nav-pills nav-stacked">
-							<li class="">
-								<a href="#">
-									<i class="fa fa-fw fa-caret-right" aria-hidden="true"></i>
-									Lorem ipsume
-								</a>
-							</li>
-							<li class="">
-								<a href="#">
-									<i class="fa fa-fw fa-caret-right" aria-hidden="true"></i>
-									Lorem ipsume
-								</a>
-							</li>
-							<li class="">
-								<a href="#">
-									<i class="fa fa-fw fa-caret-right" aria-hidden="true"></i>
-									Lorem ipsume
-								</a>
-							</li>
-							<li class="">
-								<a href="#">
-									<i class="fa fa-fw fa-caret-right" aria-hidden="true"></i>
-									Lorem ipsume
-								</a>
-							</li>
-							<li class="">
-								<a href="#">
-									<i class="fa fa-fw fa-caret-right" aria-hidden="true"></i>
-									Lorem ipsume
-								</a>
-							</li>
-						</ul>
-					</div>
-					<div class="col-sm-6 col-md-4 clear-2-sm-max clear-3-md">
-						<h3 class="text-primary">
-							<i class="fa fa-fw fa-bar-chart"></i>
-							Report
-						</h3>
-						<ul class="nav nav-pills nav-stacked">
-							<li class="">
-								<a href="#">
-									<i class="fa fa-fw fa-caret-right" aria-hidden="true"></i>
-									Lorem ipsume
-								</a>
-							</li>
-							<li class="">
-								<a href="#">
-									<i class="fa fa-fw fa-caret-right" aria-hidden="true"></i>
-									Lorem ipsume
-								</a>
-							</li>
-							<li class="">
-								<a href="#">
-									<i class="fa fa-fw fa-caret-right" aria-hidden="true"></i>
-									Lorem ipsume
-								</a>
-							</li>
-							<li class="">
-								<a href="#">
-									<i class="fa fa-fw fa-caret-right" aria-hidden="true"></i>
-									Lorem ipsume
-								</a>
-							</li>
-						</ul>
-					</div>
-					<div class="col-sm-6 col-md-4 clear-2-sm-max clear-3-md">
-						<h3 class="text-primary">
-							<i class="fa fa-fw fa-bar-chart"></i>
-							Pay
-						</h3>
-						<ul class="nav nav-pills nav-stacked">
-							<li class="">
-								<a href="#">
-									<i class="fa fa-fw fa-caret-right" aria-hidden="true"></i>
-									Lorem ipsume
-								</a>
-							</li>
-							<li class="">
-								<a href="#">
-									<i class="fa fa-fw fa-caret-right" aria-hidden="true"></i>
-									Lorem ipsume
-								</a>
-							</li>
-							<li class="">
-								<a href="#">
-									<i class="fa fa-fw fa-caret-right" aria-hidden="true"></i>
-									Lorem ipsume
-								</a>
-							</li>
-							<li class="">
-								<a href="#">
-									<i class="fa fa-fw fa-caret-right" aria-hidden="true"></i>
-									Lorem ipsume
-								</a>
-							</li>
-						</ul>
-					</div>
-					<div class="col-sm-6 col-md-4 clear-2-sm-max clear-3-md">
-						<h3 class="text-primary">
-							<i class="fa fa-fw fa-bar-chart"></i>
-							Register
-						</h3>
-						<ul class="nav nav-pills nav-stacked">
-							<li class="">
-								<a href="#">
-									<i class="fa fa-fw fa-caret-right" aria-hidden="true"></i>
-									Lorem ipsume
-								</a>
-							</li>
-							<li class="">
-								<a href="#">
-									<i class="fa fa-fw fa-caret-right" aria-hidden="true"></i>
-									Lorem ipsume
-								</a>
-							</li>
-							<li class="">
-								<a href="#">
-									<i class="fa fa-fw fa-caret-right" aria-hidden="true"></i>
-									Lorem ipsume
-								</a>
-							</li>
-							<li class="">
-								<a href="#">
-									<i class="fa fa-fw fa-caret-right" aria-hidden="true"></i>
-									Lorem ipsume
-								</a>
-							</li>
-						</ul>
+				{% for action in site.data.actions %}
+				<div class="hc-action-group">
+					<h3 class="text-primary h4">
+						<i class="fa fa-fw fa-bar-chart"></i>
+						{{ action.group }}
+					</h3>
+					<div class="hc-action-categories">
+						{% for cat in action.categories %}
+						<div class="hc-action-category">
+
+							{% if cat.category %}
+							<h4 class="h5">
+								{{ cat.category }}
+							</h4>
+							{% endif %}
+							
+							<ul class="">
+								{% for action in cat.actions %}
+								<li>
+									<a href="#">
+										{{ action.title }}
+									</a>
+								</li>
+								{% endfor %}
+							</ul>
+
+						</div>
+						{% endfor %}
 					</div>
 				</div>
+				{% endfor %}
 
 			</div>
 		</div>
 	</div>
 	<div class="panel panel-info">
 		<div class="panel-heading" role="tab" id="headingTwo">
-			<h4 class="panel-title">
+			<h2 class="panel-title">
 				<a class="collapsed" role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 					Collapsible Group Item #2
 				</a>
-			</h4>
+			</h2>
 		</div>
 		<div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
 			<div class="panel-body">
-
 				<div class="row">
 					<div class="col-md-4">
 						<p>
@@ -189,11 +83,11 @@
 	</div>
 	<div class="panel panel-info">
 		<div class="panel-heading" role="tab" id="headingThree">
-			<h4 class="panel-title">
+			<h2 class="panel-title">
 				<a class="collapsed" role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 					Collapsible Group Item #3
 				</a>
-			</h4>
+			</h2>
 		</div>
 		<div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
 			<div class="panel-body">
