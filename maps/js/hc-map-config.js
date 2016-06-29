@@ -6,7 +6,7 @@
     map_service = 'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/';
     $.fn.initHcMap = function() {
       var map, northWest, southEast;
-      map = L.map($(this).attr('id'), {
+      map = L.map($(this).get(0), {
         scrollWheelZoom: false
       });
       map.setView([0, 0], 10);
