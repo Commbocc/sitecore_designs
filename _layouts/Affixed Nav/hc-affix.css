@@ -4,7 +4,7 @@
 .hc-affix-content-heading {
   color: #ff6f59; }
   @media (min-width: 768px) {
-    .hc-affix-content-heading:not(:first-child) {
+    .hc-affix-content-heading:not(:first-of-type) {
       padding-top: 2em; } }
 
 #hc-location-map-container {
