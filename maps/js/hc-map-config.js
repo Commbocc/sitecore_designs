@@ -1,5 +1,5 @@
 (function() {
-  var addLayerToMapAndMapOverlaysPanel, cipPopupTemplate, defaultPopupTemplate, geoPopupTemplate, setGeoMarker, toggleScrollWheel;
+  var addLayerToMapAndMapOverlaysPanel, cipPopupTemplate, defaultPopupTemplate, femaPopupTemplate, geoPopupTemplate, setGeoMarker, toggleScrollWheel;
 
   $(function() {
     var map_service;
@@ -117,6 +117,8 @@
           switch ($mapElem.data('popup-template')) {
             case 'cip':
               return L.Util.template(cipPopupTemplate(properties), properties);
+            case 'fema':
+              return L.Util.template(femaPopupTemplate(properties), properties);
             default:
               return L.Util.template(defaultPopupTemplate(properties), properties);
           }
@@ -163,6 +165,14 @@
   cipPopupTemplate = function(properties) {
     var out;
     out = "<h4 class=\"popover-title\">{Project_Name}</h4>\n<div class=\"popover-content\">\n	<p>\n		{Project_Description}\n	</p>\n	<p class=\"small\">\n		<strong>Timeline:</strong><br>\n		{Construction_Start_Date} to {Construction_End_Date}\n	</p>";
+    out += "</div>";
+    return out;
+  };
+
+  femaPopupTemplate = function(properties) {
+    var effectiveDate, out;
+    effectiveDate = new Date(properties.EFF_DATE).toUTCString();
+    out = "<h4 class=\"popover-title\">FIRM Panel: {FIRM_PAN}</h4>\n<div class=\"popover-content\">\n	<p>\n		Map is {PANEL_TYP}\n	</p>\n	<p>\n		<a href=\"http://msc.fema.gov/portal/downloadProduct?productID={FIRM_PAN}\" target=\"_blank\">Download</a>\n		a graphic of the map (available if map panel is printed)\n	</p>\n	<p>\n		<a href=\"http://msc.fema.gov/portal/downloadProduct?productID=NFHL_{DFIRM_ID}\" target=\"_blank\">Download</a>\n		county GIS data\n	</p>\n	<p class=\"small\">\n		Effective " + effectiveDate + "</p>";
     out += "</div>";
     return out;
   };
