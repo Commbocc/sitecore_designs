@@ -1,6 +1,14 @@
 ---
 ---
 
+# css media query breakpoint variables
+screen_xs_max = 752						# screen_xs_max = 767
+screen_sm_max = 976						# screen_sm_max = 991
+screen_lg_min = 1185						# screen_lg_min = 1200
+screen_sm_min = screen_sm_min + 1	# screen_sm_min = 768
+screen_md_min = screen_sm_max + 1	# screen_md_min = 992
+screen_md_max = screen_lg_min - 1	# screen_md_max = 1199
+
 $ ->
 
 	# force footer to bottom
@@ -23,7 +31,7 @@ $ ->
 
 	# affix template
 	$(window).on 'load resize', ->
-		if $(this).width() > 752
+		if $(this).width() > screen_xs_max
 			$(this).on '.affix'
 			$('#hc-affix-left-nav').width $('#hc-affix-left-nav-container').width()
 			$('#hc-affix-left-nav-container').height $('#hc-affix-left-nav-container').parent().height()
