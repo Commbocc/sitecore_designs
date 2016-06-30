@@ -1,0 +1,28 @@
+// l3 actions
+
+.hc-actions {
+
+	-webkit-column-gap: 2em;
+	column-gap: 2em;
+	-moz-column-gap: 2em;
+
+	@media (min-width: $screen-md-min) {
+		-webkit-column-count: 2; /* Chrome, Safari, Opera */
+		-moz-column-count: 2; /* Firefox */
+		column-count: 2;
+	}
+	@media (min-width: $screen-md-max) {
+		-webkit-column-count: 3; /* Chrome, Safari, Opera */
+		-moz-column-count: 3; /* Firefox */
+		column-count: 3;
+	}
+
+	> li {
+		padding-bottom: 0.5em;
+		list-style-type: square;
+		-webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+		page-break-inside: avoid; /* Firefox */
+		break-inside: avoid; /* IE 10+ */
+	}
+
+}

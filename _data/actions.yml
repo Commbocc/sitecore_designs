@@ -1,0 +1,54 @@
+- group: Apply
+  categories:
+    - category: Building Permits
+      actions:
+        - title: Apply for Building Permit
+        - title: Apply for Demolition Permit
+    - category: Fire Marshal
+      actions:
+        - title: Apply for Fire Alarm or Specialized Fire Protection Systems Permit
+        - title: Apply for Fire Marshal plan review
+        - title: Apply for Fire Sprinkler or Underground Fire Line Permit
+        - title: Apply for Fireworks Display Permit
+        - title: Apply for Open Fire Permit
+        - title: Apply for Tent & Sparkler Permit
+        - title: Apply for Tent Permit
+    - category: Mobile Homes
+      actions:
+        - title: Apply for Mobile Home in a Park Permit
+    - category: Natural Resources
+      actions:
+        - title: Apply for a Gopher Tortoise Permit
+        - title: Apply for Agricultural Exemption to the Natural Resources Permit
+        - title: Apply for Master Subdivision Landscape Plan Permit
+        - title: Apply for Natural Resource Site and Subdivision Permit
+        - title: Apply for Natural Resources Permit
+        - title: Apply for Single Family/ Duplex Natural Resources Permit
+        - title: Apply for Tree Removal Permit
+        - title: Apply for Wetland Setback Encroachment Permit
+        - title: Apply for Wildlife Habitat Verification
+    - category: Stand alone
+      actions:
+        - title: Apply for Electrical Permit
+        - title: Apply for Gas Permit
+        - title: Apply for Mechanical Permit
+        - title: Apply for Plumbing Permit
+        - title: Apply for POS Backflow Assembly Permit
+        - title: Apply for Roofing Permit
+        - title: Apply for Sign Permit
+    - category: Traffic
+      actions:
+        - title: Apply for Right of Way (ROW) Management Permit
+        - title: Apply for Temporary Traffic Control (TTC) Permit
+- group: Request
+  categories:
+    - category: Traffic
+      actions:
+        - title: Request a Refund for a Permit
+        - title: Request a Refund for a Right-of-Way Permit
+- group: Report
+  categories:
+    - category:
+      actions:
+        - title: Something
+        - title: Something Else
