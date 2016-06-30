@@ -1,5 +1,5 @@
 ---
-layout: hc-county-project
+layout: hc-affix
 title: "East County Court Redevelopment / Regional Service Center"
 type:
 ---

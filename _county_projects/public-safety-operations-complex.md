@@ -1,5 +1,5 @@
 ---
-layout: hc-county-project
+layout: hc-affix
 title: "Public Safety Operations Complex"
 type:
 ---

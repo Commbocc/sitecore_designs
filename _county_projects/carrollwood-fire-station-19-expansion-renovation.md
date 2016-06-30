@@ -1,5 +1,5 @@
 ---
-layout: hc-county-project
+layout: hc-affix
 title: "Carrollwood Fire Station #19 Expansion / Renovation"
 type:
 ---

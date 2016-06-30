@@ -1,5 +1,5 @@
 ---
-layout: hc-county-project
+layout: hc-affix
 title: "Riverview Fire Station #16 Expansion / Renovation"
 type:
 ---

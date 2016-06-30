@@ -1,5 +1,5 @@
 ---
-layout: hc-county-project
+layout: hc-affix
 title: "Carrollwood Village Community Park"
 type:
 ---

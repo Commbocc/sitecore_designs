@@ -1,5 +1,5 @@
 ---
-layout: hc-county-project
+layout: hc-affix
 title: "Wimauma Fire Station #22 Replacement"
 type:
 ---
