@@ -79,12 +79,10 @@
 	padding: $grid-gutter-width 0;
 }
 
-@media (min-width: $screen-sm-min) {
-	.hc-l3-jumbo-separator-right {
+.hc-jumbo-separator {
+	@media (min-width: $screen-sm-min) {
 		border-right: solid 1px #fff;
-	}
-	.hc-l3-jumbo-separator-left {
-		border-left: solid 1px #fff;
+		min-height: $grid-gutter-width;
 	}
 }
 
