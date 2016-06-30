@@ -11,6 +11,15 @@ screen_md_max = screen_lg_min - 1	# screen_md_max = 1199
 
 $ ->
 
+	# close all but first .hc-collapse-panel on load
+	$(window).on 'load', ->
+		$collapsibles = $('.hc-collapse-panel .panel-collapse')
+		if $(this).width() > screen_xs_max
+			$collapsibles.collapse 'show'
+		else
+			$collapsibles.slice(1).collapse 'hide'
+		return
+
 	# force footer to bottom
 	$(document).ready ->
 		contentHeight = $(window).height()
