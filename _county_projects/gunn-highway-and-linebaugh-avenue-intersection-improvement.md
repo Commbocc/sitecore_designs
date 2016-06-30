@@ -1,5 +1,5 @@
 ---
-layout: hc-county-project
+layout: hc-affix
 title: Gunn Highway and Linebaugh Avenue Intersection Improvement
 type: transportation
 ---

@@ -1,5 +1,5 @@
 ---
-layout: hc-county-project
+layout: hc-affix
 title: West Bearss Avenue Drainage Improvements
 type: transportation
 ---

@@ -1,5 +1,5 @@
 ---
-layout: hc-county-project
+layout: hc-affix
 title: "C. Blythe Andrews, Jr. Library Expansion / Replacement"
 type:
 ---

@@ -1,5 +1,5 @@
 ---
-layout: hc-county-project
+layout: hc-affix
 title: "Sundance Fire Station #8 Expansion & Renovation"
 type:
 ---

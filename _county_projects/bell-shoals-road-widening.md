@@ -1,5 +1,5 @@
 ---
-layout: hc-county-project
+layout: hc-affix
 title: Bell Shoals Road Widening
 type: transportation
 ---

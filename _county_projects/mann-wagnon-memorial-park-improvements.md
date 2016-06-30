@@ -1,5 +1,5 @@
 ---
-layout: hc-county-project
+layout: hc-affix
 title: "Mann-Wagnon Memorial Park Improvements"
 type:
 ---

@@ -1,5 +1,5 @@
 ---
-layout: hc-county-project
+layout: hc-affix
 title: "Fishhawk Sports Complex Expansion Phase I"
 type:
 ---
