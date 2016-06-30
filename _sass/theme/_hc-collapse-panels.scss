@@ -1,0 +1,50 @@
+.hc-collapse-panel-group {
+	@extend .panel-group;
+	@media (max-width: $screen-xs-max) {
+		margin: 0 ($grid-gutter-width / -2);
+		background: #fff;
+	}
+}
+
+.hc-collapse-panel {
+	@extend .panel;
+
+	@media (max-width: $screen-xs-max) {
+		border: 0;
+	}
+
+	.panel-heading {
+
+		padding: 0;
+
+		@media (max-width: $screen-xs-max) {
+			border-radius: 0;
+		}
+
+		a {
+			display: block;
+
+			color: #fff;
+			text-decoration: none;
+			text-transform: uppercase;
+			padding: $grid-gutter-width / 2;
+
+			@media (max-width: $screen-xs-max) {
+				padding: $grid-gutter-width ($grid-gutter-width / 2);
+			}
+
+			.panel-title::after {
+				content: ''; // fa-angle-up
+				position: absolute;
+				right: $grid-gutter-width;
+			}
+
+			&.collapsed {
+				.panel-title::after {
+					content: ''; // fa-angle-down
+				}
+			}
+		}
+	}
+
+}

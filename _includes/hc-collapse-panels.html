@@ -1,48 +1,48 @@
-<div class="panel-group" role="tablist" aria-multiselectable="true">
-	<div class="panel panel-info">
+<div class="hc-collapse-panel-group" role="tablist" aria-multiselectable="true">
+	<div class="hc-collapse-panel panel-info">
 		<div class="panel-heading" role="tab" id="headingOne">
-			<h2 class="panel-title">
-				<a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-					Collapsible Group Item #1
-				</a>
-			</h2>
+			<a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+				<h2 class="panel-title">
+					Take Action
+				</h2>
+			</a>
 		</div>
 		<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 			<div class="panel-body">
 
 				{% for action in site.data.actions %}
-					<h3 class="text-primary h4">
-						<i class="fa fa-fw fa-bar-chart"></i>
-						{{ action.group }}
-					</h3>
+				<h3 class="text-primary h4">
+					<i class="fa fa-fw fa-bar-chart"></i>
+					{{ action.group }}
+				</h3>
 
-					{% for cat in action.categories %}
-					{% if cat.category %}
-					<h4 class="h6 text-black text-upcase">{{ cat.category }}</h4>
-					{% endif %}
-					<ul class="hc-actions">
-						{% for action in cat.actions %}
-						<li>
-							<a href="#">
-								{{ action.title }}
-							</a>
-						</li>
-						{% endfor %}
-					</ul>
+				{% for cat in action.categories %}
+				{% if cat.category %}
+				<h4 class="h6 text-black text-upcase">{{ cat.category }}</h4>
+				{% endif %}
+				<ul class="hc-actions">
+					{% for action in cat.actions %}
+					<li>
+						<a href="#">
+							{{ action.title }}
+						</a>
+					</li>
 					{% endfor %}
+				</ul>
+				{% endfor %}
 
 				{% endfor %}
 
 			</div>
 		</div>
 	</div>
-	<div class="panel panel-info">
+	<div class="hc-collapse-panel panel-info">
 		<div class="panel-heading" role="tab" id="headingTwo">
-			<h2 class="panel-title">
-				<a class="collapsed" role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-					Collapsible Group Item #2
-				</a>
-			</h2>
+			<a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+				<h2 class="panel-title">
+					Learn More
+				</h2>
+			</a>
 		</div>
 		<div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
 			<div class="panel-body">
@@ -72,13 +72,13 @@
 			</div>
 		</div>
 	</div>
-	<div class="panel panel-info">
+	<div class="hc-collapse-panel panel-info">
 		<div class="panel-heading" role="tab" id="headingThree">
-			<h2 class="panel-title">
-				<a class="collapsed" role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-					Collapsible Group Item #3
-				</a>
-			</h2>
+			<a role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+				<h2 class="panel-title">
+					Get Help
+				</h2>
+			</a>
 		</div>
 		<div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
 			<div class="panel-body">
