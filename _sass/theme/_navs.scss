@@ -39,8 +39,8 @@
 			background: $body-bg;
 			color: $brand-secondary;
 			text-shadow: 0 0 $body-bg;
+			padding: 12px 0 10px 0;
 			&:hover, &:focus { color: $brand-secondary; }
-			padding-top: .8em;
 		}
 
 	}
