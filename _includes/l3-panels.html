@@ -11,35 +11,26 @@
 			<div class="panel-body">
 
 				{% for action in site.data.actions %}
-				<div class="hc-action-group">
 					<h3 class="text-primary h4">
 						<i class="fa fa-fw fa-bar-chart"></i>
 						{{ action.group }}
 					</h3>
-					<div class="hc-action-categories">
-						{% for cat in action.categories %}
-						<div class="hc-action-category">
 
-							{% if cat.category %}
-							<h4 class="h5">
-								{{ cat.category }}
-							</h4>
-							{% endif %}
-							
-							<ul class="">
-								{% for action in cat.actions %}
-								<li>
-									<a href="#">
-										{{ action.title }}
-									</a>
-								</li>
-								{% endfor %}
-							</ul>
-
-						</div>
+					{% for cat in action.categories %}
+					{% if cat.category %}
+					<h4 class="h6 text-black text-upcase">{{ cat.category }}</h4>
+					{% endif %}
+					<ul class="hc-actions">
+						{% for action in cat.actions %}
+						<li>
+							<a href="#">
+								{{ action.title }}
+							</a>
+						</li>
 						{% endfor %}
-					</div>
-				</div>
+					</ul>
+					{% endfor %}
+
 				{% endfor %}
 
 			</div>

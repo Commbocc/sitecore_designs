@@ -42,7 +42,7 @@
         - title: Apply for Temporary Traffic Control (TTC) Permit
 - group: Request
   categories:
-    - category:
+    - category: Traffic
       actions:
         - title: Request a Refund for a Permit
         - title: Request a Refund for a Right-of-Way Permit

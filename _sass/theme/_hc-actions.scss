@@ -1,10 +1,11 @@
 // l3 actions
 
-.hc-action-group {
+.hc-actions {
 
-}
+	-webkit-column-gap: 2em;
+	column-gap: 2em;
+	-moz-column-gap: 2em;
 
-.hc-action-categories:not(.col-sm-4) {
 	@media (min-width: $screen-md-min) {
 		-webkit-column-count: 2; /* Chrome, Safari, Opera */
 		-moz-column-count: 2; /* Firefox */
@@ -15,16 +16,13 @@
 		-moz-column-count: 3; /* Firefox */
 		column-count: 3;
 	}
-}
 
-.hc-action-category {
-	float: left;
-
-	-webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
-	page-break-inside: avoid; /* Firefox */
-	break-inside: avoid; /* IE 10+ */
-
-	> h4 {
-		color: #000;
+	> li {
+		padding-bottom: 0.5em;
+		list-style-type: square;
+		-webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+		page-break-inside: avoid; /* Firefox */
+		break-inside: avoid; /* IE 10+ */
 	}
+
 }
