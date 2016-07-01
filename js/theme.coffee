@@ -1,20 +1,18 @@
 ---
 ---
 
-# css media query breakpoint variables
-screen_xs_max = 752						# screen_xs_max = 767
-screen_sm_max = 976						# screen_sm_max = 991
-screen_lg_min = 1185						# screen_lg_min = 1200
-screen_sm_min = screen_sm_min + 1	# screen_sm_min = 768
-screen_md_min = screen_sm_max + 1	# screen_md_min = 992
-screen_md_max = screen_lg_min - 1	# screen_md_max = 1199
-
 $ ->
+
+	# css media query breakpoint variables
+	screen_is_xs = -> $('#resposnive-utility > #ru-xs').is(':visible')
+	screen_is_sm = -> $('#resposnive-utility > #ru-sm').is(':visible')
+	screen_is_md = -> $('#resposnive-utility > #ru-md').is(':visible')
+	screen_is_lg = -> $('#resposnive-utility > #ru-lg').is(':visible')
 
 	# close all but first 0 .hc-collapse-panel on load
 	$(window).on 'load', ->
 		$collapsibles = $('.hc-collapse-panel .panel-collapse')
-		$collapsibles.slice(0).collapse 'hide' unless $(this).width() > screen_xs_max
+		$collapsibles.slice(0).collapse 'hide' if screen_is_xs()
 		return
 
 	# force footer to bottom
@@ -36,7 +34,7 @@ $ ->
 
 	# affix template
 	$(window).on 'load resize', ->
-		if $(this).width() > screen_xs_max
+		unless screen_is_xs()
 			$(this).on '.affix'
 			$('#hc-affix-left-nav').width $('#hc-affix-left-nav-container').width()
 			$('#hc-affix-left-nav-container').height $('#hc-affix-left-nav-container').parent().height()
