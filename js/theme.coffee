@@ -11,13 +11,10 @@ screen_md_max = screen_lg_min - 1	# screen_md_max = 1199
 
 $ ->
 
-	# close all but first .hc-collapse-panel on load
+	# close all but first 0 .hc-collapse-panel on load
 	$(window).on 'load', ->
 		$collapsibles = $('.hc-collapse-panel .panel-collapse')
-		if $(this).width() > screen_xs_max
-			$collapsibles.collapse 'show'
-		else
-			$collapsibles.slice(1).collapse 'hide'
+		$collapsibles.slice(0).collapse 'hide' unless $(this).width() > screen_xs_max
 		return
 
 	# force footer to bottom
@@ -25,8 +22,7 @@ $ ->
 		contentHeight = $(window).height()
 		footerHeight = $('#hc-footer').innerHeight()
 		footerTop = $('#hc-footer').position().top + footerHeight
-		if footerTop < contentHeight
-			$('#hc-footer').css 'margin-top', contentHeight - footerTop + 'px'
+		$('#hc-footer').css 'margin-top', contentHeight - footerTop + 'px' if footerTop < contentHeight
 		return
 
 	# nav spacer animation
