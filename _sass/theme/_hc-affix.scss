@@ -2,6 +2,16 @@
 	max-width: $screen-lg-min;
 }
 
+#hc-affix-left-nav {
+	.back-to-top {
+		border: none;
+		> a {
+			padding: 0;
+			margin: 0;
+		}
+	}
+}
+
 .hc-affix-content-heading {
 	color: $brand-primary;
 	&:not(:first-of-type) {
