@@ -5,6 +5,7 @@ layout: page
 # Select a layout below
 
 * [Home]({{ '/layouts/home/' | prepend: site.baseurl }})
+* [Home w/ Alert]({{ '/layouts/home/alert' | prepend: site.baseurl }})
 * [Maps]({{ '/maps/' | prepend: site.baseurl }})
 * [Newsroom]({{ '/layouts/newsroom/' | prepend: site.baseurl }})
 * [News Story]({{ '/news/story/' | prepend: site.baseurl }})

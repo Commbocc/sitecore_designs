@@ -36,6 +36,8 @@
 </head>
 <body data-spy="scroll">
 
+	{% if page.alert %}{% include hc-alert.html %}{% endif %}
+
 	{% include navbar.html %}
 
 	{{ content }}
