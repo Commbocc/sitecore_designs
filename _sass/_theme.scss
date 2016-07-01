@@ -105,6 +105,12 @@
 	color: $brand-secondary;
 }
 
+// panels
+.panel-title {
+	// font-size: ceil(($font-size-base * 1.125));
+	font-size: $font-size-base;
+}
+
 // footer
 #hc-footer {
 	@include gradient-background-secondary;
