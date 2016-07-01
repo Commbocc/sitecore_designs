@@ -1,0 +1,7 @@
+#keywords {
+	li {
+		&::before {
+			content: '' // fa-times
+		}
+	}
+}
