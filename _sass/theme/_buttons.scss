@@ -20,34 +20,18 @@
 	}
 }
 
-.btn-secondary {
+.btn-primary-inverse {
 	text-transform: uppercase;
-
 	@include button-variant($brand-primary, #fff, $brand-primary);
 }
-.btn-secondary:hover,
-.btn-secondary:focus,
-.btn-secondary:active,
-.btn-secondary.active {
+.btn-primary-inverse:hover,
+.btn-primary-inverse:focus,
+.btn-primary-inverse:active,
+.btn-primary-inverse.active {
 	color: #fff;
 	background-color: $brand-primary-dark;
 	border-color: $brand-primary-dark;
 }
-
-// @mixin button-line-variant($lines) {
-// 	position: relative;
-// 	white-space: normal !important;
-// 	> span {
-// 		position: absolute;
-// 		width: 100%;
-// 		padding: inherit;
-// 		top: 50%;
-// 		left: 50%;
-// 		transform: translateX(-50%) translateY(-50%);
-// 		-ms-transform: translateX(-50%) translateY(-50%);
-// 		-webkit-transform: translateX(-50%) translateY(-50%);
-// 	}
-// }
 
 .btn-2-line, .btn-3-line {
 	position: relative;

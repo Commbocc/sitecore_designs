@@ -154,7 +154,7 @@
     directions_str = [properties.WEB_ADDRESS, properties.WEB_CITY, 'FL', properties.WEB_ZIP].join('+').replace(/[^0-9a-z]/gi, '+').replace(' ', '+');
     out = "<h4 class=\"popover-title\">{WEB_NAME}</h4>\n<div class=\"popover-content\">\n	<p>\n		{WEB_ADDRESS}<br>\n		{WEB_CITY}, FL {WEB_ZIP}<br>\n		<a href=\"https://www.google.com/maps/dir//" + directions_str + "\" target=\"_blank\" class=\"small pull-right\">Directions</a>\n</p>";
     if (properties.WEB_URL !== null && properties.WEB_URL !== '') {
-      out += "<p>\n	<a href=\"{WEB_URL}\" class=\"btn btn-secondary btn-sm btn-block\">Learn More</a>\n</p>";
+      out += "<p>\n	<a href=\"{WEB_URL}\" class=\"btn btn-primary-inverse btn-sm btn-block\">Learn More</a>\n</p>";
     }
     out += "</div>";
     return out;

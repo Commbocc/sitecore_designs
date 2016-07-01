@@ -192,7 +192,7 @@ defaultPopupTemplate = (properties) ->
 	if properties.WEB_URL != null && properties.WEB_URL != ''
 		out += """
 		<p>
-			<a href="{WEB_URL}" class="btn btn-secondary btn-sm btn-block">Learn More</a>
+			<a href="{WEB_URL}" class="btn btn-primary-inverse btn-sm btn-block">Learn More</a>
 		</p>
 		"""
 	out += "</div>"
@@ -228,7 +228,7 @@ cipPopupTemplate = (properties) ->
 	# if properties.WEB_URL != null && properties.WEB_URL != ''
 	# 	out += """
 	# 	<p>
-	# 		<a href="{WEB_URL}" class="btn btn-secondary btn-sm btn-block">Learn More</a>
+	# 		<a href="{WEB_URL}" class="btn btn-primary-inverse btn-sm btn-block">Learn More</a>
 	# 	</p>
 	# 	"""
 	out += "</div>"

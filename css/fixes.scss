@@ -23,7 +23,7 @@ body {
 	// font-size: $font-size-base;
 }
 
-.btn:not(.btn-secondary):not(.btn-default)  {
+.btn:not(.btn-primary-inverse):not(.btn-default)  {
 	color: #fff !important;
 	&:hover {
 		color: #fff !important;
