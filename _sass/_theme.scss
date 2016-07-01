@@ -32,6 +32,7 @@
 // simple text transformations
 .text-white { color: #fff; }
 .text-black { color: #000; }
+.text-secondary { color: $brand-secondary; }
 .text-upcase { text-transform: uppercase; }
 .text-shadowed { text-shadow: 1px 1px #000; }
 
