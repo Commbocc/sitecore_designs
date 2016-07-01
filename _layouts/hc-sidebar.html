@@ -6,7 +6,9 @@ layout: default
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-8 col-md-9 {% if page.back %}col-sm-push-4 col-md-push-3{% endif %}">
+				{% unless page.hide_title_in_jumbo %}
 				<h2 class="text-center-xs">{{ page.title }}</h2>
+				{% endunless %}
 			</div>
 			{% if page.back %}
 			<div class="col-sm-4 col-sm-pull-8 col-md-3 col-md-pull-9 hc-jumbo-separator">
@@ -25,7 +27,11 @@ layout: default
 <div class="container">
 	<div class="row">
 		<aside class="col-sm-4 col-md-3">
+			{% if page.sidebar %}
 			{% include {{page.sidebar}} %}
+			{% else %}
+			{% include hc-default-sidebar.html %}
+			{% endif %}
 		</aside>
 		<div class="col-sm-8 col-md-9">
 			{{ content }}

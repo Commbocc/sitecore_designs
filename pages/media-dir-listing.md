@@ -1,5 +1,5 @@
 ---
-layout: hc-media-dir-listing
+layout: hc-sidebar
 title: Administrative Directives
 back: County Administrator
 permalink: /layouts/media-dir/

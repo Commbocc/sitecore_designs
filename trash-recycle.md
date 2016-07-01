@@ -1,5 +1,5 @@
 ---
-layout: hc-l3
+layout: hc-sidebar
 title: What Can Be recycled
 back: Property Owners & Renters
 permalink: /trash-recycle/

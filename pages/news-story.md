@@ -1,9 +1,16 @@
 ---
-layout: hc-news-story
+layout: hc-sidebar
 title: Pet Resource Center Celebrates Grand Opening of New Lobby
+hide_title_in_jumbo: true
 back: Newsroom
 permalink: /news/story/
+sidebar: hc-news-story-sidebar.html
 ---
+
+<div class="embed-responsive embed-responsive-16by9">
+	<iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/EB57fyEBRTI?rel=0" allowfullscreen></iframe>
+	<img src="{{ '/images/news-pets.jpg' | prepend: site.baseurl }}" class="img-responsive center-block" />
+</div>
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, [sed do eiusmod](#) tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 {: .lead}
