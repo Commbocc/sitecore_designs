@@ -7,9 +7,7 @@
 }
 
 .btn-primary {
-
 	text-transform: uppercase;
-
 	&:hover,
 	&:focus,
 	&.focus {
@@ -31,6 +29,18 @@
 	color: #fff;
 	background-color: $brand-primary-dark;
 	border-color: $brand-primary-dark;
+}
+
+.btn-secondary {
+	@include button-variant(#fff, $brand-secondary, $brand-secondary);
+}
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active,
+.btn-secondary.active {
+	color: #fff;
+	background-color: $brand-secondary;
+	border-color: $brand-secondary;
 }
 
 .btn-2-line, .btn-3-line {
