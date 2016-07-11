@@ -1,3 +1,7 @@
+// layouts
+@import "theme/hc-affix";
+
+// components
 @import "theme/mixins";
 @import "theme/navbar";
 @import "theme/navs";
@@ -5,14 +9,7 @@
 @import "theme/columns";
 @import "theme/cards";
 @import "theme/search";
-
-// affix layout
-@import "theme/hc-affix";
-
-// l3 actions
 @import "theme/hc-actions";
-
-// custom collapse panels
 @import "theme/hc-collapse-panels";
 
 // links
@@ -175,15 +172,5 @@
 				}
 			}
 		}
-	}
-}
-
-.hc-alert {
-	color: #fff;
-	background: $brand-danger;
-	margin-bottom: 0;
-	border-radius: 0;
-	.close {
-		&:hover { color: #fff; }
 	}
 }

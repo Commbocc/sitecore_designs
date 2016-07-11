@@ -1,0 +1,9 @@
+.hc-header-alert {
+	color: #fff;
+	background: $brand-danger;
+	margin-bottom: 0;
+	border-radius: 0;
+	.close {
+		&:hover { color: #fff; }
+	}
+}
