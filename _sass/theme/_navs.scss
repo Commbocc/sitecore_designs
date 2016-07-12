@@ -11,7 +11,7 @@
 	> .nav.nav-tabs {
 
 		position: absolute;
-		bottom: -100%;
+		bottom: 0;
 
 		font-weight: 600;
 		text-transform: uppercase;
@@ -20,6 +20,7 @@
 			display: table-cell;
 			width: 1%;
 			a {
+				margin-bottom: 0;
 				background: $link-color;
 				background: rgba($link-color, 0.75);
 				color: rgba($body-bg, 0.75);
