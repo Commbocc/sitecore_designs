@@ -36,15 +36,8 @@
 </head>
 <body data-spy="scroll">
 
-	<div id="resposnive-utility" style="visibility: hidden;">
-		<span id="ru-xs" class="visible-xs-block"></span>
-		<span id="ru-sm" class="visible-sm-block"></span>
-		<span id="ru-md" class="visible-md-block"></span>
-		<span id="ru-lg" class="visible-lg-block"></span>
-	</div>
-
 	{% include navbar.html %}
-	
+
 	{% if page.alert %}{% include hc-header-alert.html %}{% endif %}
 
 	{{ content }}
@@ -52,6 +45,13 @@
 	{% include footer.html %}
 
 	{% include default-modal.html %}
+
+	<div id="resposnive-utility" style="visibility: hidden;">
+		<span id="ru-xs" class="visible-xs-block"></span>
+		<span id="ru-sm" class="visible-sm-block"></span>
+		<span id="ru-md" class="visible-md-block"></span>
+		<span id="ru-lg" class="visible-lg-block"></span>
+	</div>
 
 </body>
 </html>
