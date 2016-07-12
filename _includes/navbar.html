@@ -1,5 +1,130 @@
 <nav id="hc-main-nav" class="navbar navbar-default">
 	<div class="container-fluid">
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="hc-main-nav-collapse">
+
+			<div id="navbar-toggle-close-xs" class="visible-xs-block">
+				<a href="#" class="btn btn-md btn-block btn-primary" data-toggle="collapse" data-target="#hc-main-nav-collapse" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<i class="fa fa-fw fa-close"></i>
+				</a>
+			</div>
+
+			<div id="navbar-collapse-content-xs" class="">
+				<form class="navbar-form navbar-right" role="search">
+					<div class="form-group">
+						<input id="hc-nav-search-bar" type="text" class="form-control input-sm" placeholder="&#xf002; Search">
+					</div>
+				</form>
+
+				<ul id="hc-main-nav-sections" class="nav navbar-nav navbar-right">
+					{% for item in site.data.nav_items %}
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+							{{ item.title }}
+							<span class="caret visible-xs-inline-block pull-right"></span>
+						</a>
+						<div class="dropdown-menu hc-nav-dropdown">
+
+							<h3 class="hc-dropdown-title hidden-xs">{{ item.title }}</h3>
+
+							<div class="row">
+								<div class="col-sm-6">
+									<ul class="nav nav-pills nav-stacked nav-service-sections">
+										{% for subitem in item.l2s %}
+										<li>
+											<a href="{{ '/layouts/l2/' | prepend: site.baseurl }}">
+												{{ subitem.title }}
+											</a>
+										</li>
+										{% endfor %}
+									</ul>
+								</div>
+								<div class="col-sm-6 hidden-xs">
+									<div class="row">
+										<div class="col-xs-7 col-sm-6">
+											<h3 class="hc-dropdown-featured">
+												{{ item.title }} L3/4
+											</h3>
+											<p>
+												Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+											</p>
+											<p>
+												<a href="{{ '/layouts/l3/' | prepend: site.baseurl }}" class="btn btn-primary-inverse">Learn More</a>
+											</p>
+										</div>
+										<div class="col-xs-5 col-sm-4">
+											<p>
+												<img src="https://pbs.twimg.com/profile_images/562466745340817408/_nIu8KHX.jpeg" alt="{{ item.title }}" class="img-thumbnail img-circle">
+											</p>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</li>
+					{% endfor %}
+
+					<li id="nav-i-want-to" class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+							I Want To<span class="visible-xs-inline-block">...</span>
+						</a>
+
+						<div class="dropdown-menu hc-nav-dropdown">
+							<div class="row text-center">
+								<div class="col-sm-20">
+									<h3>
+										<a href="{{ '/layouts/4a/' | prepend: site.baseurl }}">
+											<i class="fa fa-pencil"></i>
+											Apply
+										</a>
+									</h3>
+								</div>
+								<div class="col-sm-20">
+									<h3>
+										<a href="{{ '/layouts/4a/' | prepend: site.baseurl }}">
+											<i class="fa fa-pencil"></i>
+											Register
+										</a>
+									</h3>
+								</div>
+								<div class="col-sm-20">
+									<h3>
+										<a href="{{ '/layouts/4a/' | prepend: site.baseurl }}">
+											<i class="fa fa-pencil"></i>
+											Report
+										</a>
+									</h3>
+								</div>
+								<div class="col-sm-20">
+									<h3>
+										<a href="{{ '/layouts/4a/' | prepend: site.baseurl }}">
+											<i class="fa fa-pencil"></i>
+											Request
+										</a>
+									</h3>
+								</div>
+								<div class="col-sm-20">
+									<h3>
+										<a href="{{ '/layouts/4a/' | prepend: site.baseurl }}">
+											<i class="fa fa-pencil"></i>
+											Pay
+										</a>
+									</h3>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+
+			</div>
+
+			<div id="hc-navbar-dim"></div>
+
+		</div><!-- /.navbar-collapse -->
+
+
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#hc-main-nav-collapse" aria-expanded="false">
@@ -13,117 +138,7 @@
 			</a>
 		</div>
 
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="hc-main-nav-collapse">
-			<form class="navbar-form navbar-right" role="search">
-				<div class="form-group">
-					<input id="hc-nav-search-bar" type="text" class="form-control input-sm" placeholder="&#xf002; Search">
-				</div>
-			</form>
 
-			<ul id="hc-main-nav-sections" class="nav navbar-nav navbar-right">
-
-				{% for item in site.data.nav_items %}
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-						{{ item.title }}
-						<span class="caret visible-xs-inline-block pull-right"></span>
-					</a>
-					<div class="dropdown-menu hc-nav-dropdown">
-
-						<h3 class="hc-dropdown-title hidden-xs">{{ item.title }}</h3>
-
-						<div class="row">
-							<div class="col-sm-6">
-								<ul class="nav nav-pills nav-stacked nav-service-sections">
-									{% for subitem in item.l2s %}
-									<li>
-										<a href="{{ '/layouts/l2/' | prepend: site.baseurl }}">
-											{{ subitem.title }}
-										</a>
-									</li>
-									{% endfor %}
-								</ul>
-							</div>
-							<div class="col-sm-6 hidden-xs">
-								<div class="row">
-									<div class="col-xs-7 col-sm-6">
-										<h3 class="hc-dropdown-featured">
-											{{ item.title }} L3/4
-										</h3>
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-										</p>
-										<p>
-											<a href="{{ '/layouts/l3/' | prepend: site.baseurl }}" class="btn btn-primary-inverse">Learn More</a>
-										</p>
-									</div>
-									<div class="col-xs-5 col-sm-4">
-										<p>
-											<img src="https://pbs.twimg.com/profile_images/562466745340817408/_nIu8KHX.jpeg" alt="{{ item.title }}" class="img-thumbnail img-circle">
-										</p>
-									</div>
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</li>
-				{% endfor %}
-
-				<li id="nav-i-want-to" class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-						I Want To<span class="visible-xs-inline-block">...</span>
-					</a>
-
-					<div class="dropdown-menu hc-nav-dropdown">
-						<div class="row text-center">
-							<div class="col-sm-20">
-								<h3>
-									<a href="{{ '/layouts/4a/' | prepend: site.baseurl }}">
-										<i class="fa fa-pencil"></i>
-										Apply
-									</a>
-								</h3>
-							</div>
-							<div class="col-sm-20">
-								<h3>
-									<a href="{{ '/layouts/4a/' | prepend: site.baseurl }}">
-										<i class="fa fa-pencil"></i>
-										Register
-									</a>
-								</h3>
-							</div>
-							<div class="col-sm-20">
-								<h3>
-									<a href="{{ '/layouts/4a/' | prepend: site.baseurl }}">
-										<i class="fa fa-pencil"></i>
-										Report
-									</a>
-								</h3>
-							</div>
-							<div class="col-sm-20">
-								<h3>
-									<a href="{{ '/layouts/4a/' | prepend: site.baseurl }}">
-										<i class="fa fa-pencil"></i>
-										Request
-									</a>
-								</h3>
-							</div>
-							<div class="col-sm-20">
-								<h3>
-									<a href="{{ '/layouts/4a/' | prepend: site.baseurl }}">
-										<i class="fa fa-pencil"></i>
-										Pay
-									</a>
-								</h3>
-							</div>
-						</div>
-					</div>
-				</li>
-
-			</ul>
-		</div><!-- /.navbar-collapse -->
 	</div><!-- /.container-fluid -->
 </nav>
 

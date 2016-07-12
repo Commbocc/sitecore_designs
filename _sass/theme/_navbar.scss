@@ -74,10 +74,16 @@ li#nav-i-want-to {
 	background: #fff;
 	border-radius: 0;
 
+	.navbar-toggle {
+		border: none;
+		.icon-bar {
+			background: $brand-primary;
+		}
+	}
+
 	.navbar-form {
 		@media (max-width: $screen-xs-max) {
-			margin-top: 0;
-			margin-bottom: 0;
+			margin: 0;
 		}
 	}
 
@@ -122,13 +128,19 @@ li#nav-i-want-to {
 
 	#hc-main-nav-sections {
 
-		margin-bottom: 0;
+		margin: 0;
 
 		position: static;
 
 		> li {
 
 			position: static;
+
+			@media (max-width: $screen-xs-max) {
+				&:not(#nav-i-want-to) {
+					border-bottom: solid 1px $brand-info
+				}
+			}
 
 			> a {
 				font-weight: bold;
@@ -230,25 +242,53 @@ li#nav-i-want-to {
 	background: $body-bg;
 	z-index: 50;
 	visibility: hidden;
-
-	// -moz-transition: all 500ms linear 0s;
-	// -webkit-transition: all 500ms linear;
-	// -webkit-transition-delay: 0s;
-	// transition: all 500ms linear 0s;
-	// -moz-transform: rotateX(90deg);
-	// -ms-transform: rotateX(90deg);
-	// -webkit-transform: rotateX(90deg);
-	// transform: rotateX(90deg);
-	// -moz-transform-origin: 0 0;
-	// -ms-transform-origin: 0 0;
-	// -webkit-transform-origin: 0 0;
-	// transform-origin: 0 0;
 }
 
 #hc-main-nav-sections > li:hover > .hc-dropdown {
 	visibility: visible;
+}
 
-	// -moz-transform: rotateX(0deg);
-	// -webkit-transform: rotateX(0deg);
-	// transform: rotateX(0deg);
+#hc-main-nav-collapse {
+	@media (max-width: $screen-xs-max) {
+		position: absolute;
+		left: 0;
+		right: 0;
+		// padding: 0 15px;
+		// margin: 0;
+		z-index: 1010;
+		overflow: visible;
+	}
+	@media (min-width: $screen-sm-min) {
+		float: right;
+	}
+}
+
+@media (max-width: $screen-xs-max) {
+	#navbar-toggle-close-xs {
+		// padding: 0;
+		width: 15%;
+		float: left;
+		.btn {
+			border-radius: 0;
+			padding: 10px;
+		}
+	}
+
+	#navbar-collapse-content-xs {
+		width: 85%;
+		float: right;
+		background: $body-bg;
+	}
+
+	#hc-navbar-dim {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 100%;
+		background: #000;
+		background: rgba(#000, 0.75);
+		z-index: -1;
+	}
 }

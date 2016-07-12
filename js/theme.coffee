@@ -9,6 +9,11 @@ $ ->
 	screen_is_md = -> $('#resposnive-utility > #ru-md').is(':visible')
 	screen_is_lg = -> $('#resposnive-utility > #ru-lg').is(':visible')
 
+	# close mobile nav on opaque backdrop click
+	$('#hc-navbar-dim').on 'click', ->
+		$('#hc-main-nav-collapse').collapse('hide')
+		return
+
 	# close all but first 0 .hc-collapse-panel on load
 	$(window).on 'load', ->
 		$collapsibles = $('.hc-collapse-panel .panel-collapse')
