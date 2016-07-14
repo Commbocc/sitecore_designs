@@ -3,13 +3,13 @@
 
 // components
 @import "theme/mixins";
+@import "theme/columns";
+@import "theme/buttons";
 @import "theme/alerts";
 @import "theme/navbar";
-@import "theme/navs";
-@import "theme/buttons";
-@import "theme/columns";
-@import "theme/cards";
 @import "theme/search";
+@import "theme/navs";
+@import "theme/cards";
 @import "theme/hc-actions";
 @import "theme/hc-collapse-panels";
 

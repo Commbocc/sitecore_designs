@@ -9,6 +9,17 @@ $ ->
 	screen_is_md = -> $('#resposnive-utility > #ru-md').is(':visible')
 	screen_is_lg = -> $('#resposnive-utility > #ru-lg').is(':visible')
 
+	# pull mobile navbar to top
+	pull_mobile_nav_to_top = ->
+		$('#hc-main-nav-collapse').css top: -$('#hc-main-nav').offset().top
+		return
+	$(window).on 'load resize', ->
+		pull_mobile_nav_to_top()
+		return
+	$('#hc-main-nav-collapse').on 'show.bs.collapse', ->
+		pull_mobile_nav_to_top()
+		return
+
 	# close mobile nav on opaque backdrop click
 	$('#hc-navbar-dim').on 'click', ->
 		$('#hc-main-nav-collapse').collapse('hide')

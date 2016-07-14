@@ -36,11 +36,13 @@
 </head>
 <body data-spy="scroll">
 
-	{% include navbar.html %}
-
 	{% if page.alert %}{% include hc-header-alert.html %}{% endif %}
 
-	{{ content }}
+	{% include navbar.html %}
+
+	<main id="body-content">
+		{{ content }}
+	</main>
 
 	{% include footer.html %}
 
