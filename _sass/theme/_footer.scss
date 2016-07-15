@@ -1,0 +1,34 @@
+// footer
+#hc-footer {
+	@include gradient-background-secondary;
+
+	padding-top: 30px;
+	color: #fff;
+
+	a {
+		color: #fff;
+		// text-decoration: none;
+		text-decoration: underline;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	> #hc-footer-row .col-sm-4 {
+		padding: 10px 15px;
+	}
+
+	@media (min-width: $screen-sm-min) {
+		// display: table;
+		// width: 100%;
+		#hc-footer-row {
+			display: table-row;
+			width: 100%;
+			.col-sm-4 {
+				float: none;
+				display: table-cell;
+				vertical-align: middle;
+			}
+		}
+	}
+}

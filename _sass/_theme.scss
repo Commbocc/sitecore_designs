@@ -7,11 +7,14 @@
 @import "theme/buttons";
 @import "theme/alerts";
 @import "theme/navbar";
+@import "theme/jumbotrons";
 @import "theme/search";
 @import "theme/navs";
 @import "theme/cards";
+@import "theme/footer";
 @import "theme/hc-actions";
 @import "theme/hc-collapse-panels";
+@import "theme/htv";
 
 // links
 .hc-rte-content {
@@ -35,60 +38,6 @@
 .text-upcase { text-transform: uppercase; }
 .text-shadowed { text-shadow: 1px 1px #000; }
 
-// jumbotron - http://getbootstrap.com/components/#jumbotron
-.jumbotron {
-	@include gradient-background-info;
-
-	color: $brand-secondary;
-
-	.hc-rte-content {
-		a:not(.btn) {
-			color: #DEF8FA;
-			// color: darken($link-color, 5%);
-			// font-weight: 500;
-			&:hover { color: lighten(#DEF8FA, 5%); }
-
-		}
-	}
-
-	h1, .h1 {
-		@media screen and (min-width: 768px) {
-			font-size: 3em;
-		}
-	}
-
-	h1, h2, h3, h4, h5, h6 {
-		font-weight: 600;
-		color: #fff;
-		margin: 12.5px 0 !important;
-	}
-
-	p {
-		font-weight: 400;
-	}
-
-	&.jumbotron-sm {
-		padding: $grid-gutter-width / 2;
-	}
-}
-
-// jumbotron-hc-tabs
-.jumbotron-hc-tabs {
-	margin-bottom: 0;
-	padding-bottom: $grid-gutter-width * 2.5;
-}
-.jumbotron-hc-tabs-empty {
-	margin-bottom: 0;
-	padding: $grid-gutter-width 0;
-}
-
-.hc-jumbo-separator {
-	@media (min-width: $screen-sm-min) {
-		border-right: solid 1px #fff;
-		min-height: $grid-gutter-width;
-	}
-}
-
 // full-width white container to accomodate margins of sibling elements
 .hc-container-white {
 	background: #fff;
@@ -109,41 +58,6 @@
 .panel-title {
 	// font-size: ceil(($font-size-base * 1.125));
 	font-size: $font-size-base;
-}
-
-// footer
-#hc-footer {
-	@include gradient-background-secondary;
-
-	padding-top: 30px;
-	color: #fff;
-
-	a {
-		color: #fff;
-		// text-decoration: none;
-		text-decoration: underline;
-		&:hover {
-			text-decoration: underline;
-		}
-	}
-
-	> #hc-footer-row .col-sm-4 {
-		padding: 10px 15px;
-	}
-
-	@media (min-width: $screen-sm-min) {
-		// display: table;
-		// width: 100%;
-		#hc-footer-row {
-			display: table-row;
-			width: 100%;
-			.col-sm-4 {
-				float: none;
-				display: table-cell;
-				vertical-align: middle;
-			}
-		}
-	}
 }
 
 // featured links section

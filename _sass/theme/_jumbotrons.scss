@@ -1,0 +1,53 @@
+// jumbotron - http://getbootstrap.com/components/#jumbotron
+.jumbotron {
+	@include gradient-background-info;
+
+	color: $brand-secondary;
+
+	.hc-rte-content {
+		a:not(.btn) {
+			color: #DEF8FA;
+			// color: darken($link-color, 5%);
+			// font-weight: 500;
+			&:hover { color: lighten(#DEF8FA, 5%); }
+
+		}
+	}
+
+	h1, .h1 {
+		@media screen and (min-width: 768px) {
+			font-size: 3em;
+		}
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: 600;
+		color: #fff;
+		margin: 12.5px 0 !important;
+	}
+
+	p {
+		font-weight: 400;
+	}
+
+	&.jumbotron-sm {
+		padding: $grid-gutter-width / 2;
+	}
+}
+
+// jumbotron-hc-tabs
+.jumbotron-hc-tabs {
+	margin-bottom: 0;
+	padding-bottom: $grid-gutter-width * 2.5;
+}
+.jumbotron-hc-tabs-empty {
+	margin-bottom: 0;
+	padding: $grid-gutter-width 0;
+}
+
+.hc-jumbo-separator {
+	@media (min-width: $screen-sm-min) {
+		border-right: solid 1px #fff;
+		min-height: $grid-gutter-width;
+	}
+}

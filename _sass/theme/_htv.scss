@@ -1,0 +1,19 @@
+#hc-htv-promos {
+	@media (min-width: $screen-sm-min) {
+		position: relative;
+		&::before {
+			content: "";
+			background: $brand-info;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			height: 100%;
+			width: 50%;
+		}
+	}
+}
+
+#hc-htv-roof-cam {
+	padding: $grid-gutter-width;
+	background: $brand-info;
+}
