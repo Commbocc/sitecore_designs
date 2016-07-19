@@ -1,10 +1,13 @@
 #hc-htv-promos {
-	@media (min-width: $screen-sm-min) {
-		position: relative;
-		&::before {
+	position: relative;
+	&::before {
+		@media (min-width: $screen-sm-min) {
 			content: "";
-			background: $brand-info;
 			position: absolute;
+			background-color: $brand-info;
+			background-image: url($hc-htv-roof-cam-bg);
+			background-position: center;
+			background-size: cover;
 			top: 0;
 			left: 50%;
 			height: 100%;
@@ -15,5 +18,10 @@
 
 #hc-htv-roof-cam {
 	padding: $grid-gutter-width;
-	background: $brand-info;
+	@media (max-width: $screen-xs-max) {
+		background-color: $brand-info;
+		background-image: url($hc-htv-roof-cam-bg);
+		background-position: center;
+		background-size: cover;
+	}
 }

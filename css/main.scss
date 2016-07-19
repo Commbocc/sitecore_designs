@@ -11,6 +11,8 @@
 @import "bootstrap";
 // @import "bootswatch/lumen/bootswatch";
 
+$hc-htv-roof-cam-bg: "{{ '/images/tampa-skyline.png' | prepend: site.baseurl }}";
+
 @import "theme";
 
 @import "hc-map-leaflet.min.css";

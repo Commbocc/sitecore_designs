@@ -14,21 +14,21 @@
 		}
 	}
 
-	> #hc-footer-row .col-sm-4 {
-		padding: 10px 15px;
-	}
+	// > #hc-footer-row .col-sm-4 {
+	// 	padding: 10px 15px;
+	// }
 
 	@media (min-width: $screen-sm-min) {
 		// display: table;
 		// width: 100%;
-		#hc-footer-row {
-			display: table-row;
-			width: 100%;
-			.col-sm-4 {
-				float: none;
-				display: table-cell;
-				vertical-align: middle;
-			}
-		}
+		// #hc-footer-row {
+		// 	display: table-row;
+		// 	width: 100%;
+		// 	.col-sm-4 {
+		// 		float: none;
+		// 		display: table-cell;
+		// 		vertical-align: middle;
+		// 	}
+		// }
 	}
 }
