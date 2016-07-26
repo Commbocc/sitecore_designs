@@ -1,0 +1,13 @@
+.thumbnail-bio {
+	background: #fff;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.embed-responsive-bio {
+	@include gradient-background-info;
+	background-size: cover;
+	background-position: top center;
+	padding-bottom: 115%;
+}

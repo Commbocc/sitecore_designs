@@ -1,0 +1,37 @@
+---
+layout: default
+title: Board of County Commissioners
+permalink: /commissioners-index/
+---
+
+<header class="jumbotron">
+	<div class="container">
+		<h1 class="">{{ page.title }}</h1>
+	</div>
+</header>
+
+<div class="container">
+
+	<div class="row">
+
+		{% for commissioner in site.data.commissioners %}
+		<div class="col-sm-6 col-md-3">
+			<a href="{{ '/commissioner/' | prepend: site.baseurl }}" class="thumbnail thumbnail-bio">
+				<figure class="embed-responsive embed-responsive-bio" style="background-image: url(http://www.hillsboroughcounty.org/images/pages/N3862/HeadShot_CBHC_2013_376x566px.jpg);">
+				</figure>
+				<div class="caption">
+					<h3 class="text-center text-primary">
+						{{ commissioner.name }}
+						<br>
+						<small>
+							{{ commissioner.district }}
+						</small>
+					</h3>
+				</div>
+			</a>
+		</div>
+		{% endfor %}
+
+	</div>
+
+</div>
