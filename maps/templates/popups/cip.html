@@ -1,0 +1,16 @@
+<h4 class="popover-title">{Project_Name}</h4>
+<div class="popover-content">
+	<p>
+		{Project_Description}
+	</p>
+	<p class="small">
+		<strong>Timeline:</strong><br>
+		{Construction_Start_Date} to {Construction_End_Date}
+	</p>
+
+	<% if (properties.WEB_URL != null && properties.WEB_URL != '') { %>
+	<p>
+		<a href="{WEB_URL}" class="btn btn-primary-inverse btn-sm btn-block">Learn More</a>
+	</p>
+	<% } %>
+</div>
