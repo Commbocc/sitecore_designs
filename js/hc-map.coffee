@@ -14,6 +14,7 @@ class HcMap
 		@templatesDir = "{{ '/maps/templates/' | prepend: site.baseurl }}"
 		@hasOverlays = if _.isUndefined @elem.data('has-overlay') then false else @elem.data('has-overlay')
 		@mapObjects = []
+		@leafletObjects = []
 		@overlayToggles = []
 
 		@map.setView [0,0], 10
@@ -54,6 +55,7 @@ class HcMap
 	addCoordsMarker: (marker, coords=false) ->
 		coordinates = if coords then coords else marker.latlng
 		leafletMarker = L.marker coordinates, icon: L.divIcon className: null, html: marker.renderedIcon().get(0).outerHTML
+		# @leafletObjects.push leafletMarker
 		@bindPopupFor marker, leafletMarker
 		if @hasOverlays
 			leafletMarker.addTo @map if marker.visible
@@ -62,6 +64,7 @@ class HcMap
 
 	addHcLayer: (layer) ->
 		feature = layer.feature()
+		# @leafletObjects.push feature
 		@bindPopupFor layer, feature
 		if @hasOverlays
 			@overlayToggles.push {obj: layer, leafletObj: feature}
@@ -75,6 +78,7 @@ class HcMap
 
 		$.each layerGroup.layers, (index, layer) ->
 			feature = layer.feature()
+			# self.leafletObjects.push feature
 			self.bindPopupFor(layerGroup, feature)
 			leafletGroup.addLayer feature
 			return
@@ -104,6 +108,8 @@ class HcMap
 			return
 
 	zoomToFit: ->
+		# featGroup = new L.featureGroup(@leafletObjects)
+		# @map.fitBounds featGroup.getBounds()
 		# layer.on 'createfeature', ->
 		# 	bounds = []
 		# 	$.each $(this)[0]._layers, (index, marker) ->
@@ -129,10 +135,9 @@ class HcMapObject
 			content: @elem.html()
 
 	renderedIcon: ->
-		self = @
 		$('<div class="hc-map-icon"></div>').css(
-			background: self.icon.color
-			boxShadow: '0 0 0 1px ' + self.icon.color).html(self.icon.char)
+			background: @icon.color
+			boxShadow: '0 0 0 1px ' + @icon.color).html(@icon.char)
 
 class HcMapMarker extends HcMapObject
 	constructor: (@elem, @map) ->

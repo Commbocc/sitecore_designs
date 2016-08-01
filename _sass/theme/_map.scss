@@ -1,17 +1,10 @@
-// @import "https://api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/css/font-awesome.min.css";
-// @import "https://cdn.jsdelivr.net/leaflet/1.0.0-rc.1/leaflet.css";
-// @import "https://domoritz.github.io/leaflet-locatecontrol/dist/L.Control.Locate.min.css";
-
-#map-container, .map-container {
-	position: relative;
+#hc-map-home {
 	height: 350px;
 }
 
-#home-map, .hc-map {
-	position: absolute;
-	top:0;
-	bottom:0;
-	width:100%;
+.hc-map, .hc-map-v2 {
+
+	@extend .embed-responsive-item;
 
 	.leaflet-top.leaflet-left {
 		@media (max-width: $screen-xs-max) {
@@ -44,12 +37,15 @@
 	}
 }
 
-#btn-map-overlays {
-	position: absolute;
-	top: 10px;
-	right: 10px;
-	z-index: 500;
-	margin: 0 0;
+#hc-map-overlay {
+
+	#hc-map-overlay-btn {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		z-index: 500;
+		margin: 0 0;
+	}
 
 	@media (max-width: $screen-xs-max) {
 		left: 10px;
@@ -66,6 +62,19 @@
 		text-transform: uppercase;
 		font-weight: 600;
 		color: $brand-secondary;
+		padding-right: 50px;
+
+		&::after {
+			content: '';
+			color: $brand-primary;
+			position: absolute;
+			right: 20px;
+			top: 10px;
+		}
+		&.collapsed::after {
+			content: '';
+		}
+
 	}
 }
 
@@ -98,14 +107,6 @@
 }
 
 // map icons
-@mixin hc-map-icon($icon: '', $color: $brand-primary) {
-	background: $color;
-	box-shadow: 0 0 0 1px $color;
-	&::after {
-		content: $icon;
-	}
-}
-
 .hc-map-icon {
 	font-family: FontAwesome;
 	display: inline-block;
@@ -116,26 +117,12 @@
 	text-align: center;
 	padding-top: 2px;
 	border: 1px solid #fff;
-	&::after {
-		font-size: 16px;
-		color: #fff;
-	}
-	@include hc-map-icon('', $brand-primary);
+	font-size: 16px;
+	color: #fff;
 }
 
 .map-overlay-toggle {
 	.hc-map-icon {
-		padding-top: 4px;
+		padding-top: 3px;
 	}
 }
-
-.hc-map-icon-public-office { @include hc-map-icon('', #fd9407); }
-.hc-map-icon-collection-center { @include hc-map-icon('', #975ab9); }
-.hc-map-icon-senior-center { @include hc-map-icon('', #e34c84); }
-.hc-map-icon-park { @include hc-map-icon('', #9bd543); }
-.hc-map-icon-const-office { @include hc-map-icon('', #bbbcbe); }
-.hc-map-icon-fire-station { @include hc-map-icon('', #f0463c); }
-.hc-map-icon-library { @include hc-map-icon('', #1e95c0); }
-
-.hc-map-icon-road { @include hc-map-icon('', #a8a8a8); }
-.hc-map-icon-hospital { @include hc-map-icon('', #4f2d84); }
