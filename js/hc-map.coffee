@@ -13,6 +13,7 @@ class HcMap
 		@arcgisUrl = 'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/'
 		@templatesDir = "{{ '/maps/templates/' | prepend: site.baseurl }}"
 		@hasOverlays = if _.isUndefined @elem.data('has-overlay') then false else @elem.data('has-overlay')
+		@zoom = if _.isUndefined @elem.data('zoom') then false else @elem.data('zoom')
 		@mapObjects = []
 		@leafletObjects = []
 		@overlayToggles = []
@@ -26,7 +27,7 @@ class HcMap
 
 		@scrollWheelToggle()
 		@createObjects()
-		# @zoomToFit() if false
+		@zoomToFit() if @zoom
 		new HcMapOverlay(@) if @hasOverlays
 
 	createObjects: ->
@@ -55,8 +56,9 @@ class HcMap
 	addCoordsMarker: (marker, coords=false) ->
 		coordinates = if coords then coords else marker.latlng
 		leafletMarker = L.marker coordinates, icon: L.divIcon className: null, html: marker.renderedIcon().get(0).outerHTML
-		# @leafletObjects.push leafletMarker
+		@leafletObjects.push leafletMarker
 		@bindPopupFor marker, leafletMarker
+		@bindHrefFor marker, leafletMarker
 		if @hasOverlays
 			leafletMarker.addTo @map if marker.visible
 		else
@@ -99,8 +101,13 @@ class HcMap
 		, 'html'
 		return
 
+	bindHrefFor: (obj, leafletObj) ->
+		unless _.isUndefined obj.href
+			leafletObj.on 'click', ->
+				window.location = obj.href
+
 	scrollWheelToggle: ->
-		@map.on 'load', ->
+		@map.on 'click', ->
 			if @scrollWheelZoom.enabled()
 				@scrollWheelZoom.disable()
 			else
@@ -108,8 +115,12 @@ class HcMap
 			return
 
 	zoomToFit: ->
-		# featGroup = new L.featureGroup(@leafletObjects)
+
+		featGroup = new L.featureGroup(@leafletObjects)
 		# @map.fitBounds featGroup.getBounds()
+		# console.log featGroup.getBounds()
+		console.log @leafletObjects
+
 		# layer.on 'createfeature', ->
 		# 	bounds = []
 		# 	$.each $(this)[0]._layers, (index, marker) ->
@@ -122,6 +133,7 @@ class HcMap
 class HcMapObject
 	constructor: (@elem, @map) ->
 		@name = @elem.data('name')
+		@href = @elem.attr('href')
 
 		@icon =
 			char: if _.isUndefined @elem.data('icon-char') then '' else @elem.data('icon-char')

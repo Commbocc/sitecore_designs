@@ -49,9 +49,9 @@ layout: default
 		<section id="hc-affix-content" class="col-sm-8 col-md-9">
 
 			<ol class="breadcrumb text-right small">
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Animals & Pets</a></li>
-				<li><a href="#">Lost Pets</a></li>
+				<li><a href="{{ '/' | prepend: site.baseurl }}">Home</a></li>
+				<li><a href="{{ '/layouts/l2/' | prepend: site.baseurl }}">Animals & Pets</a></li>
+				<li><a href="{{ '/layouts/l3/' | prepend: site.baseurl }}">Lost Pets</a></li>
 				<li class="active">{{ page.title }}</li>
 			</ol>
 
