@@ -65,3 +65,13 @@ $ ->
 			$('#hc-affix-left-nav').width 'auto'
 			$('#hc-affix-left-nav-container').height 'auto'
 		return
+
+	# #
+	# $('#hc-i-want-to').on 'show.bs.collapse', (e) ->
+	# 	console.log e
+	# 	$panels = $(this).find '.panel'
+	# 	$panel = $(e.currentTarget.firstElementChild)
+	# 	$btn = $panel.find '.btn'
+	# 	# $btn.height '400px'
+	# 	$panels.height $(e.target).height() + $panel.height()
+	# 	return

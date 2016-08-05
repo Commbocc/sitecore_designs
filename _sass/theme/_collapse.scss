@@ -1,0 +1,20 @@
+#hc-i-want-to {
+
+	position: relative;
+
+	.panel {
+		position: initial;
+		background: none;
+	}
+
+	@media (min-width: $screen-sm-min) {
+		.collapse, .collapsing {
+			position: absolute;
+			// margin-top: 10px;
+			left: 0;
+			width: 100%;
+			background: #fff;
+		}
+	}
+
+}
