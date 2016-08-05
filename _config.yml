@@ -24,6 +24,8 @@ collections:
 # Build settings
 markdown: kramdown
 
+exclude: [maps/css, maps/js]
+
 gems:
  - jekyll-coffeescript
  - jekyll-paginate
