@@ -11,13 +11,13 @@ __Demos can be seen [here](http://commbocc.github.io/sitecore_designs/maps/demos
 
 # *Prerequisites*
 
-Assumes jQuery is included.
+Assumes __jQuery__ is included.
 
 ```HTML
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 ```
 
-Assumes Bootstrap files are included.
+Assumes __Bootstrap__ files are included.
 
 ```HTML
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -25,13 +25,13 @@ Assumes Bootstrap files are included.
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 ```
 
-Assumes FontAwesome is included.
+Assumes __FontAwesome__ is included.
 
 ```HTML
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 ```
 
-Assumes Underscore is included.
+Assumes __Underscore__ is included.
 
 ```HTML
 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
