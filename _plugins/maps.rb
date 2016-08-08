@@ -15,6 +15,7 @@ module HcMap
 
 			# vendor files
 			FileUtils.cp "#{site.in_dest_dir}/css/hc-map-leaflet.min.css", "#{site.in_source_dir}/maps/css/hc-map-leaflet.min.css"
+			FileUtils.cp "#{site.in_dest_dir}/js/underscore.min.js", "#{site.in_source_dir}/maps/js/underscore.min.js"
 			FileUtils.cp "#{site.in_dest_dir}/js/leaflet-esri.min.js", "#{site.in_source_dir}/maps/js/leaflet-esri.min.js"
 			FileUtils.cp "#{site.in_dest_dir}/js/leaflet-geosearch-esri.min.js", "#{site.in_source_dir}/maps/js/leaflet-geosearch-esri.min.js"
 			FileUtils.cp "#{site.in_dest_dir}/js/leaflet-geosearch.min.js", "#{site.in_source_dir}/maps/js/leaflet-geosearch.min.js"

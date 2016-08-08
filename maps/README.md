@@ -37,6 +37,7 @@ __Place stylesheets and scripts in layout.__
 <link href="/css/hc-map-leaflet.min.css" rel="stylesheet">
 <link href="/css/hc-map.css" rel="stylesheet">
 
+<script src="/js/underscore.min.js"></script>
 <script src="/js/leaflet.min.js"></script>
 <script src="/js/leaflet-locate.min.js"></script>
 <script src="/js/leaflet-esri.min.js"></script>
