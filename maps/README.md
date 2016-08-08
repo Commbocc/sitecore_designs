@@ -71,7 +71,7 @@ __Place stylesheets and scripts in layout.__
 * `href` _URL_
 * `data-name` _String_
 * `data-icon-char` [_FontAwesome icon unicode_](http://glyphsearch.com/?copy=unicode&library=font-awesome)
-* `data-icon-color` _Hex color code_ (ex. #a3b2c1)
+* `data-icon-color` _Hex color code_ __#ff6f59__
 * `data-visible` _Boolean_ __true__ | false
 * `data-template` _Template filename_ __default__ | marker | cip | fema
 
