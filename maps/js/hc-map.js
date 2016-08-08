@@ -15,7 +15,6 @@
       this.hasOverlays = _.isUndefined(this.elem.data('has-overlay')) ? false : this.elem.data('has-overlay');
       this.zoom = _.isUndefined(this.elem.data('zoom')) ? false : this.elem.data('zoom');
       this.mapObjects = [];
-      this.leafletObjects = [];
       this.overlayToggles = [];
       this.map.setView([0, 0], 10);
       L.esri.basemapLayer('Topographic').addTo(this.map);
@@ -76,7 +75,6 @@
           html: marker.renderedIcon().get(0).outerHTML
         })
       });
-      this.leafletObjects.push(leafletMarker);
       this.bindPopupFor(marker, leafletMarker);
       this.bindHrefFor(marker, leafletMarker);
       if (this.hasOverlays) {
@@ -161,9 +159,14 @@
     };
 
     HcMap.prototype.zoomToFit = function() {
-      var featGroup;
-      featGroup = new L.featureGroup(this.leafletObjects);
-      return console.log(this.leafletObjects);
+      var bounds;
+      bounds = new L.latLngBounds();
+      return this.map.on('layeradd', function(e) {
+        if (e.layer._latlng) {
+          bounds.extend(e.layer._latlng);
+          this.fitBounds(bounds);
+        }
+      });
     };
 
     return HcMap;

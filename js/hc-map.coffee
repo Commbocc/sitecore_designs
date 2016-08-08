@@ -9,7 +9,6 @@ class window.HcMap
 		@hasOverlays = if _.isUndefined @elem.data('has-overlay') then false else @elem.data('has-overlay')
 		@zoom = if _.isUndefined @elem.data('zoom') then false else @elem.data('zoom')
 		@mapObjects = []
-		@leafletObjects = []
 		@overlayToggles = []
 
 		@map.setView [0,0], 10
@@ -50,7 +49,6 @@ class window.HcMap
 	addCoordsMarker: (marker, coords=false) ->
 		coordinates = if coords then coords else marker.latlng
 		leafletMarker = L.marker coordinates, icon: L.divIcon className: null, html: marker.renderedIcon().get(0).outerHTML
-		@leafletObjects.push leafletMarker
 		@bindPopupFor marker, leafletMarker
 		@bindHrefFor marker, leafletMarker
 		if @hasOverlays
@@ -60,7 +58,6 @@ class window.HcMap
 
 	addHcLayer: (layer) ->
 		feature = layer.feature()
-		# @leafletObjects.push feature
 		@bindPopupFor layer, feature
 		if @hasOverlays
 			@overlayToggles.push {obj: layer, leafletObj: feature}
@@ -74,7 +71,6 @@ class window.HcMap
 
 		$.each layerGroup.layers, (index, layer) ->
 			feature = layer.feature()
-			# self.leafletObjects.push feature
 			self.bindPopupFor(layerGroup, feature)
 			leafletGroup.addLayer feature
 			return
@@ -109,20 +105,12 @@ class window.HcMap
 			return
 
 	zoomToFit: ->
-
-		featGroup = new L.featureGroup(@leafletObjects)
-		# @map.fitBounds featGroup.getBounds()
-		# console.log featGroup.getBounds()
-		console.log @leafletObjects
-
-		# layer.on 'createfeature', ->
-		# 	bounds = []
-		# 	$.each $(this)[0]._layers, (index, marker) ->
-		# 		bounds.push marker._latlng
-		# 		return
-		# 	unless $.inArray(bounds, undefined)
-		# 		map.fitBounds bounds
-		# 	return
+		bounds = new L.latLngBounds()
+		@map.on 'layeradd', (e) ->
+			if e.layer._latlng
+				bounds.extend e.layer._latlng
+				@fitBounds bounds
+			return
 
 class HcMapObject
 	constructor: (@elem, @map) ->
