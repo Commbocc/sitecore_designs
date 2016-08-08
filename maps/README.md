@@ -1,3 +1,5 @@
+__Demos can be seen [here](http://commbocc.github.io/sitecore_designs/maps/demos/).__
+
 # Table of Contents
 
 * [Prerequisites](#prerequisites)
