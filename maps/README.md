@@ -1,6 +1,4 @@
-# Hillsborough County Maps
-
-## Table of Contents
+# Table of Contents
 
 * [Prerequisites](#prerequisites)
 * [Map Container](#map-container-hcmap)
@@ -9,7 +7,7 @@
 	* [Layers](#layers-hcmaplayer)
 	* [Layer Groups](#layer-groups-hcmaplayergroup)
 
-## *Prerequisites*
+# *Prerequisites*
 
 Assumes jQuery is included.
 
@@ -46,7 +44,7 @@ __Place stylesheets and scripts in layout.__
 <script src="/js/leaflet-geosearch-esri.min.js"></script>
 ```
 
-## Map Container `HcMap`
+# Map Container `HcMap`
 
 ```HTML
 <div class="embed-responsive embed-responsive-16by9 thumbnail">
@@ -64,7 +62,7 @@ __Place stylesheets and scripts in layout.__
 	* Determines whether or not an overlay that allows certain features to be toggled on or off is displayed on top of the map. See the [Home map](https://commbocc.github.io/sitecore_designs/layouts/home/#hc-map-home) for an example.
 
 
-## Map Objects `HcMapObject`
+# Map Objects `HcMapObject`
 
 ### Options
 
