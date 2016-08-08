@@ -61,7 +61,7 @@ __Place stylesheets and scripts in layout.__
 * `class="hc-map-v2"` _REQUIRED_
 	* The `.hc-map-v2` class initializes the map.
 * `data-has-overlay` _Boolean_ __true__ | false
-	* Determines whether or not an overlay that allows certain features to be toggled on or off is displayed on top of the map. See the Home map for an example.
+	* Determines whether or not an overlay that allows certain features to be toggled on or off is displayed on top of the map. See the [Home map](https://commbocc.github.io/sitecore_designs/layouts/home/#hc-map-home) for an example.
 
 
 ## Map Objects `HcMapObject`
