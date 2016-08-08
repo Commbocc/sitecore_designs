@@ -57,7 +57,7 @@ __Initialize the maps. Be sure to set the second argument to the path of the tem
 ```javascript
 $('.hc-map-v2').each(function() {
 	var map;
-	map = new HcMap($(this), "/templates/");
+	map = new HcMap($(this), "/assets/map/templates/");
 });
 ```
 
