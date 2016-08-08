@@ -3,11 +3,11 @@
 ## Table of Contents
 
 * [Prerequisites](#prerequisites)
-* [Map Container](#map-container)
-* [Map Object](#map-object)
-* [Markers](#markers)
-* [Layers](#layers)
-* [Layer Groups](#layer-groups)
+* [Map Container](#map-container-hcmap)
+* [Map Object](#map-object-hcmapobject)
+* [Markers](#markers-hcmapmarker)
+* [Layers](#layers-hcmaplayer)
+* [Layer Groups](#layer-groups-hcmaplayergroup)
 
 ## *Prerequisites*
 
