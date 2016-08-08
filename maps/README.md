@@ -78,7 +78,7 @@ $('.hc-map-v2').each(function() {
 * `data-has-overlay` _Boolean_ __false__ | true
 	* Determines whether or not an overlay that allows certain features to be toggled on or off is displayed on top of the map. See the [Home map](https://commbocc.github.io/sitecore_designs/layouts/home/#hc-map-home) for an example.
 * `data-zoom` _Boolean_ __false__ | true
-	* __For use with Markers only.__ Will contain and zoom to all markers.
+	* Will contain and zoom all map objects.
 
 
 # Map Objects `HcMapObject`
