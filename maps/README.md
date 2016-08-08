@@ -60,7 +60,7 @@ __Place stylesheets and scripts in layout.__
 
 * `class="hc-map-v2"` _REQUIRED_
 	* The `.hc-map-v2` class initializes the map.
-* `data-has-overlay` _Boolean_ __true__ | false
+* `data-has-overlay` _Boolean_ __false__ | true
 	* Determines whether or not an overlay that allows certain features to be toggled on or off is displayed on top of the map. See the [Home map](https://commbocc.github.io/sitecore_designs/layouts/home/#hc-map-home) for an example.
 
 
@@ -72,7 +72,8 @@ __Place stylesheets and scripts in layout.__
 * `data-name` _String_
 * `data-icon-char` [_FontAwesome icon unicode_](http://glyphsearch.com/?copy=unicode&library=font-awesome)
 * `data-icon-color` _Hex color code_ __#ff6f59__
-* `data-visible` _Boolean_ __true__ | false
+* `data-visible` _Boolean_ __false__ | true
+	* This option is assessed only when the parent container's `has-overlay` option is set to true.
 * `data-template` _Template filename_ __default__ | marker | cip | fema
 
 
