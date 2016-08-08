@@ -97,7 +97,7 @@ Extends the [`HcMapObject`](#map-objects-hcmapobject) class.
 * `data-latlng` _Floating Pair_
 * `data-address` _String_
 * `data-template` _Template filename_ __marker__
-	* When set to `marker`, content between the `<marker></marker>` tags will be displayed in the body of the popup.
+	* Content between the `<marker></marker>` tags will be displayed in the body of the popup.
 
 
 ## Layers `HcMapLayer`
@@ -124,10 +124,12 @@ Extends the [`HcMapObject`](#map-objects-hcmapobject) class.
 
 ## Layer Groups `HcMapLayerGroup`
 
+Overrides the options of its descendant layers.
+
 ```HTML
 <div class="embed-responsive embed-responsive-16by9 thumbnail">
 	<figure class="hc-map-v2">
-		<layerGroup data-name="County Public Offices" data-visible="true" data-icon-char="" data-icon-color="#fd9407">
+		<layerGroup data-name="County Public Offices" data-icon-char="" data-icon-color="#fd9407">
 			<layer data-name="Community Resource Centers" data-id="2"></layer>
 			<layer data-name="Consumer Protection Offices" data-id="3"></layer>
 			...
