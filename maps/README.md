@@ -91,7 +91,7 @@ __Place stylesheets and scripts in layout.__
 
 ### Attributes
 
-Extends the `HcMapObject` class.
+Extends the [`HcMapObject`](#map-objects-hcmapobject) class.
 
 * `data-latlng` _Floating Pair_
 * `data-address` _String_
@@ -112,7 +112,7 @@ Extends the `HcMapObject` class.
 
 ### Attributes
 
-Extends the `HcMapObject` class.
+Extends the [`HcMapObject`](#map-objects-hcmapobject) class.
 
 * `data-id` _Integer_
 	* The layer identifier from [this ArcGIS map service](https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/).
@@ -137,4 +137,4 @@ Extends the `HcMapObject` class.
 
 ### Attributes
 
-Extends the [`HcMapObject`](# Hillsborough County Maps
+Extends the [`HcMapObject`](#map-objects-hcmapobject) class.
