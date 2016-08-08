@@ -1,5 +1,5 @@
 Jekyll::Hooks.register :site, :post_write do |site|
-	# code to call before Jekyll renders the site
+	# code to call after Jekyll writes the site
 	sass = HcMap::Init.new(site)
 end
 

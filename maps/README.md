@@ -20,9 +20,9 @@ Assumes jQuery is included.
 Assumes Bootstrap files are included.
 
 ```HTML
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 ```
 
 Assumes FontAwesome is included.
@@ -31,13 +31,18 @@ Assumes FontAwesome is included.
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 ```
 
+Assumes Underscore is included.
+
+```HTML
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+```
+
 __Place stylesheets and scripts in layout.__
 
 ```HTML
 <link href="/css/hc-map-leaflet.min.css" rel="stylesheet">
 <link href="/css/hc-map.css" rel="stylesheet">
 
-<script src="/js/underscore.min.js"></script>
 <script src="/js/leaflet.min.js"></script>
 <script src="/js/leaflet-locate.min.js"></script>
 <script src="/js/leaflet-esri.min.js"></script>
@@ -102,7 +107,7 @@ $('.hc-map-v2').each(function() {
 
 ### Options
 
-Extends the [`HcMapObject`](#map-objects-hcmapobject) class.
+Extends the [`HcMapObject`](#map-objects-hcmapobject) class. Requires either the `latlng` or `address` option to be set.
 
 * `data-latlng` _Floating Pair_
 * `data-address` _String_
@@ -123,7 +128,7 @@ Extends the [`HcMapObject`](#map-objects-hcmapobject) class.
 
 ### Options
 
-Extends the [`HcMapObject`](#map-objects-hcmapobject) class.
+Extends the [`HcMapObject`](#map-objects-hcmapobject) class. Requires either `id` or `url` option to be set.
 
 * `data-id` _Integer_
 	* The layer identifier from [this ArcGIS map service](https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/).
