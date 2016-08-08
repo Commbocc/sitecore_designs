@@ -79,6 +79,8 @@ $('.hc-map-v2').each(function() {
 	* Determines whether or not an overlay that allows certain features to be toggled on or off is displayed on top of the map. See the [Home map](https://commbocc.github.io/sitecore_designs/layouts/home/#hc-map-home) for an example.
 * `data-zoom` _Boolean_ __false__ | true
 	* Will contain and zoom to all map objects.
+* `data-click-scroll` _Boolean_ __true__ | false
+	* Allows the map to be clicked which in turn enables the ability to scroll in and out with the mouse wheel.
 
 
 # Map Objects `HcMapObject`

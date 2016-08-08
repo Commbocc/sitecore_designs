@@ -8,6 +8,7 @@ class window.HcMap
 		@arcgisUrl = 'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/'
 		@hasOverlays = if _.isUndefined @elem.data('has-overlay') then false else @elem.data('has-overlay')
 		@zoom = if _.isUndefined @elem.data('zoom') then false else @elem.data('zoom')
+		@clickToScroll = if _.isUndefined @elem.data('click-scroll') then true else @elem.data('click-scroll')
 		@mapObjects = []
 		@overlayToggles = []
 
@@ -18,7 +19,7 @@ class window.HcMap
 		@southEast = L.latLng(27.57055, -82.054012) # Hillsborough County Boundaries
 		@map.fitBounds L.latLngBounds(@northWest, @southEast)
 
-		@scrollWheelToggle()
+		@scrollWheelToggle() if @clickToScroll
 		@createObjects()
 		@zoomToFit() if @zoom
 		new HcMapOverlay(@) if @hasOverlays

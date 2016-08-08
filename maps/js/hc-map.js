@@ -14,6 +14,7 @@
       this.arcgisUrl = 'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/';
       this.hasOverlays = _.isUndefined(this.elem.data('has-overlay')) ? false : this.elem.data('has-overlay');
       this.zoom = _.isUndefined(this.elem.data('zoom')) ? false : this.elem.data('zoom');
+      this.clickToScroll = _.isUndefined(this.elem.data('click-scroll')) ? true : this.elem.data('click-scroll');
       this.mapObjects = [];
       this.overlayToggles = [];
       this.map.setView([0, 0], 10);
@@ -22,7 +23,9 @@
       this.northWest = L.latLng(28.173379, -82.823669);
       this.southEast = L.latLng(27.57055, -82.054012);
       this.map.fitBounds(L.latLngBounds(this.northWest, this.southEast));
-      this.scrollWheelToggle();
+      if (this.clickToScroll) {
+        this.scrollWheelToggle();
+      }
       this.createObjects();
       if (this.zoom) {
         this.zoomToFit();
