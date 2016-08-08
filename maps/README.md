@@ -93,7 +93,7 @@ Extends the [`HcMapObject`](#map-objects-hcmapobject) class.
 
 * `data-latlng` _Floating Pair_
 * `data-address` _String_
-* `data-template` _Template filename_ __marker__ | default | cip | fema
+* `data-template` _Template filename_ __marker__
 	* When set to `marker`, content between the `<marker></marker>` tags will be displayed in the body of the popup.
 
 
