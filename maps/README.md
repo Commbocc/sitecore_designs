@@ -4,7 +4,7 @@
 
 * [Prerequisites](#prerequisites)
 * [Map Container](#map-container-hcmap)
-* [Map Object](#map-object-hcmapobject)
+* [Map Object](#map-objects-hcmapobject)
 * [Markers](#markers-hcmapmarker)
 * [Layers](#layers-hcmaplayer)
 * [Layer Groups](#layer-groups-hcmaplayergroup)
