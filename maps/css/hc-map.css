@@ -31,6 +31,8 @@
   .hc-map-v2 .leaflet-top.leaflet-left {
     bottom: 10px;
     top: auto; } }
+.hc-map-v2 .leaflet-popup {
+  margin-left: 10px; }
 .hc-map-v2 .leaflet-popup-content-wrapper, .hc-map-v2 .leaflet-popup-content {
   min-width: 300px;
   padding: 0;
