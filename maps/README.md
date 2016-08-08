@@ -46,7 +46,7 @@ __Place stylesheets and scripts in layout.__
 <script src="/js/leaflet-geosearch-esri.min.js"></script>
 ```
 
-__Initialize the maps. Be sure to set the second argument to the path of the templates folder, include a trailing slash.__ This is demonstrated in a separate file `/js/hc-map-init.js`.
+__Initialize the maps. Be sure to set the second argument to the path of the templates folder, include a trailing slash.__
 
 ```javascript
 $('.hc-map-v2').each(function() {
