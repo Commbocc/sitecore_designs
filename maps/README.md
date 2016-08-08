@@ -56,7 +56,7 @@ __Place stylesheets and scripts in layout.__
 </div>
 ```
 
-### Attributes
+### Options
 
 * `class="hc-map-v2"` _REQUIRED_
 	* The `.hc-map-v2` class initializes the map.
@@ -66,7 +66,7 @@ __Place stylesheets and scripts in layout.__
 
 ## Map Objects `HcMapObject`
 
-### Attributes
+### Options
 
 * `href` _URL_
 * `data-name` _String_
@@ -89,7 +89,7 @@ __Place stylesheets and scripts in layout.__
 </div>
 ```
 
-### Attributes
+### Options
 
 Extends the [`HcMapObject`](#map-objects-hcmapobject) class.
 
@@ -110,7 +110,7 @@ Extends the [`HcMapObject`](#map-objects-hcmapobject) class.
 </div>
 ```
 
-### Attributes
+### Options
 
 Extends the [`HcMapObject`](#map-objects-hcmapobject) class.
 
@@ -135,6 +135,6 @@ Extends the [`HcMapObject`](#map-objects-hcmapobject) class.
 </div>
 ```
 
-### Attributes
+### Options
 
 Extends the [`HcMapObject`](#map-objects-hcmapobject) class.
