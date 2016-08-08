@@ -108,7 +108,7 @@ class window.HcMap
 	zoomToFit: ->
 		bounds = new L.latLngBounds()
 		@map.on 'layeradd', (e) ->
-			if e.layer._latlng
+			if e.layer._latlng && e.layer._icon
 				bounds.extend e.layer._latlng
 				@fitBounds bounds
 			return

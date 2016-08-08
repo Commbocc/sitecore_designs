@@ -165,7 +165,7 @@
       var bounds;
       bounds = new L.latLngBounds();
       return this.map.on('layeradd', function(e) {
-        if (e.layer._latlng) {
+        if (e.layer._latlng && e.layer._icon) {
           bounds.extend(e.layer._latlng);
           this.fitBounds(bounds);
         }
