@@ -40,10 +40,19 @@ __Place stylesheets and scripts in layout.__
 <script src="/js/leaflet.min.js"></script>
 <script src="/js/leaflet-locate.min.js"></script>
 <script src="/js/leaflet-esri.min.js"></script>
-<script src="/js/hc-map-config.js"></script>
+<script src="/js/hc-map.js"></script>
 <!-- geosearch files -->
 <script src="/js/leaflet-geosearch.min.js"></script>
 <script src="/js/leaflet-geosearch-esri.min.js"></script>
+```
+
+__Initialize the maps. Be sure to set the second argument to the path of the templates folder, include a trailing slash.__ This is demonstrated in a separate file `/js/hc-map-init.js`.
+
+```javascript
+$('.hc-map-v2').each(function() {
+	var map;
+	map = new HcMap($(this), "/templates/");
+});
 ```
 
 # Map Container `HcMap`

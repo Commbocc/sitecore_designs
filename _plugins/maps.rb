@@ -11,6 +11,7 @@ module HcMap
 			# config files
 			FileUtils.cp "#{site.in_dest_dir}/css/hc-map.css", "#{site.in_source_dir}/maps/css/hc-map.css"
 			FileUtils.cp "#{site.in_dest_dir}/js/hc-map.js", "#{site.in_source_dir}/maps/js/hc-map.js"
+			FileUtils.cp "#{site.in_dest_dir}/js/hc-map-init.js", "#{site.in_source_dir}/maps/js/hc-map-init.js"
 
 			# vendor files
 			FileUtils.cp "#{site.in_dest_dir}/css/hc-map-leaflet.min.css", "#{site.in_source_dir}/maps/css/hc-map-leaflet.min.css"

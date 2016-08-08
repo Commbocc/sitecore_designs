@@ -1,24 +1,17 @@
 (function() {
-  var HcMap, HcMapLayer, HcMapLayerGroup, HcMapMarker, HcMapObject, HcMapOverlay,
+  var HcMapLayer, HcMapLayerGroup, HcMapMarker, HcMapObject, HcMapOverlay,
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
 
-  $(function() {
-    return $('.hc-map-v2').each(function() {
-      var map;
-      map = new HcMap($(this));
-    });
-  });
-
-  HcMap = (function() {
-    function HcMap(elem) {
+  window.HcMap = (function() {
+    function HcMap(elem, templatesDir) {
       this.elem = elem;
+      this.templatesDir = templatesDir;
       this.map = L.map(this.elem.get(0), {
         scrollWheelZoom: false
       });
       this.mapObjectElems = this.elem.find('> layer, > layerGroup, > marker');
       this.arcgisUrl = 'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/';
-      this.templatesDir = "/sitecore_designs/maps/templates/";
       this.hasOverlays = _.isUndefined(this.elem.data('has-overlay')) ? false : this.elem.data('has-overlay');
       this.zoom = _.isUndefined(this.elem.data('zoom')) ? false : this.elem.data('zoom');
       this.mapObjects = [];
@@ -178,9 +171,9 @@
   })();
 
   HcMapObject = (function() {
-    function HcMapObject(elem, map1) {
+    function HcMapObject(elem, map) {
       this.elem = elem;
-      this.map = map1;
+      this.map = map;
       this.name = this.elem.data('name');
       this.href = this.elem.attr('href');
       this.icon = {
@@ -209,9 +202,9 @@
   HcMapMarker = (function(superClass) {
     extend(HcMapMarker, superClass);
 
-    function HcMapMarker(elem, map1) {
+    function HcMapMarker(elem, map) {
       this.elem = elem;
-      this.map = map1;
+      this.map = map;
       HcMapMarker.__super__.constructor.call(this, this.elem, this.map);
       this.latlng = _.isUndefined(this.elem.data('latlng')) ? void 0 : this.elem.data('latlng').split(',');
       this.address = this.elem.data('address');
@@ -232,9 +225,9 @@
   HcMapLayer = (function(superClass) {
     extend(HcMapLayer, superClass);
 
-    function HcMapLayer(elem, map1, inGroup) {
+    function HcMapLayer(elem, map, inGroup) {
       this.elem = elem;
-      this.map = map1;
+      this.map = map;
       if (inGroup == null) {
         inGroup = false;
       }
@@ -271,9 +264,9 @@
   HcMapLayerGroup = (function(superClass) {
     extend(HcMapLayerGroup, superClass);
 
-    function HcMapLayerGroup(elem, map1) {
+    function HcMapLayerGroup(elem, map) {
       this.elem = elem;
-      this.map = map1;
+      this.map = map;
       HcMapLayerGroup.__super__.constructor.call(this, this.elem, this.map);
       this.layerElems = this.elem.find('> layer');
       this.layers = [];
@@ -298,9 +291,9 @@
   })(HcMapObject);
 
   HcMapOverlay = (function() {
-    function HcMapOverlay(map1) {
+    function HcMapOverlay(map) {
       var self;
-      this.map = map1;
+      this.map = map;
       self = this;
       $.get(this.map.templatesDir + 'overlays.html', function(templateData) {
         var $template, $toggles, template;

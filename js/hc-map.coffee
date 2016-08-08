@@ -1,17 +1,11 @@
 ---
 ---
 
-$ ->
-	$('.hc-map-v2').each ->
-		map = new HcMap($(this))
-		return
-
-class HcMap
-	constructor: (@elem) ->
+class window.HcMap
+	constructor: (@elem, @templatesDir) ->
 		@map = L.map @elem.get(0), {scrollWheelZoom: false}
 		@mapObjectElems = @elem.find '> layer, > layerGroup, > marker'
 		@arcgisUrl = 'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/'
-		@templatesDir = "{{ '/maps/templates/' | prepend: site.baseurl }}"
 		@hasOverlays = if _.isUndefined @elem.data('has-overlay') then false else @elem.data('has-overlay')
 		@zoom = if _.isUndefined @elem.data('zoom') then false else @elem.data('zoom')
 		@mapObjects = []
