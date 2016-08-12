@@ -176,7 +176,7 @@ class HcMapLayerGroup extends HcMapObject
 			layer = new HcMapLayer($(this), self.map, true)
 			layer.icon.char = self.icon.char
 			layer.icon.color = self.icon.color
-			layer.popupProperties.template = self.popupProperties.template unless _.isUndefined self.elem.data('template')
+			# layer.popupProperties.template = self.popupProperties.template unless _.isUndefined self.elem.data('template')
 			self.layers.push layer
 
 class HcMapOverlay
