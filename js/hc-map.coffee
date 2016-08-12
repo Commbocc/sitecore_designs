@@ -150,6 +150,7 @@ class HcMapLayer extends HcMapObject
 		super(@elem, @map)
 		@id = @elem.data('id')
 		@url = if _.isUndefined @elem.data('url') then @map.arcgisUrl + @id else @elem.data('url')
+		@popupProperties.template = 'hc-arcgis' unless _.isUndefined @id && _.isUndefined @elem.data('template')
 		@whereClause = if _.isUndefined @elem.data('where') then null else @elem.data('where')
 		@map.addHcLayer(@) unless inGroup
 

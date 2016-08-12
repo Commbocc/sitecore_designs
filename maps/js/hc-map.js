@@ -238,6 +238,9 @@
       HcMapLayer.__super__.constructor.call(this, this.elem, this.map);
       this.id = this.elem.data('id');
       this.url = _.isUndefined(this.elem.data('url')) ? this.map.arcgisUrl + this.id : this.elem.data('url');
+      if (!_.isUndefined(this.id && _.isUndefined(this.elem.data('template')))) {
+        this.popupProperties.template = 'hc-arcgis';
+      }
       this.whereClause = _.isUndefined(this.elem.data('where')) ? null : this.elem.data('where');
       if (!inGroup) {
         this.map.addHcLayer(this);
