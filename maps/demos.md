@@ -7,12 +7,12 @@ permalink: /maps/demos/
 
 <!-- <div id="ooTest" data-name="testwelfjh" data-latlng="23,89">Inner Content</div> -->
 
-<!-- Home -->
-<h3>Home</h3>
+### Home
+
 {% include home-map.html %}
 
-<!-- Commissioner Districts -->
-<h3>Commissioner Districts</h3>
+### Commissioner Districts
+
 <div class="embed-responsive embed-responsive-16by9 thumbnail">
 	<figure class="hc-map-v2">
 		<layer data-name="District 1" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/Commissioners/SandraMurmanDistrict1/MapServer/0">
@@ -30,8 +30,8 @@ permalink: /maps/demos/
 	</figure>
 </div>
 
-<!-- Markers -->
-<h3>Markers</h3>
+### Markers
+
 <div class="embed-responsive embed-responsive-16by9 thumbnail">
 	<figure class="hc-map-v2" data-zoom="true">
 		<marker data-name="Address" data-address="601 E Kennedy Blvd, Tampa, FL 33602">
@@ -41,32 +41,31 @@ permalink: /maps/demos/
 	</figure>
 </div>
 
-<!-- CIP -->
-<h3>CIP</h3>
+### CIP
 <div class="embed-responsive embed-responsive-16by9 thumbnail">
 	<figure class="hc-map-v2">
 		<layer data-name="CIP" data-template="cip" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/InfoLayers/CIP_Layers/MapServer/1"></layer>
 	</figure>
 </div>
 
-<!-- Flood Hazard Map -->
-<h3>Flood Hazard Map</h3>
+### Flood Hazard Map
+
 <div class="embed-responsive embed-responsive-16by9 thumbnail">
 	<figure class="hc-map-v2">
 		<layer data-template="fema" data-url="//hazards.fema.gov/gis/nfhl/rest/services/public/NFHL/MapServer/3"></layer>
 	</figure>
 </div>
 
-<!-- Dog Parks -->
-<h3>Dog Parks</h3>
+### Dog Parks
+
 <div class="embed-responsive embed-responsive-16by9 thumbnail">
 	<figure class="hc-map-v2" data-zoom="true">
 		<layer data-id="9" data-template="hc-arcgis" data-where="DogPark <> ''"></layer>
 	</figure>
 </div>
 
-<!-- Recreation Centers -->
-<h3>Recreation Centers</h3>
+### Recreation Centers
+
 <div class="embed-responsive embed-responsive-16by9 thumbnail">
 	<figure class="hc-map-v2" data-zoom="true">
 		<marker data-name="Keystone Recreation Center" data-address="17928 Gunn Highway Odessa, FL 33556"></marker>
