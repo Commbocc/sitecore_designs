@@ -145,7 +145,7 @@ Overrides the options of its descendant layers.
 ```HTML
 <div class="embed-responsive embed-responsive-16by9 thumbnail">
 	<figure class="hc-map-v2">
-		<layerGroup data-name="County Public Offices" data-template="hc-arcgis" data-icon-char="" data-icon-color="#fd9407">
+		<layerGroup data-name="County Public Offices" data-icon-char="" data-icon-color="#fd9407">
 			<layer data-name="Community Resource Centers" data-id="2"></layer>
 			<layer data-name="Consumer Protection Offices" data-id="3"></layer>
 			...
