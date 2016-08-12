@@ -114,7 +114,7 @@
       $.each(layerGroup.layers, function(index, layer) {
         var feature;
         feature = layer.feature();
-        self.bindPopupFor(layerGroup, feature);
+        self.bindPopupFor(layer, feature);
         leafletGroup.addLayer(feature);
       });
       if (this.hasOverlays) {
@@ -289,7 +289,9 @@
         layer = new HcMapLayer($(this), self.map, true);
         layer.icon.char = self.icon.char;
         layer.icon.color = self.icon.color;
-        layer.popupProperties.template = self.popupProperties.template;
+        if (!_.isUndefined(self.elem.data('template'))) {
+          layer.popupProperties.template = self.popupProperties.template;
+        }
         return self.layers.push(layer);
       });
     };
