@@ -1,0 +1,14 @@
+.hc-rte {
+
+	a {
+		color: $brand-primary;
+		text-decoration: underline;
+	}
+
+	img:not([align="left"]):not([align="right"]) {
+		@extend .img-responsive;
+		@extend .center-block;
+		max-width: 80%;
+	}
+
+}
