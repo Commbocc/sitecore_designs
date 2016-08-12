@@ -93,6 +93,7 @@
       var feature;
       feature = layer.feature();
       this.bindPopupFor(layer, feature);
+      this.bindHrefFor(layer, feature);
       if (this.hasOverlays) {
         this.overlayToggles.push({
           obj: layer,
@@ -135,7 +136,7 @@
         template = _.template(templateData);
         leafletObj.bindPopup(function(e) {
           var templateProperties;
-          templateProperties = _.isUndefined(e.feature) ? obj.popupProperties : e.feature.properties;
+          templateProperties = obj.popupProperties.template !== 'default' ? e.feature.properties : obj.popupProperties;
           return L.Util.template(template({
             properties: templateProperties
           }), templateProperties);
@@ -214,9 +215,6 @@
       HcMapMarker.__super__.constructor.call(this, this.elem, this.map);
       this.latlng = _.isUndefined(this.elem.data('latlng')) ? void 0 : this.elem.data('latlng').split(',');
       this.address = this.elem.data('address');
-      if (_.isUndefined(this.elem.data('template'))) {
-        this.popupProperties.template = 'marker';
-      }
       if (!_.isUndefined(this.latlng)) {
         this.map.addCoordsMarker(this);
       } else if (!_.isUndefined(this.address)) {
@@ -288,6 +286,7 @@
         layer = new HcMapLayer($(this), self.map, true);
         layer.icon.char = self.icon.char;
         layer.icon.color = self.icon.color;
+        layer.popupProperties.template = self.popupProperties.template;
         return self.layers.push(layer);
       });
     };

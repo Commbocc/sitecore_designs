@@ -60,6 +60,7 @@ class window.HcMap
 	addHcLayer: (layer) ->
 		feature = layer.feature()
 		@bindPopupFor layer, feature
+		@bindHrefFor layer, feature
 		if @hasOverlays
 			@overlayToggles.push {obj: layer, leafletObj: feature}
 			feature.addTo @map if layer.visible
@@ -86,7 +87,7 @@ class window.HcMap
 		$.get @templatesDir + 'popups/' + obj.popupProperties.template + '.html', (templateData) ->
 			template = _.template templateData
 			leafletObj.bindPopup (e) ->
-				templateProperties = if _.isUndefined e.feature then obj.popupProperties else e.feature.properties
+				templateProperties = if obj.popupProperties.template != 'default' then e.feature.properties else obj.popupProperties
 				L.Util.template template({properties: templateProperties}), templateProperties
 			return
 		, 'html'
@@ -139,7 +140,6 @@ class HcMapMarker extends HcMapObject
 		super(@elem, @map)
 		@latlng = if _.isUndefined @elem.data('latlng') then undefined else @elem.data('latlng').split(',')
 		@address = @elem.data('address')
-		@popupProperties.template = 'marker' if _.isUndefined @elem.data('template')
 		if !_.isUndefined @latlng
 			@map.addCoordsMarker(@)
 		else if !_.isUndefined @address
@@ -175,6 +175,7 @@ class HcMapLayerGroup extends HcMapObject
 			layer = new HcMapLayer($(this), self.map, true)
 			layer.icon.char = self.icon.char
 			layer.icon.color = self.icon.color
+			layer.popupProperties.template = self.popupProperties.template
 			self.layers.push layer
 
 class HcMapOverlay

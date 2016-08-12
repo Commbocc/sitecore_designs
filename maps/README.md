@@ -92,7 +92,7 @@ $('.hc-map-v2').each(function() {
 * `data-icon-color` _Hex color code_ __#ff6f59__
 * `data-visible` _Boolean_ __false__ | true
 	* This option is assessed only when the parent container's `has-overlay` option is set to true.
-* `data-template` _Template filename_ __default__ | marker | cip | fema
+* `data-template` _Template filename_ __default__ | hc-arcgis | cip | fema
 
 
 ## Markers `HcMapMarker`
@@ -114,8 +114,6 @@ Extends the [`HcMapObject`](#map-objects-hcmapobject) class. Requires either the
 
 * `data-latlng` _Floating Pair_
 * `data-address` _String_
-* `data-template` _Template filename_ __marker__
-	* Content between the `<marker></marker>` tags will be displayed in the body of the popup.
 
 
 ## Layers `HcMapLayer`
