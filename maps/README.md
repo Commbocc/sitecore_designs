@@ -157,3 +157,5 @@ Overrides the options of its descendant layers.
 ### Options
 
 Extends the [`HcMapObject`](#map-objects-hcmapobject) class.
+
+* `data-content` _String_

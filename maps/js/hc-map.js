@@ -115,6 +115,7 @@
         var feature;
         feature = layer.feature();
         self.bindPopupFor(layer, feature);
+        self.bindHrefFor(layer, feature);
         leafletGroup.addLayer(feature);
       });
       if (this.hasOverlays) {
@@ -277,6 +278,9 @@
       HcMapLayerGroup.__super__.constructor.call(this, this.elem, this.map);
       this.layerElems = this.elem.find('> layer');
       this.layers = [];
+      if (!_.isUndefined(this.elem.data('content'))) {
+        this.popupProperties.content = this.elem.data('content');
+      }
       this.initHcLayers();
       this.map.addHcLayerGroup(this);
     }
@@ -287,8 +291,20 @@
       return this.layerElems.each(function() {
         var layer;
         layer = new HcMapLayer($(this), self.map, true);
+        if (!_.isUndefined(self.elem.attr('href'))) {
+          layer.href = self.href;
+        }
         layer.icon.char = self.icon.char;
         layer.icon.color = self.icon.color;
+        if (!_.isUndefined(self.elem.data('template'))) {
+          layer.popupProperties.template = self.popupProperties.template;
+        }
+        if (!_.isUndefined(self.elem.data('name'))) {
+          layer.popupProperties.title = self.popupProperties.title;
+        }
+        if (!_.isUndefined(self.elem.data('content'))) {
+          layer.popupProperties.content = self.elem.data('content');
+        }
         return self.layers.push(layer);
       });
     };

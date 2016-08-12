@@ -30,6 +30,21 @@ permalink: /maps/demos/
 	</figure>
 </div>
 
+#### Countywide example
+
+<div class="embed-responsive embed-responsive-16by9 thumbnail">
+	<figure class="hc-map-v2">
+		<layerGroup data-name="District 5, Countywide" data-content="Ken Hagan">
+			<layer data-name="District 1" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/Commissioners/SandraMurmanDistrict1/MapServer/0">
+				Sandra Murman
+			</layer>
+			<layer data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/Commissioners/VictorCristDistrict2/MapServer/0"></layer>
+			<layer data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/Commissioners/LesleyMillerDistrict3/MapServer/0"></layer>
+			<layer data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/Commissioners/StacyWhiteDistrict4/MapServer/0"></layer>
+		</layerGroup>
+	</figure>
+</div>
+
 ### Markers
 
 <div class="embed-responsive embed-responsive-16by9 thumbnail">
@@ -60,7 +75,7 @@ permalink: /maps/demos/
 
 <div class="embed-responsive embed-responsive-16by9 thumbnail">
 	<figure class="hc-map-v2" data-zoom="true">
-		<layer data-id="9" data-template="hc-arcgis" data-where="DogPark <> ''"></layer>
+		<layer data-id="9" data-where="DogPark <> ''"></layer>
 	</figure>
 </div>
 

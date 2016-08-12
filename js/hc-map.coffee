@@ -74,6 +74,7 @@ class window.HcMap
 		$.each layerGroup.layers, (index, layer) ->
 			feature = layer.feature()
 			self.bindPopupFor(layer, feature)
+			self.bindHrefFor(layer, feature)
 			leafletGroup.addLayer feature
 			return
 
@@ -167,6 +168,7 @@ class HcMapLayerGroup extends HcMapObject
 		super(@elem, @map)
 		@layerElems = @elem.find('> layer')
 		@layers = []
+		@popupProperties.content = @elem.data('content') unless _.isUndefined @elem.data('content')
 		@initHcLayers()
 		@map.addHcLayerGroup(@)
 
@@ -174,9 +176,12 @@ class HcMapLayerGroup extends HcMapObject
 		self = @
 		@layerElems.each ->
 			layer = new HcMapLayer($(this), self.map, true)
+			layer.href = self.href unless _.isUndefined self.elem.attr('href')
 			layer.icon.char = self.icon.char
 			layer.icon.color = self.icon.color
-			# layer.popupProperties.template = self.popupProperties.template unless _.isUndefined self.elem.data('template')
+			layer.popupProperties.template = self.popupProperties.template unless _.isUndefined self.elem.data('template')
+			layer.popupProperties.title = self.popupProperties.title unless _.isUndefined self.elem.data('name')
+			layer.popupProperties.content = self.elem.data('content') unless _.isUndefined self.elem.data('content')
 			self.layers.push layer
 
 class HcMapOverlay
