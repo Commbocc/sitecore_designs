@@ -11,6 +11,13 @@ permalink: /maps/demos/
 
 {% include home-map.html %}
 
+### Road & Lane Closures
+<div class="embed-responsive embed-responsive-16by9 thumbnail">
+	<figure class="hc-map-v2">
+		<layer data-name="Road & Lane Closures" data-template="road_lane" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesign_RoadClosures_20160817/MapServer/0"></layer>
+	</figure>
+</div>
+
 ### Commissioner Districts
 
 <div class="embed-responsive embed-responsive-16by9 thumbnail">
