@@ -134,6 +134,7 @@ Extends the [`HcMapObject`](#map-objects-hcmapobject) class. Requires either `id
 * `data-id` _Integer_
 	* The layer identifier from [this ArcGIS map service](https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/).
 * `data-url` _URL_
+* `data-color` _Hex color code_ __#ff0000__
 * `data-where` _SQL String_ (ex. `<layer data-id="9" data-where="DogPark <> ''"></layer>`)
 	* Limits a layer's data points. The example above will show all parks, [layer 9](https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/9), where the `DogPark` field is not blank.
 

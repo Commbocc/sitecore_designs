@@ -5,8 +5,6 @@ back: Lorem Ipsum
 permalink: /maps/demos/
 ---
 
-<!-- <div id="ooTest" data-name="testwelfjh" data-latlng="23,89">Inner Content</div> -->
-
 ### Home
 
 {% include home-map.html %}
@@ -104,5 +102,24 @@ permalink: /maps/demos/
 		<marker data-name="Roy Haynes Recreation Center" data-address="1902 South Village Ave, Tampa, FL 33612">813-903-3480</marker>
 		<marker data-name="Westchase Recreation Center" data-address="9791 Westchase Dr, Tampa, FL 33626">(813) 964-2948</marker>
 		<marker data-name="All People's Life Center" data-address="6105 E. Sligh Ave, Tampa, FL 33617">813-744-5978</marker>
+	</figure>
+</div>
+
+### CORE Locations
+
+<div class="embed-responsive embed-responsive-16by9 thumbnail">
+	<figure class="hc-map-v2" data-zoom="true">
+		<marker data-name="Bartels Middle School" data-address="9020 Imperial Oak Blvd. Tampa, Fl 33647">
+			9020 Imperial Oak Blvd. Tampa, Fl 33647
+		</marker>
+		<marker data-name="Burnett Middle School" data-address="1010 North Kingsway Rd. Seffner, Fl 33584">
+			1010 North Kingsway Rd. Seffner, Fl 33584
+		</marker>
+		<marker data-name="Sergeant Paul R. Smith Middle School" data-address="14303 Citrus Pointe Dr. Tampa, Fl 33625">
+			14303 Citrus Pointe Dr. Tampa, Fl 33625
+		</marker>
+		<marker data-name="Shields Middle School" data-address="15732 Beth Shields Way Ruskin, Fl 33573">
+			15732 Beth Shields Way Ruskin, Fl 33573
+		</marker>
 	</figure>
 </div>

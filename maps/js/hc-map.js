@@ -189,7 +189,6 @@
       this.map = map;
       this.name = this.elem.data('name');
       this.href = this.elem.attr('href');
-      this.color = this.elem.data('color');
       this.icon = {
         char: _.isUndefined(this.elem.data('icon-char')) ? '' : this.elem.data('icon-char'),
         color: _.isUndefined(this.elem.data('icon-color')) ? '#ff6f59' : this.elem.data('icon-color')
@@ -244,6 +243,7 @@
       }
       HcMapLayer.__super__.constructor.call(this, this.elem, this.map);
       this.id = this.elem.data('id');
+      this.color = this.elem.data('color');
       this.url = _.isUndefined(this.elem.data('url')) ? this.map.arcgisUrl + this.id : this.elem.data('url');
       if (!_.isUndefined(this.id && _.isUndefined(this.elem.data('template')))) {
         this.popupProperties.template = 'hc-arcgis';

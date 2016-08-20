@@ -120,7 +120,6 @@ class HcMapObject
 	constructor: (@elem, @map) ->
 		@name = @elem.data('name')
 		@href = @elem.attr('href')
-		@color = @elem.data('color')
 
 		@icon =
 			char: if _.isUndefined @elem.data('icon-char') then '' else @elem.data('icon-char')
@@ -152,6 +151,7 @@ class HcMapLayer extends HcMapObject
 	constructor: (@elem, @map, inGroup=false) ->
 		super(@elem, @map)
 		@id = @elem.data('id')
+		@color = @elem.data('color')
 		@url = if _.isUndefined @elem.data('url') then @map.arcgisUrl + @id else @elem.data('url')
 		@popupProperties.template = 'hc-arcgis' unless _.isUndefined @id && _.isUndefined @elem.data('template')
 		@whereClause = if _.isUndefined @elem.data('where') then null else @elem.data('where')
