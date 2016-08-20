@@ -59,6 +59,7 @@ class window.HcMap
 
 	addHcLayer: (layer) ->
 		feature = layer.feature()
+		feature.setStyle({color: layer.color}) unless _.isUndefined layer.color
 		@bindPopupFor layer, feature
 		@bindHrefFor layer, feature
 		if @hasOverlays
@@ -119,6 +120,7 @@ class HcMapObject
 	constructor: (@elem, @map) ->
 		@name = @elem.data('name')
 		@href = @elem.attr('href')
+		@color = @elem.data('color')
 
 		@icon =
 			char: if _.isUndefined @elem.data('icon-char') then '' else @elem.data('icon-char')

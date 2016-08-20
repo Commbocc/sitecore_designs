@@ -92,6 +92,11 @@
     HcMap.prototype.addHcLayer = function(layer) {
       var feature;
       feature = layer.feature();
+      if (!_.isUndefined(layer.color)) {
+        feature.setStyle({
+          color: layer.color
+        });
+      }
       this.bindPopupFor(layer, feature);
       this.bindHrefFor(layer, feature);
       if (this.hasOverlays) {
@@ -184,6 +189,7 @@
       this.map = map;
       this.name = this.elem.data('name');
       this.href = this.elem.attr('href');
+      this.color = this.elem.data('color');
       this.icon = {
         char: _.isUndefined(this.elem.data('icon-char')) ? '' : this.elem.data('icon-char'),
         color: _.isUndefined(this.elem.data('icon-color')) ? '#ff6f59' : this.elem.data('icon-color')
