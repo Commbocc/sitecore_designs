@@ -1,16 +1,22 @@
 // footer
 #hc-footer {
-	@include gradient-background-secondary;
 
-	padding-top: 30px;
-	color: #fff;
+	background: #fff;
 
-	a {
+	#footer-main {
+
+		@include gradient-background-secondary;
+
+		padding-top: 30px;
 		color: #fff;
-		// text-decoration: none;
-		text-decoration: underline;
-		&:hover {
+
+		a {
+			color: #fff;
+			// text-decoration: none;
 			text-decoration: underline;
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 	}
 
