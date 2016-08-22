@@ -225,3 +225,35 @@ class HcMapOverlay
 			self.map.elem.before $template
 			return
 		, 'html'
+
+class window.UrlParser
+	constructor: (url) ->
+		a = document.createElement('a')
+		a.href = url
+		@source = url
+		@path = a.pathname.replace(/^([^/])/,'/$1')
+		@protocol = a.protocol.replace(':','')
+		@host = a.hostname
+		@port = a.port
+		@query = a.search
+		@hash = a.hash.replace('#','')
+		@params = @getParams(a)
+		@fullPath = @getFullPath()
+
+	getFullPath: ->
+		return @path + @query
+
+	getParams: (a) ->
+		ret = {}
+		seg = a.search.replace(/^\?/,'').split('&')
+		len = seg.length
+		i = 0
+		s = undefined
+		while i < len
+			if !seg[i]
+				i++
+				continue
+			s = seg[i].split('=')
+			ret[s[0]] = s[1]
+			i++
+		return ret

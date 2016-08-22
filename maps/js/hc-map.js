@@ -366,4 +366,47 @@
 
   })();
 
+  window.UrlParser = (function() {
+    function UrlParser(url) {
+      var a;
+      a = document.createElement('a');
+      a.href = url;
+      this.source = url;
+      this.path = a.pathname.replace(/^([^\/])/, '/$1');
+      this.protocol = a.protocol.replace(':', '');
+      this.host = a.hostname;
+      this.port = a.port;
+      this.query = a.search;
+      this.hash = a.hash.replace('#', '');
+      this.params = this.getParams(a);
+      this.fullPath = this.getFullPath();
+    }
+
+    UrlParser.prototype.getFullPath = function() {
+      return this.path + this.query;
+    };
+
+    UrlParser.prototype.getParams = function(a) {
+      var i, len, ret, s, seg;
+      ret = {};
+      seg = a.search.replace(/^\?/, '').split('&');
+      len = seg.length;
+      i = 0;
+      s = void 0;
+      while (i < len) {
+        if (!seg[i]) {
+          i++;
+          continue;
+        }
+        s = seg[i].split('=');
+        ret[s[0]] = s[1];
+        i++;
+      }
+      return ret;
+    };
+
+    return UrlParser;
+
+  })();
+
 }).call(this);
