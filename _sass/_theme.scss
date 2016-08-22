@@ -17,44 +17,15 @@
 @import "theme/footer";
 @import "theme/bios";
 @import "theme/map";
+@import "theme/text";
 @import "theme/hc-rte";
 
-// links
-.hc-rte-content {
-	a {
-		color: $brand-primary;
-		text-decoration: underline;
-		&:hover { color: darken($brand-primary, 20%); }
-	}
-}
-
-// xs (mobile) only
-@media (max-width: $screen-xs-max) {
-	// center text
-	.text-center-xs { text-align: center; }
-}
-
-// simple text transformations
-.text-white { color: #fff; }
-.text-black { color: #000; }
-.text-secondary { color: $brand-secondary; }
-.text-upcase { text-transform: uppercase; }
-.text-shadowed { text-shadow: 1px 1px #000; }
 
 // full-width white container to accomodate margins of sibling elements
 .hc-container-white {
 	background: #fff;
 	margin: -($grid-gutter-width) auto ($grid-gutter-width / 2);
 	padding: 25px 0 15px 0;
-}
-
-// lead text - http://getbootstrap.com/css/#lead-body-copy
-.lead {
-	font-size: 1.25em;
-	@media (min-width: $screen-sm-min) {
-		font-size: 1.4em;
-	}
-	color: $brand-secondary;
 }
 
 // panels
