@@ -18,3 +18,4 @@ layout: page
 * [Search]({{ '/search/' | prepend: site.baseurl }})
 * [County Projects]({{ '/county_projects/' | prepend: site.baseurl }})
 * [Media Directory Listing]({{ '/layouts/media-dir/' | prepend: site.baseurl }})
+* [Department]({{ '/layouts/department/' | prepend: site.baseurl }})
