@@ -5,13 +5,13 @@ layout: default
 <header class="jumbotron jumbotron-sm">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-8 col-md-9 {% if page.back %}col-sm-push-4 col-md-push-3{% endif %}">
+			<div class="hc-jumbo-separator col-sm-8 col-md-9 {% if page.back %}col-sm-push-4 col-md-push-3{% endif %}">
 				{% unless page.hide_title_in_jumbo %}
 				<h2 class="text-center-xs">{{ page.title }}</h2>
 				{% endunless %}
 			</div>
 			{% if page.back %}
-			<div class="col-sm-4 col-sm-pull-8 col-md-3 col-md-pull-9 hc-jumbo-separator">
+			<div class="col-sm-4 col-sm-pull-8 col-md-3 col-md-pull-9">
 				<h3 class="h5 text-center">
 					<a href="{{ '/layouts/l2/' | prepend: site.baseurl }}">
 						<i class="fa fa-fw fa-angle-left"></i>
