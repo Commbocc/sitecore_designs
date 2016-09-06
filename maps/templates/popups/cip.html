@@ -1,3 +1,5 @@
+<% has_url = properties.Project_URL != null && properties.Project_URL != '' %>
+
 <h4 class="popover-title">{Project_Name}</h4>
 <div class="popover-content">
 	<p>
@@ -8,9 +10,10 @@
 		{Construction_Start_Date} to {Construction_End_Date}
 	</p>
 
-	<% if (properties.WEB_URL != null && properties.WEB_URL != '') { %>
-	<p>
-		<a href="{WEB_URL}" class="btn btn-primary-inverse btn-sm btn-block">Learn More</a>
-	</p>
+	<% if (has_url) { %>
+		<% urlObj = new UrlParser(properties.Project_URL) %>
+		<p>
+			<a href="<%= urlObj.fullPath %>" class="btn btn-primary-inverse btn-xs btn-block">Learn More</a>
+		</p>
 	<% } %>
 </div>

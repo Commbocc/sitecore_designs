@@ -1,0 +1,15 @@
+.hc-rte {
+
+	a:not(.btn) {
+		color: $link-color-secondary;
+		text-decoration: underline;
+		&:hover { color: $link-hover-color-secondary; }
+	}
+
+	img:not([align="left"]):not([align="right"]) {
+		@extend .img-responsive;
+		@extend .center-block;
+		max-width: 80%;
+	}
+
+}

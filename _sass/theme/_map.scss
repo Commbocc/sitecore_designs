@@ -2,7 +2,7 @@
 	height: 350px;
 }
 
-.hc-map, .hc-map-v2 {
+.hc-map-v2 {
 
 	@extend .embed-responsive-item;
 
@@ -11,6 +11,10 @@
 			bottom: 10px;
 			top: auto;
 		}
+	}
+
+	.leaflet-popup {
+		margin-left: 10px;
 	}
 
 	.leaflet-popup-content-wrapper, .leaflet-popup-content {

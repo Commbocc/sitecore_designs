@@ -1,0 +1,22 @@
+// lead text - http://getbootstrap.com/css/#lead-body-copy
+.lead {
+	font-size: 1.25em;
+	@media (min-width: $screen-sm-min) {
+		font-size: 1.4em;
+	}
+	color: $brand-secondary;
+}
+
+// simple text transformations
+.text-white { color: #fff; }
+.text-black { color: #000; }
+.text-secondary { color: $brand-secondary; }
+.text-upcase { text-transform: uppercase; }
+.text-shadowed { text-shadow: 1px 1px #000; }
+
+// center text when xs (mobile) only
+.text-center-xs {
+	@media (max-width: $screen-xs-max) {
+		text-align: center;
+	}
+}

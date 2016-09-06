@@ -4,7 +4,7 @@
 
 	color: $brand-secondary;
 
-	.hc-rte-content {
+	.hc-rte {
 		a:not(.btn) {
 			color: #DEF8FA;
 			// color: darken($link-color, 5%);
@@ -47,7 +47,7 @@
 
 .hc-jumbo-separator {
 	@media (min-width: $screen-sm-min) {
-		border-right: solid 1px #fff;
+		border-left: solid 1px #fff;
 		min-height: $grid-gutter-width;
 	}
 }

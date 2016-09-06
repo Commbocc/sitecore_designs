@@ -1,32 +1,40 @@
-# Hillsborough County Maps
+__Demos can be seen [here](http://commbocc.github.io/sitecore_designs/maps/demos/).__
 
-## Table of Contents
+# Table of Contents
 
 * [Prerequisites](#prerequisites)
-* [Home Map](#home-map)
-* [Single Layer Maps](#single-layer)
-* [Geosearch Maps](#geosearch)
+* [Map Container](#map-container-hcmap)
+* [Map Objects](#map-objects-hcmapobject)
+	* [Markers](#markers-hcmapmarker)
+	* [Layers](#layers-hcmaplayer)
+	* [Layer Groups](#layer-groups-hcmaplayergroup)
 
-## *Prerequisites*
+# *Prerequisites*
 
-Assumes jQuery is included.
+Assumes __jQuery__ is included.
 
 ```HTML
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 ```
 
-Assumes Bootstrap files are included.
+Assumes __Bootstrap__ files are included.
 
 ```HTML
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 ```
 
-Assumes FontAwesome is included.
+Assumes __FontAwesome__ is included.
 
 ```HTML
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+```
+
+Assumes __Underscore__ is included.
+
+```HTML
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 ```
 
 __Place stylesheets and scripts in layout.__
@@ -38,128 +46,117 @@ __Place stylesheets and scripts in layout.__
 <script src="/js/leaflet.min.js"></script>
 <script src="/js/leaflet-locate.min.js"></script>
 <script src="/js/leaflet-esri.min.js"></script>
-<script src="/js/hc-map-config.js"></script>
-```
-
-### Geosearch files
-
-```HTML
 <script src="/js/leaflet-geosearch.min.js"></script>
 <script src="/js/leaflet-geosearch-esri.min.js"></script>
+<script src="/js/hc-map.js"></script>
 ```
 
-## Home Map
+__Initialize the maps. Be sure to set the second argument to the path of the templates folder, include a trailing slash.__
 
-[Demo](http://commbocc.github.io/sitecore_designs/layouts/home/) | [jsFiddle](https://jsfiddle.net/oanrfxt0/2/)
-
-```HTML
-<section id="map-container">
-  <div id="btn-map-overlays" class="panel-group">
-    <div class="panel panel-default">
-      <a class="panel-heading" role="button" data-toggle="collapse" data-parent="#btn-map-overlays" href="#map-overlays" aria-expanded="true" aria-controls="map-overlays">
-        <i class="fa fa-chevron-down pull-right text-primary"></i>
-        <i class="fa fa-map-marker fa-fw"></i> Select Map Overlays
-      </a>
-      <div id="map-overlays" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-        <div id="map-overlay-toggles" class=""></div>
-      </div>
-    </div>
-  </div>
-  <div id="home-map"></div>
-</section>
+```javascript
+$('.hc-map-v2').each(function() {
+	var map;
+	map = new HcMap($(this), "/assets/map/templates/");
+});
 ```
 
-## Single Layer
-
-[Demo](http://commbocc.github.io/sitecore_designs/maps/single-layer/) | [jsFiddle](https://jsfiddle.net/ey092t64/4/)
-
-__Requires one of the following formats in the `layer` data attribute:__
-
-* An integer from the [Acceptable Layers](#acceptable-layers) list
-* A full URL of a MapService Layer
-	* _Popups will most likely NOT work properly with this method if a URL outside of [this Map Service](https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer) is provided._
-
-See examples below.
-
-```HTML
-<!-- Senior Centers -->
-<!-- this is the same as putting the entire url from the web-approved map service in the layer attribute -->
-<div class="embed-responsive embed-responsive-16by9 thumbnail">
-	<div class="hc-map hc-map-layer" data-layer="13"></div>
-</div>
-
-<!-- Senior Centers -->
-<!-- Layers outside of the web-approved map service popup's will most likely not work) -->
-<div class="embed-responsive embed-responsive-16by9 thumbnail">
-	<div class="hc-map hc-map-layer" data-layer="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/County_Webmap/MapServer/1"></div>
-</div>
-```
-
-### Acceptable Layers
-
-[ESRI Map Service](https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer)
-
-* 0 - Clerk of Court Locations
-* 1 - Community Collection Centers
-* 2 - Community Resource Centers
-* 3 - Consumer Protection Offices
-* 4 - County Center
-* 5 - Fire Stations
-* 6 - Hillsborough County Sheriff Office Locations
-* 7 - Hospitals
-* 8 - Libraries
-* 9 - Parks
-* 10 - Pet Resource Center
-* 11 - Property Appraiser Locations
-* 12 - Customer Service Center for Public Utilities
-* 13 - Senior Centers
-* 14 - Supervisor of Elections Locations
-* 15 - Tax Collector Locations
-* 16 - Veterans Services Offices
-
-### Popup Templates
-
-The following are acceptable in the `popup-template` data attribute:
-
-* cip
-* fema
-
-```HTML
-<!-- CIP -->
-<div class="embed-responsive embed-responsive-16by9 thumbnail">
-	<div class="hc-map hc-map-layer" data-popup-template="cip" data-layer="https://maps.hillsboroughcounty.org/arcgis/rest/services/InfoLayers/CIP_Layers/MapServer/1"></div>
-</div>
-
-<!-- Flood Hazard Map -->
-<div class="embed-responsive embed-responsive-16by9 thumbnail">
-	<div class="hc-map hc-map-layer" data-popup-template="fema" data-layer="http://hazards.fema.gov/gis/nfhl/rest/services/public/NFHL/MapServer/3"></div>
-</div>
-```
-
-### SQL Where Statements
-
-You can filter results of a layer using the `where` data attribute. See the following example to show only Dog Parks:
-
-```HTML
-<!-- Dog Parks -->
-<div class="embed-responsive embed-responsive-16by9 thumbnail">
-	<div class="hc-map hc-map-layer" data-where="DogPark <> ''" data-layer="9"></div>
-</div>
-```
-
-* [ESRI FeatureLayer Options](https://esri.github.io/esri-leaflet/api-reference/layers/feature-layer.html#options)
-* [MySQL Operators](http://dev.mysql.com/doc/refman/5.7/en/non-typed-operators.html)
-
-## Geosearch
-
-[Demo](http://commbocc.github.io/sitecore_designs/layouts/location/) | [jsFiddle](https://jsfiddle.net/eb5fyneb/3/)
-
-__Requires [Geosearch files](#geosearch-files)__
+# Map Container `HcMap`
 
 ```HTML
 <div class="embed-responsive embed-responsive-16by9 thumbnail">
-	<div class="hc-map hc-map-geo" data-name="County Center" data-address="601 E Kennedy Blvd, Tampa, FL 33602"></div>
+	<figure class="hc-map-v2" data-has-overlay="true">
+		...
+	</figure>
 </div>
 ```
 
-The map will generate a marker at the address in the `address` data attribute. Once the marker is clicked the popup title will take the `name` attribute.
+### Options
+
+* `class="hc-map-v2"` _REQUIRED_
+	* The `.hc-map-v2` class initializes the map.
+* `data-has-overlay` _Boolean_ __false__ | true
+	* Determines whether or not an overlay that allows certain features to be toggled on or off is displayed on top of the map. See the [Home map](https://commbocc.github.io/sitecore_designs/layouts/home/#hc-map-home) for an example.
+* `data-zoom` _Boolean_ __false__ | true
+	* Will contain and zoom to all map objects.
+* `data-click-scroll` _Boolean_ __true__ | false
+	* Allows the map to be clicked which in turn enables the ability to scroll in and out with the mouse wheel.
+
+
+# Map Objects `HcMapObject`
+
+### Options
+
+* `href` _URL_
+* `data-name` _String_
+* `data-icon-char` [_FontAwesome icon unicode_](http://glyphsearch.com/?copy=unicode&library=font-awesome)
+* `data-icon-color` _Hex color code_ __#ff6f59__
+* `data-visible` _Boolean_ __false__ | true
+	* This option is assessed only when the parent container's `has-overlay` option is set to true.
+* `data-template` _Template filename_ __default__ | hc-arcgis | cip | fema
+
+
+## Markers `HcMapMarker`
+
+```HTML
+<div class="embed-responsive embed-responsive-16by9 thumbnail">
+	<figure class="hc-map-v2">
+		<marker data-name="Hillsborough County" data-latlng="28.173379, -82.823669" >
+			Popup content can be placed here...
+		</marker>
+		<marker href="http://hcflgov.net/" data-name="Hillsborough County Center" data-address="601 E Kennedy Blvd, Tampa, FL 33602"></marker>
+	</figure>
+</div>
+```
+
+### Options
+
+Extends the [`HcMapObject`](#map-objects-hcmapobject) class. Requires either the `latlng` or `address` option to be set.
+
+* `data-latlng` _Floating Pair_
+* `data-address` _String_
+
+
+## Layers `HcMapLayer`
+
+```HTML
+<div class="embed-responsive embed-responsive-16by9 thumbnail">
+	<figure class="hc-map-v2">
+		<layer data-id="9"></layer>
+		<layer data-template="cip" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/InfoLayers/CIP_Layers/MapServer/1"></layer>
+	</figure>
+</div>
+```
+
+### Options
+
+Extends the [`HcMapObject`](#map-objects-hcmapobject) class. Requires either `id` or `url` option to be set.
+
+* `data-id` _Integer_
+	* The layer identifier from [this ArcGIS map service](https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/).
+* `data-url` _URL_
+* `data-color` _Hex color code_ __#ff0000__
+* `data-where` _SQL String_ (ex. `<layer data-id="9" data-where="DogPark <> ''"></layer>`)
+	* Limits a layer's data points. The example above will show all parks, [layer 9](https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/9), where the `DogPark` field is not blank.
+
+
+## Layer Groups `HcMapLayerGroup`
+
+Overrides the options of its descendant layers.
+
+```HTML
+<div class="embed-responsive embed-responsive-16by9 thumbnail">
+	<figure class="hc-map-v2">
+		<layerGroup data-name="County Public Offices" data-icon-char="" data-icon-color="#fd9407">
+			<layer data-name="Community Resource Centers" data-id="2"></layer>
+			<layer data-name="Consumer Protection Offices" data-id="3"></layer>
+			...
+		</layerGroup>
+	</figure>
+</div>
+```
+
+### Options
+
+Extends the [`HcMapObject`](#map-objects-hcmapobject) class.
+
+* `data-content` _String_

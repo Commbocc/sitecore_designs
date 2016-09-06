@@ -1,0 +1,22 @@
+<% dateClosed = new Date(properties.Date_Closed).toUTCString() %>
+<% dateOpened = new Date(properties.Date_Opened).toUTCString() %>
+
+<h4 class="popover-title">{Street}</h4>
+<div class="popover-content">
+	<p>
+			From <strong>{From_Street}</strong> to <strong>{To_Street}</strong>
+	</p>
+
+	<dl>
+		<dt>Date Closed</dt>
+		<dd><%= dateClosed %></dd>
+
+		<dt>Date Opened</dt>
+		<dd><%= dateOpened %></dd>
+	</dl>
+
+	<p>
+		{Reason}
+	</p>
+
+</div>
