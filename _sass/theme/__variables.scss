@@ -37,8 +37,10 @@ $text-color:            $gray-dark !default;
 
 //** Global textual link color.
 $link-color:            $brand-secondary !default;
+$link-color-secondary:  #337ab7 !default;
 //** Link hover color set via `darken()` function.
-$link-hover-color:      darken($link-color, 10%) !default;
+$link-hover-color:    		  darken($link-color, 10%) !default;
+$link-hover-color-secondary: #23527c !default;
 //** Link hover decoration.
 $link-hover-decoration: underline !default;
 

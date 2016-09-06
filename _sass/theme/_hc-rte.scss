@@ -1,9 +1,9 @@
 .hc-rte {
 
 	a:not(.btn) {
-		color: $brand-primary;
+		color: $link-color-secondary;
 		text-decoration: underline;
-		&:hover { color: darken($brand-primary, 20%); }
+		&:hover { color: $link-hover-color-secondary; }
 	}
 
 	img:not([align="left"]):not([align="right"]) {
