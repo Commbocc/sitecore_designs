@@ -94,6 +94,17 @@ $('.hc-map-v2').each(function() {
 	* This option is assessed only when the parent container's `has-overlay` option is set to true.
 * `data-template` _Template filename_ __default__ | hc-arcgis | cip | fema
 
+### Caveats
+
+Map object elements are [non-void](https://www.w3.org/TR/html-markup/syntax.html#void-element_xref4) elements, similar to divs, and should not self-close.
+
+```html
+<!-- correct -->
+<layer …></layer>
+<!-- incorrect -->
+<layer … />
+```
+
 
 ## Markers `HcMapMarker`
 
