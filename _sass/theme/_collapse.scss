@@ -1,3 +1,64 @@
+@mixin collapsible-rows($columns) {
+
+	@for $i from 1 through $columns {
+		@media (min-width: $screen-lg-min) {
+			.col-sm-3:nth-of-type(#{$i}){
+				.i-want-to-row {
+					margin-left: ($screen-lg-min / $columns - 10) * -($i - 1);
+					margin-right: ($screen-lg-min / $columns - 10) * -($columns - $i);
+				}
+			}
+		}
+
+		@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+			.col-sm-3:nth-of-type(#{$i}){
+				.i-want-to-row {
+					margin-left: ($screen-md-min / $columns - 10) * -($i - 1);
+					margin-right: ($screen-md-min / $columns - 10) * -($columns - $i);
+				}
+			}
+		}
+
+		@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+			.col-sm-3:nth-of-type(#{$i}){
+				.i-want-to-row {
+					margin-left: ($screen-sm-min / $columns - 10) * -($i - 1);
+					margin-right: ($screen-sm-min / $columns - 10) * -($columns - $i);
+				}
+			}
+		}
+	}
+
+}
+
+#hc-i-want-tos {
+	@include collapsible-rows(4);
+	// .col-sm-3:nth-of-type(1){
+	// 	.i-want-to-row {
+	// 		margin-left: ($screen-lg-min / 4 - 10) * -0;
+	// 		margin-right: ($screen-lg-min / 4 - 10) * -3;
+	// 	}
+	// }
+	// .col-sm-3:nth-of-type(2){
+	// 	.i-want-to-row {
+	// 		margin-left: ($screen-lg-min / 4 - 10) * -1;
+	// 		margin-right: ($screen-lg-min / 4 - 10) * -2;
+	// 	}
+	// }
+	// .col-sm-3:nth-of-type(3){
+	// 	.i-want-to-row {
+	// 		margin-left: ($screen-lg-min / 4 - 10) * -2;
+	// 		margin-right: ($screen-lg-min / 4 - 10) * -1;
+	// 	}
+	// }
+	// .col-sm-3:nth-of-type(4){
+	// 	.i-want-to-row {
+	// 		margin-left: ($screen-lg-min / 4 - 10) * -3;
+	// 		margin-right: ($screen-lg-min / 4 - 10) * -0;
+	// 	}
+	// }
+}
+
 #hc-i-want-to {
 
 	position: relative;
