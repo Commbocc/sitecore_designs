@@ -9,6 +9,13 @@ permalink: /maps/demos/
 
 {% include home-map.html %}
 
+### Water Quality Report
+<div class="embed-responsive embed-responsive-16by9 thumbnail">
+	<figure class="hc-map-v2">
+		<layer data-name="Water Quality Report" data-template="water_quality" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesign_PW_ServiceAreas_20160909/MapServer/0"></layer>
+	</figure>
+</div>
+
 ### Road & Lane Closures
 <div class="embed-responsive embed-responsive-16by9 thumbnail">
 	<figure class="hc-map-v2">
