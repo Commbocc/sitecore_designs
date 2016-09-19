@@ -155,15 +155,41 @@ class HcMapLayer extends HcMapObject
 		@url = if _.isUndefined @elem.data('url') then @map.arcgisUrl + @id else @elem.data('url')
 		@popupProperties.template = 'hc-arcgis' unless _.isUndefined @id && _.isUndefined @elem.data('template')
 		@whereClause = if _.isUndefined @elem.data('where') then null else @elem.data('where')
+		@list = @elem.data('list-elem')
+		@list_fields = @elem.data('list-fields')
 		@map.addHcLayer(@) unless inGroup
 
 	feature: ->
 		self = @
+		$table = $('<table class="table table-striped"><thead></thead><tbody></tbody></table>')
+		$(@list).html $table
 		return L.esri.featureLayer
 			url: @url
 			where: @whereClause
+			onEachFeature: (layer) ->
+				unless _.isUndefined self.list_fields
+					fields = self.listFieldItems()
+					_.each fields, (item) ->
+						item.setValue(layer.properties[item.field])
+
+					$.get self.map.templatesDir + '/lists/headers.html', (templateData) ->
+						template = _.template(templateData)
+						$(self.list + ' thead').html(template(headers: fields))
+					$.get self.map.templatesDir + '/lists/row.html', (templateData) ->
+						template = _.template(templateData)
+						$(self.list + ' tbody').append(template(properties: fields))
 			pointToLayer: (esriFeature, latlng) ->
 				L.marker latlng, icon: L.divIcon className: null, html: self.renderedIcon().get(0).outerHTML
+
+	listFieldItems: ->
+		unless _.isUndefined @list_fields
+			list_fields = @list_fields.split(',')
+			items = []
+			_.each list_fields, (instance) ->
+				items.push new ListFieldItem(instance.trim().split(':'))
+			return items
+		else
+			undefined
 
 class HcMapLayerGroup extends HcMapObject
 	constructor: (@elem, @map) ->
@@ -257,3 +283,16 @@ class window.UrlParser
 			ret[s[0]] = s[1]
 			i++
 		return ret
+
+class ListFieldItem
+	constructor: (arr) ->
+		@field = arr[0]
+		@label = if _.isUndefined arr[1] then arr[0] else arr[1]
+		@type = if _.isUndefined arr[2] then 'String' else arr[2]
+		@value = undefined
+
+	setValue: (value) ->
+		@value = switch
+			when @type == 'Date' then new Date(value).toDateString()
+			when @type == 'String' then value
+			else value
