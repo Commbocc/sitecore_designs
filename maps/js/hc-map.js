@@ -1,5 +1,5 @@
 (function() {
-  var HcMapLayer, HcMapLayerGroup, HcMapMarker, HcMapObject, HcMapOverlay, ListFieldItem,
+  var HcMapLayer, HcMapLayerGroup, HcMapMarker, HcMapObject, HcMapOverlay,
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
 
@@ -99,6 +99,7 @@
       }
       this.bindPopupFor(layer, feature);
       this.bindHrefFor(layer, feature);
+      this.bindListFor(layer, feature);
       if (this.hasOverlays) {
         this.overlayToggles.push({
           obj: layer,
@@ -179,6 +180,24 @@
       });
     };
 
+    HcMap.prototype.bindListFor = function(obj, leafletObj) {
+      var self;
+      self = this;
+      if (!(_.isUndefined(obj.listElem) || _.isUndefined(obj.listTemplate))) {
+        return leafletObj.on('load', function(e) {
+          var layers;
+          layers = e.target._layers;
+          return $.get(self.templatesDir + '/lists/' + obj.listTemplate + '.html', function(templateData) {
+            var template;
+            template = _.template(templateData);
+            return $(obj.listElem).html(template({
+              layers: layers
+            }));
+          });
+        });
+      }
+    };
+
     return HcMap;
 
   })();
@@ -249,44 +268,19 @@
         this.popupProperties.template = 'hc-arcgis';
       }
       this.whereClause = _.isUndefined(this.elem.data('where')) ? null : this.elem.data('where');
-      this.list = this.elem.data('list-elem');
-      this.list_fields = this.elem.data('list-fields');
+      this.listElem = this.elem.data('list-elem');
+      this.listTemplate = this.elem.data('list-template');
       if (!inGroup) {
         this.map.addHcLayer(this);
       }
     }
 
     HcMapLayer.prototype.feature = function() {
-      var $table, self;
+      var self;
       self = this;
-      $table = $('<table class="table table-striped"><thead></thead><tbody></tbody></table>');
-      $(this.list).html($table);
       return L.esri.featureLayer({
         url: this.url,
         where: this.whereClause,
-        onEachFeature: function(layer) {
-          var fields;
-          if (!_.isUndefined(self.list_fields)) {
-            fields = self.listFieldItems();
-            _.each(fields, function(item) {
-              return item.setValue(layer.properties[item.field]);
-            });
-            $.get(self.map.templatesDir + '/lists/headers.html', function(templateData) {
-              var template;
-              template = _.template(templateData);
-              return $(self.list + ' thead').html(template({
-                headers: fields
-              }));
-            });
-            return $.get(self.map.templatesDir + '/lists/row.html', function(templateData) {
-              var template;
-              template = _.template(templateData);
-              return $(self.list + ' tbody').append(template({
-                properties: fields
-              }));
-            });
-          }
-        },
         pointToLayer: function(esriFeature, latlng) {
           return L.marker(latlng, {
             icon: L.divIcon({
@@ -296,20 +290,6 @@
           });
         }
       });
-    };
-
-    HcMapLayer.prototype.listFieldItems = function() {
-      var items, list_fields;
-      if (!_.isUndefined(this.list_fields)) {
-        list_fields = this.list_fields.split(',');
-        items = [];
-        _.each(list_fields, function(instance) {
-          return items.push(new ListFieldItem(instance.trim().split(':')));
-        });
-        return items;
-      } else {
-        return void 0;
-      }
     };
 
     return HcMapLayer;
@@ -447,31 +427,6 @@
     };
 
     return UrlParser;
-
-  })();
-
-  ListFieldItem = (function() {
-    function ListFieldItem(arr) {
-      this.field = arr[0];
-      this.label = _.isUndefined(arr[1]) ? arr[0] : arr[1];
-      this.type = _.isUndefined(arr[2]) ? 'String' : arr[2];
-      this.value = void 0;
-    }
-
-    ListFieldItem.prototype.setValue = function(value) {
-      return this.value = (function() {
-        switch (false) {
-          case this.type !== 'Date':
-            return new Date(value).toDateString();
-          case this.type !== 'String':
-            return value;
-          default:
-            return value;
-        }
-      }).call(this);
-    };
-
-    return ListFieldItem;
 
   })();
 

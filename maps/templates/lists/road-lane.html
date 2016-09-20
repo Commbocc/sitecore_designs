@@ -1,0 +1,40 @@
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Street</th>
+			<th>From</th>
+			<th>To</th>
+			<th>Closed</th>
+			<th>Open</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<%
+		_.each(layers, function(layer, key){
+			%>
+			<tr>
+
+				<td>
+					<%= layer.feature.properties.Street %>
+				</td>
+				<td>
+					<%= layer.feature.properties.From_Street %>
+				</td>
+				<td>
+					<%= layer.feature.properties.To_Street %>
+				</td>
+				<td>
+					<%= new Date(layer.feature.properties.Date_Closed).toDateString() %>
+				</td>
+				<td>
+					<%= new Date(layer.feature.properties.Date_Opened).toDateString() %>
+				</td>
+
+			</tr>
+			<%
+		});
+		%>
+	</tbody>
+
+</table>
