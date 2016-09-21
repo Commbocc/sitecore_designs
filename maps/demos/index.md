@@ -12,21 +12,39 @@ permalink: /maps/demos/
 ### Water Quality Report
 <div class="embed-responsive embed-responsive-16by9 thumbnail">
 	<figure class="hc-map-v2">
-		<layer data-name="CALM HARBOR" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesign_PW_ServiceAreas_20160909/MapServer/0"></layer>
-		<layer data-name="CYPRESS COVE" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesign_PW_ServiceAreas_20160909/MapServer/1"></layer>
-		<layer data-name="EAGLE TRAIL DR" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesign_PW_ServiceAreas_20160909/MapServer/2"></layer>
-		<layer data-name="EAST LAKE" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesign_PW_ServiceAreas_20160909/MapServer/3"></layer>
-		<layer data-name="EAST LAKE FAIRVIEW" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesign_PW_ServiceAreas_20160909/MapServer/4"></layer>
-		<layer data-name="HERSHEL HEIGHTS AREA" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesign_PW_ServiceAreas_20160909/MapServer/5"></layer>
-		<layer data-name="JEFFERSON RD" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesign_PW_ServiceAreas_20160909/MapServer/6"></layer>
-		<layer data-name="NORTHWEST AREA" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesign_PW_ServiceAreas_20160909/MapServer/7"></layer>
-		<layer data-name="OAKVIEW ESTATES" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesign_PW_ServiceAreas_20160909/MapServer/8"></layer>
-		<layer data-name="OLD US HIGWAY 41 A" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesign_PW_ServiceAreas_20160909/MapServer/9"></layer>
-		<layer data-name="PALM RIVER INTERLOCAL AGREEMENT" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesign_PW_ServiceAreas_20160909/MapServer/10"></layer>
-		<layer data-name="PEBBLE CREEK VILLAGE" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesign_PW_ServiceAreas_20160909/MapServer/11"></layer>
-		<layer data-name="SAN REMO" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesign_PW_ServiceAreas_20160909/MapServer/12"></layer>
-		<layer data-name="SC SERVICE AREA" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesign_PW_ServiceAreas_20160909/MapServer/13"></layer>
-		<layer data-name="SEABOARD AREA" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesign_PW_ServiceAreas_20160909/MapServer/14"></layer>
+		<layer data-name="Calm Harbor" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesign_PW_ServiceAreas_20160909/MapServer/0">
+			<a href="/library/hillsborough/media-center/documents/water-quality-reports/pu_calm-harbor-water-quality-annual-report-2015.pdf">View Report</a>
+		</layer>
+		<layer data-name="Cypress Cove" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesign_PW_ServiceAreas_20160909/MapServer/1">
+			<a href="/library/hillsborough/media-center/documents/water-quality-reports/pu_cypress-cove-water-quality-annual-report-2015_.pdf">View Report</a>
+		</layer>
+		<layer data-name="East Lake" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesign_PW_ServiceAreas_20160909/MapServer/3">
+			<a href="/library/hillsborough/media-center/documents/water-quality-reports/pu_east-lake-water-quality-annual-report-2015_.pdf">View Report</a>
+		</layer>
+		<layer data-name="East Lake Fairview" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesign_PW_ServiceAreas_20160909/MapServer/4">
+			<a href="/library/hillsborough/media-center/documents/water-quality-reports/pu_fairview-mhp-water-quality-annual-report-2015_.pdf">View Report</a>
+		</layer>
+		<layer data-name="Hershel Heights" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesign_PW_ServiceAreas_20160909/MapServer/5">
+			<a href="/library/hillsborough/media-center/documents/water-quality-reports/pu_hershel-heights-water-quality-annual-report-2015_.pdf">View Report</a>
+		</layer>
+		<layer data-name="Northwest" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesign_PW_ServiceAreas_20160909/MapServer/7">
+			<a href="/library/hillsborough/media-center/documents/water-quality-reports/pu_nw-water-quality-annual-report-2015_.pdf">View Report</a>
+		</layer>
+		<layer data-name="Oakview Estates" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesign_PW_ServiceAreas_20160909/MapServer/8">
+			<a href="/library/hillsborough/media-center/documents/water-quality-reports/pu_oakview-estates-water-quality-annual-report-2015-(1).pdf">View Report</a>
+		</layer>
+		<layer data-name="Pebble Creek" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesign_PW_ServiceAreas_20160909/MapServer/11">
+			<a href="/library/hillsborough/media-center/documents/water-quality-reports/pu_pebble-creek-water-quality-annual-report-2015.pdf">View Report</a>
+		</layer>
+		<layer data-name="San Remo" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesign_PW_ServiceAreas_20160909/MapServer/12">
+			<a href="/library/hillsborough/media-center/documents/water-quality-reports/pu_san-remo-water-quality-annual-report-2015_.pdf">View Report</a>
+		</layer>
+		<layer data-name="South Central" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesign_PW_ServiceAreas_20160909/MapServer/13">
+			<a href="/library/hillsborough/media-center/documents/water-quality-reports/pu_scr-water-quality-annual-report-2015_.pdf">View Report</a>
+		</layer>
+		<layer data-name="Seavoard Utilities" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesign_PW_ServiceAreas_20160909/MapServer/14">
+			<a href="/library/hillsborough/media-center/documents/water-quality-reports/pu_seaboard-water-quality-annual-report-2015_.pdf">View Report</a>
+		</layer>
 	</figure>
 </div>
 
