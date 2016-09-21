@@ -100,6 +100,7 @@
       this.bindPopupFor(layer, feature);
       this.bindHrefFor(layer, feature);
       this.bindListFor(layer, feature);
+      this.bindFilterFor(layer, feature);
       if (this.hasOverlays) {
         this.overlayToggles.push({
           obj: layer,
@@ -198,6 +199,27 @@
       }
     };
 
+    HcMap.prototype.bindFilterFor = function(obj, leafletObj) {
+      var self;
+      self = this;
+      if (!(_.isUndefined(obj.filterField) || _.isUndefined(obj.filterElem))) {
+        return leafletObj.on('load', function(e) {
+          var filters;
+          filters = _.uniq(_.map(e.target._layers, function(layer) {
+            return layer.feature.properties[obj.filterField];
+          }));
+          return $.get(self.templatesDir + '/filters/filter.html', function(templateData) {
+            var template;
+            template = _.template(templateData);
+            return $(obj.filterElem).html(template({
+              filter_field: obj.filterField,
+              filters: filters
+            }));
+          });
+        });
+      }
+    };
+
     return HcMap;
 
   })();
@@ -267,9 +289,11 @@
       if (!_.isUndefined(this.id && _.isUndefined(this.elem.data('template')))) {
         this.popupProperties.template = 'hc-arcgis';
       }
-      this.whereClause = _.isUndefined(this.elem.data('where')) ? null : this.elem.data('where');
+      this.whereClause = this.elem.data('where');
       this.listElem = this.elem.data('list-elem');
       this.listTemplate = this.elem.data('list-template');
+      this.filterElem = this.elem.data('filter-elem');
+      this.filterField = this.elem.data('filter-field');
       if (!inGroup) {
         this.map.addHcLayer(this);
       }
@@ -280,7 +304,7 @@
       self = this;
       return L.esri.featureLayer({
         url: this.url,
-        where: this.whereClause,
+        where: self.where(),
         pointToLayer: function(esriFeature, latlng) {
           return L.marker(latlng, {
             icon: L.divIcon({
@@ -290,6 +314,18 @@
           });
         }
       });
+    };
+
+    HcMapLayer.prototype.where = function() {
+      var url;
+      url = new UrlParser();
+      if (!_.isUndefined(this.whereClause)) {
+        return this.whereClause;
+      } else if (url.params.filter !== void 0) {
+        return this.filterField + " = '" + url.params.filter + "'";
+      } else {
+        return null;
+      }
     };
 
     return HcMapLayer;
@@ -390,6 +426,9 @@
   window.UrlParser = (function() {
     function UrlParser(url) {
       var a;
+      if (url == null) {
+        url = window.location.href;
+      }
       a = document.createElement('a');
       a.href = url;
       this.source = url;

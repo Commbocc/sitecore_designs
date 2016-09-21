@@ -7,8 +7,16 @@ permalink: /maps/demos/cip
 
 <div class="embed-responsive embed-responsive-16by9 thumbnail">
 	<figure class="hc-map-v2">
-		<layer data-list-elem="#list-cip" data-list-template="cip" data-name="CIP" data-template="cip" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/InfoLayers/CIP_Layers/MapServer/1"></layer>
+		<layer data-filter-elem="#filter-cip-programs" data-filter-field="Program" data-list-elem="#list-cip" data-list-template="cip" data-name="CIP" data-template="cip" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/InfoLayers/CIP_Layers/MapServer/1"></layer>
 	</figure>
+</div>
+
+<p class="text-center">
+	<a class="btn btn-xs btn-primary" href="http://www.arcgis.com/home/webmap/viewer.html?url=https%3A%2F%2Fmaps.hillsboroughcounty.org%2Farcgis%2Frest%2Fservices%2FInfoLayers%2FCIP_Layers%2FMapServer&source=sd" target="_blank">View the Full Map</a>
+</p>
+
+<div class="well well-sm">
+	<div id="filter-cip-programs"></div>
 </div>
 
 <div id="list-cip" class="table-responsive"></div>

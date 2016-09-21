@@ -63,6 +63,7 @@ class window.HcMap
 		@bindPopupFor layer, feature
 		@bindHrefFor layer, feature
 		@bindListFor layer, feature
+		@bindFilterFor layer, feature
 		if @hasOverlays
 			@overlayToggles.push {obj: layer, leafletObj: feature}
 			feature.addTo @map if layer.visible
@@ -126,6 +127,15 @@ class window.HcMap
 					template = _.template(templateData)
 					$(obj.listElem).html(template(layers: layers))
 
+	bindFilterFor: (obj, leafletObj) ->
+		self = @
+		unless _.isUndefined(obj.filterField) || _.isUndefined(obj.filterElem)
+			leafletObj.on 'load', (e) ->
+				filters = _.uniq _.map(e.target._layers, (layer) -> layer.feature.properties[obj.filterField])
+				$.get self.templatesDir + '/filters/filter.html', (templateData) ->
+					template = _.template(templateData)
+					$(obj.filterElem).html(template(filter_field: obj.filterField, filters: filters))
+
 class HcMapObject
 	constructor: (@elem, @map) ->
 		@name = @elem.data('name')
@@ -164,18 +174,29 @@ class HcMapLayer extends HcMapObject
 		@color = @elem.data('color')
 		@url = if _.isUndefined @elem.data('url') then @map.arcgisUrl + @id else @elem.data('url')
 		@popupProperties.template = 'hc-arcgis' unless _.isUndefined @id && _.isUndefined @elem.data('template')
-		@whereClause = if _.isUndefined @elem.data('where') then null else @elem.data('where')
+		@whereClause = @elem.data('where')
 		@listElem = @elem.data('list-elem')
 		@listTemplate = @elem.data('list-template')
+		@filterElem = @elem.data('filter-elem')
+		@filterField = @elem.data('filter-field')
 		@map.addHcLayer(@) unless inGroup
 
 	feature: ->
 		self = @
 		return L.esri.featureLayer
 			url: @url
-			where: @whereClause
+			where: self.where()
 			pointToLayer: (esriFeature, latlng) ->
 				L.marker latlng, icon: L.divIcon className: null, html: self.renderedIcon().get(0).outerHTML
+
+	where: ->
+		url = new UrlParser()
+		if !_.isUndefined(@whereClause)
+			return @whereClause
+		else if url.params.filter != undefined
+			return @filterField+" = '"+url.params.filter+"'"
+		else
+			return null
 
 class HcMapLayerGroup extends HcMapObject
 	constructor: (@elem, @map) ->
@@ -239,7 +260,7 @@ class HcMapOverlay
 		, 'html'
 
 class window.UrlParser
-	constructor: (url) ->
+	constructor: (url = window.location.href) ->
 		a = document.createElement('a')
 		a.href = url
 		@source = url

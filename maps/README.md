@@ -151,6 +151,9 @@ Extends the [`HcMapObject`](#map-objects-hcmapobject) class. Requires either `id
 * `data-list-elem` _CSS ID Selector_ (ex. `<layer data-list-elem="#list-roads" ...`)
 * `data-list-template` _Template filename_ road-lane | cip
 	* _REQUIRED_ if `data-list-elem` is set
+* `data-filter-elem` _CSS ID Selector_ (ex. `<layer data-filter-elem="#filter-cip-programs" ...`)
+* `data-filter-field` _ArcGIS Field_ (ex. `<layer data-filter-field="Program" ...`)
+	* _REQUIRED_ if `data-filter-elem` is set
 
 
 ## Layer Groups `HcMapLayerGroup`

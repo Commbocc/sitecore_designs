@@ -1,0 +1,28 @@
+<ul class="list-inline" style="margin-bottom: 0;">
+
+	<li>
+		<strong>Filter by <%= filter_field %>:</strong>
+	</li>
+
+	<% var url = new UrlParser(); %>
+
+	<% if (!_.isUndefined(url.params.filter)) { %>
+		<li>
+			<a href="<%= url.path %>">Reset</a>
+		</li>
+	<% } else { %>
+
+	<%
+	_.each(filters, function(filter){
+		%>
+		<li>
+			<a href="?filter=<%= filter %>">
+				<%= filter %>
+			</a>
+		</li>
+		<%
+	});
+	%>
+
+	<% } %>
+</ul>
