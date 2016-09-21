@@ -1,0 +1,40 @@
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>CIP #</th>
+			<th>Project</th>
+			<th>Phase</th>
+			<th>Constuction<br>Start</th>
+			<th>Constuction<br>End</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<%
+		_.each(layers, function(layer, key){
+			%>
+			<tr>
+
+				<td>
+					<%= layer.feature.properties.CIP_Number %>
+				</td>
+				<td width="30%">
+					<%= layer.feature.properties.Project_Name %>
+				</td>
+				<td>
+					<%= layer.feature.properties.Project_Phase %>
+				</td>
+				<td>
+					<%= layer.feature.properties.Construction_Start_Date %>
+				</td>
+				<td>
+					<%= layer.feature.properties.Construction_End_Date %>
+				</td>
+
+			</tr>
+			<%
+		});
+		%>
+	</tbody>
+
+</table>

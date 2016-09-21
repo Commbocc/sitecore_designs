@@ -92,7 +92,7 @@ $('.hc-map-v2').each(function() {
 * `data-icon-color` _Hex color code_ __#ff6f59__
 * `data-visible` _Boolean_ __false__ | true
 	* This option is assessed only when the parent container's `has-overlay` option is set to true.
-* `data-template` _Template filename_ __default__ | hc-arcgis | cip | fema
+* `data-template` _Template filename_ __default__ | hc-arcgis | cip | fema | road-lane
 
 ### Caveats
 
@@ -149,12 +149,8 @@ Extends the [`HcMapObject`](#map-objects-hcmapobject) class. Requires either `id
 * `data-where` _SQL String_ (ex. `<layer data-id="9" data-where="DogPark <> ''"></layer>`)
 	* Limits a layer's data points. The example above will show all parks, [layer 9](https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/9), where the `DogPark` field is not blank.
 * `data-list-elem` _CSS ID Selector_ (ex. `<layer data-list-elem="#list-roads" ...`)
-	* Specify the element to list specified fields (see `data-list-fields` below) into a table.
-	* See [demo]({{ '/maps/demos/road-lane' | prepend: site.baseurl }}) for example
-* `data-list-fields` _Comma Separated String_ (ex. `<layer data-list-fields="Street, From_Street:From, Date_Closed:Closed:Date" ...`)
+* `data-list-template` _Template filename_ road-lane | cip
 	* _REQUIRED_ if `data-list-elem` is set
-	* Each CSV accepts 3 arguments delimited by a colon (:); __Field__, __Label__, __Type__. Only __Field__, the field name of the layer, is required.
-	* See [demo]({{ '/maps/demos/road-lane' | prepend: site.baseurl }}) for example
 
 
 ## Layer Groups `HcMapLayerGroup`
