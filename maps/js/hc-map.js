@@ -191,7 +191,7 @@
           return $.get(self.templatesDir + '/lists/' + obj.listTemplate + '.html', function(templateData) {
             var template;
             template = _.template(templateData);
-            return $(obj.listElem).html(template({
+            return $(obj.listElem).append(template({
               layers: layers
             }));
           });
@@ -211,7 +211,7 @@
           return $.get(self.templatesDir + '/filters/filter.html', function(templateData) {
             var template;
             template = _.template(templateData);
-            return $(obj.filterElem).html(template({
+            return $(obj.filterElem).append(template({
               filter_field: obj.filterField,
               filters: filters
             }));

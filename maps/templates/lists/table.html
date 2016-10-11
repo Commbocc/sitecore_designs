@@ -1,0 +1,45 @@
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<%
+			_.each(_.keys(_.first(layers).feature.properties), function(key){
+				%>
+				<th><%= key %></th>
+				<%
+			});
+			%>
+		</tr>
+	</thead>
+
+	<tbody>
+		<%
+		_.each(layers, function(layer, key){
+			%>
+			<tr>
+
+				<td>
+					edfsdfdwf
+				</td>
+				<td>
+					<%= layer.feature.properties.Street %>
+				</td>
+				<td>
+					<%= layer.feature.properties.From_Street %>
+				</td>
+				<td>
+					<%= layer.feature.properties.To_Street %>
+				</td>
+				<td>
+					<%= new Date(layer.feature.properties.Date_Closed).toDateString() %>
+				</td>
+				<td>
+					<%= new Date(layer.feature.properties.Date_Opened).toDateString() %>
+				</td>
+
+			</tr>
+			<%
+		});
+		%>
+	</tbody>
+
+</table>

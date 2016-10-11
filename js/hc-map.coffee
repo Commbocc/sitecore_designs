@@ -125,7 +125,7 @@ class window.HcMap
 				layers = e.target._layers
 				$.get self.templatesDir + '/lists/'+obj.listTemplate+'.html', (templateData) ->
 					template = _.template(templateData)
-					$(obj.listElem).html(template(layers: layers))
+					$(obj.listElem).append(template(layers: layers))
 
 	bindFilterFor: (obj, leafletObj) ->
 		self = @
@@ -134,7 +134,7 @@ class window.HcMap
 				filters = _.uniq _.map(e.target._layers, (layer) -> layer.feature.properties[obj.filterField])
 				$.get self.templatesDir + '/filters/filter.html', (templateData) ->
 					template = _.template(templateData)
-					$(obj.filterElem).html(template(filter_field: obj.filterField, filters: filters))
+					$(obj.filterElem).append(template(filter_field: obj.filterField, filters: filters))
 
 class HcMapObject
 	constructor: (@elem, @map) ->
