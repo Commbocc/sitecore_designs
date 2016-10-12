@@ -143,11 +143,11 @@ Extends the [`HcMapObject`](#map-objects-hcmapobject) class. Requires either the
 Extends the [`HcMapObject`](#map-objects-hcmapobject) class. Requires either `id` or `url` option to be set.
 
 * `data-id` _Integer_
-	* The layer identifier from [this ArcGIS map service](https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/).
+	* The layer identifier from [this ArcGIS map service](https://services.arcgis.com/apTfC6SUmnNfnxuF/arcgis/rest/services/HCWebMap/FeatureServer/).
 * `data-url` _URL_
 * `data-color` _Hex color code_ __#ff0000__
 * `data-where` _SQL String_ (ex. `<layer data-id="9" data-where="DogPark <> ''"></layer>`)
-	* Limits a layer's data points. The example above will show all parks, [layer 9](https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/9), where the `DogPark` field is not blank.
+	* Limits a layer's data points. The example above will show all parks, [layer 9](https://services.arcgis.com/apTfC6SUmnNfnxuF/arcgis/rest/services/HCWebMap/FeatureServer/9), where the `DogPark` field is not blank.
 * `data-list-elem` _CSS ID Selector_ (ex. `<layer data-list-elem="#list-roads" ...`)
 * `data-list-template` _Template filename_ road-lane | cip
 	* _REQUIRED_ if `data-list-elem` is set

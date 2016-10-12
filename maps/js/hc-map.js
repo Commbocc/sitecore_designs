@@ -11,7 +11,7 @@
         scrollWheelZoom: false
       });
       this.mapObjectElems = this.elem.find('> layer, > layerGroup, > marker');
-      this.arcgisUrl = 'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/';
+      this.arcgisUrl = 'https://services.arcgis.com/apTfC6SUmnNfnxuF/arcgis/rest/services/HCWebMap/FeatureServer/';
       this.hasOverlays = _.isUndefined(this.elem.data('has-overlay')) ? false : this.elem.data('has-overlay');
       this.zoom = _.isUndefined(this.elem.data('zoom')) ? false : this.elem.data('zoom');
       this.clickToScroll = _.isUndefined(this.elem.data('click-scroll')) ? true : this.elem.data('click-scroll');
@@ -324,7 +324,7 @@
       } else if (url.params.filter !== void 0) {
         return this.filterField + " = '" + url.params.filter + "'";
       } else {
-        return null;
+        return '';
       }
     };
 

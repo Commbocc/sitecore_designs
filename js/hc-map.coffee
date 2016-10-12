@@ -5,7 +5,7 @@ class window.HcMap
 	constructor: (@elem, @templatesDir) ->
 		@map = L.map @elem.get(0), {scrollWheelZoom: false}
 		@mapObjectElems = @elem.find '> layer, > layerGroup, > marker'
-		@arcgisUrl = 'https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesignMap_20160609/MapServer/'
+		@arcgisUrl = 'https://services.arcgis.com/apTfC6SUmnNfnxuF/arcgis/rest/services/HCWebMap/FeatureServer/'
 		@hasOverlays = if _.isUndefined @elem.data('has-overlay') then false else @elem.data('has-overlay')
 		@zoom = if _.isUndefined @elem.data('zoom') then false else @elem.data('zoom')
 		@clickToScroll = if _.isUndefined @elem.data('click-scroll') then true else @elem.data('click-scroll')
@@ -196,7 +196,7 @@ class HcMapLayer extends HcMapObject
 		else if url.params.filter != undefined
 			return @filterField+" = '"+url.params.filter+"'"
 		else
-			return null
+			return ''
 
 class HcMapLayerGroup extends HcMapObject
 	constructor: (@elem, @map) ->
