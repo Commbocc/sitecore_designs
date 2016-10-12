@@ -1,31 +1,29 @@
-<table class="table table-striped">
-	<tbody>
-		<%
-		_.each(abusers, function(abuser){
-			%>
+<%
+_.each(abusers, function(abuser){
+	%>
 
-			<tr>
-				<td>
-					<img src="<%= abuser['Head Photo'] %>" alt="<%= abuser.name %>" class="abuser-photo img-responsive center-block" />
-				</td>
-				<td>
-					<dl class="dl-horizontal">
-						<dt>Name</dt>
-						<dd><%= abuser.name %></dd>
-						<dt>DOB</dt>
-						<dd><%= abuser.DOB %></dd>
-						<dt>Address</dt>
-						<dd><%= abuser.address %></dd>
-					</dl>
-					<dl class="dl-horizontal">
-						<dt>Offenses</dt>
-						<dd><%= abuser.offenses %></dd>
-					</dl>
-				</td>
-			</tr>
+	<div class="row">
+		<div class="col-md-3">
+			<p>
+				<img src="<%= abuser['Head Photo'] %>" alt="<%= abuser.name %>" class="img-responsive center-block" />
+			</p>
+		</div>
+		<div class="col-md-9">
+			<dl class="dl-horizontal">
+				<dt>Name</dt>
+				<dd><%= abuser.name %></dd>
+				<dt>DOB</dt>
+				<dd><%= abuser.DOB %></dd>
+				<dt>Address</dt>
+				<dd><%= abuser.address %></dd>
+			</dl>
+			<dl class="dl-horizontal">
+				<dt>Offenses</dt>
+				<dd><%= abuser.offenses %></dd>
+			</dl>
+		</div>
+	</div>
 
-			<%
-		});
-		%>
-	</tbody>
-</table>
+	<%
+});
+%>
