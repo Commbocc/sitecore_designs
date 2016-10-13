@@ -45,8 +45,6 @@ $ ->
 					return x[sort_by]
 			$('#sort-animalabusers').val(sort_by)
 
-		console.log abusers
-
 		# has results?
 		if _.isEmpty(abusers)
 			$results_elem.replaceWith($results_elem_clone.clone())
