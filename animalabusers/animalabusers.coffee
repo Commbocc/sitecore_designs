@@ -3,8 +3,8 @@
 
 $ ->
 
-	apexAPI = '/sitecore_designs/animalabusers/data.json'
-	# var apexAPI = "https://apex-pub.hillsboroughcounty.org/apex/bocc.caar_get_json";
+	# apexAPI = '/sitecore_designs/animalabusers/data.json'
+	apexAPI = "https://apex-pub.hillsboroughcounty.org/apex/bocc.caar_get_json";
 
 	url = new UrlParser()
 	search_str = url.params.q
