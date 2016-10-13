@@ -8,14 +8,19 @@ $ ->
 
 	url = new UrlParser()
 	search_str = url.params.q
+	sort_by = url.params.s
+
+	$results_elem = $('#animalabusers')
+	$results_elem_clone = $results_elem.clone()
+
+	unless _.isEmpty(url.params)
+		$('html, body').animate { scrollTop: $results_elem.offset().top }, 1000
 
 	$.getJSON(apexAPI).always (data) ->
 
-		$results_elem = $('#animalabusers')
-		$results_elem_clone = $results_elem.clone()
-
 		abusers = data['abuser registry'].abusers
 
+		# search filter
 		unless _.isUndefined(search_str)
 			abusers = _.filter abusers, (x) ->
 				regex = new RegExp(search_str+'.*', 'i')
@@ -23,10 +28,14 @@ $ ->
 					if value.match regex
 						return true
 				return _.contains(key_values, true)
-				
 			$('#search-animalabusers').val(search_str)
-			$('html, body').animate { scrollTop: $results_elem.offset().top }, 1000
 
+		# order by
+		unless _.isUndefined(sort_by)
+			abusers = _.sortBy abusers, sort_by
+			$('#sort-animalabusers').val(sort_by)
+
+		# has results?
 		if _.isEmpty(abusers)
 			$results_elem.replaceWith($results_elem_clone.clone())
 		else
