@@ -13,7 +13,11 @@ layout: default
 			{% if page.back %}
 			<div class="col-sm-4 col-sm-pull-8 col-md-3 col-md-pull-9">
 				<h3 class="h5 text-center">
+					{% if page.back_link %}
+					<a href="{{ page.back_link }}">
+					{% else %}
 					<a href="{{ '/layouts/l2/' | prepend: site.baseurl }}">
+					{% endif %}
 						<i class="fa fa-fw fa-angle-left"></i>
 						{{ page.back }}
 					</a>
