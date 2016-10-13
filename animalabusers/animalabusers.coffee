@@ -20,21 +20,32 @@ $ ->
 
 		abusers = data['abuser registry'].abusers
 
+		# format DOBs
+		abusers = _.map abusers, (x) ->
+			x.DOB = new Date(x.DOB)
+			return x
+
 		# search filter
 		unless _.isUndefined(search_str)
 			abusers = _.filter abusers, (x) ->
 				regex = new RegExp(search_str+'.*', 'i')
-				key_values = _.map x, (value) ->
-					if value.match regex
-						return true
+				key_values = _.map x, (value, key) ->
+					if $.type(value) == 'string'
+						if value.match(regex)
+							return true
 				return _.contains(key_values, true)
 			$('#search-animalabusers').val(search_str)
 
 		# order by
 		unless _.isUndefined(sort_by)
 			abusers = _.sortBy abusers, (x) ->
-				return x[sort_by].toLowerCase()
+				if $.type(x[sort_by]) == 'string'
+					return x[sort_by].toLowerCase()
+				else
+					return x[sort_by]
 			$('#sort-animalabusers').val(sort_by)
+
+		console.log abusers
 
 		# has results?
 		if _.isEmpty(abusers)
@@ -42,7 +53,7 @@ $ ->
 		else
 			$results_elem.html(null)
 
-		$.get '/sitecore_designs/animalabusers/templates/abusers.html', (templateData) ->
+		$.get '/sitecore_designs/animalabusers/templates/abuser.html', (templateData) ->
 			template = _.template(templateData)
 			_.each abusers, (abuser) ->
 				$results_elem.append(template(abuser: abuser))
