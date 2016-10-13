@@ -32,7 +32,8 @@ $ ->
 
 		# order by
 		unless _.isUndefined(sort_by)
-			abusers = _.sortBy abusers, sort_by
+			abusers = _.sortBy abusers, (x) ->
+				return x[sort_by].toLowerCase()
 			$('#sort-animalabusers').val(sort_by)
 
 		# has results?
