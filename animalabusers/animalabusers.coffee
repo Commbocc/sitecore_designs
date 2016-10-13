@@ -17,13 +17,15 @@ $ ->
 		abusers = data['abuser registry'].abusers
 
 		unless _.isUndefined(search_str)
-			$('#search-animalabusers').val(search_str)
 			abusers = _.filter abusers, (x) ->
 				regex = new RegExp(search_str+'.*', 'i')
 				key_values = _.map x, (value) ->
 					if value.match regex
 						return true
 				return _.contains(key_values, true)
+				
+			$('#search-animalabusers').val(search_str)
+			$('html, body').animate { scrollTop: $results_elem.offset().top }, 1000
 
 		if _.isEmpty(abusers)
 			$results_elem.replaceWith($results_elem_clone.clone())
