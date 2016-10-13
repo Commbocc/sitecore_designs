@@ -1,7 +1,8 @@
 ---
 layout: hc-sidebar
 title: Animal Abuse Registry
-back: Back
+back: Public Safety
+sidebar: hc-sidebar-animal-abusers.html
 permalink: /animalabusers/
 ---
 
@@ -9,52 +10,70 @@ permalink: /animalabusers/
 #animalabusers > .row {
 	padding: 20px 15px;
 	margin: 0;
+	border-top: solid 1px #b7b7b7;
 }
 #animalabusers > .row:nth-child(odd) {
-	background: #eee;
+	background: #E3EAEE;
 }
 </style>
 
 <div class="well">
 	<h4 class="text-primary">Disclaimer</h4>
 	<p>
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		The County will attempt to ensure that the information in the Registry is accurate and complete. However, the County relies on other sources for the information. As a result, the County makes no express or implied guarantee concerning the accuracy or completeness of any of the data in the Registry.
+	</p>
+	<p>
+		The information in this Registry must be used responsibly. Anyone who uses this information to knowingly harass or interfere with lawful commerce shall commit a violation of this Ordinance punishable as provided therein.
 	</p>
 </div>
 
-<div id="animalabusers"></div>
+<form class="" method="get">
+	<div class="panel panel-default">
+		<header class="panel-heading">
+			<div class="row">
+				<div class="col-md-4 col-md-offset-8">
 
-<nav class="text-right" aria-label="Page navigation">
-	<ul class="pagination">
-		<li>
-			<a href="#" aria-label="Previous">
-				<span aria-hidden="true">&laquo;</span>
-			</a>
-		</li>
-		<li><a href="#">1</a></li>
-		<li><a href="#">2</a></li>
-		<li><a href="#">3</a></li>
-		<li><a href="#">4</a></li>
-		<li><a href="#">5</a></li>
-		<li>
-			<a href="#" aria-label="Next">
-				<span aria-hidden="true">&raquo;</span>
-			</a>
-		</li>
-	</ul>
-</nav>
+					<div class="input-group input-group-sm">
+						<input id="search-animalabusers" name="q" type="text" class="form-control" placeholder="Search Registry">
+						<span class="input-group-btn">
+							<button class="btn btn-primary" type="submit">
+								<i class="fa fa-fw fa-search"></i>
+							</button>
+						</span>
+					</div>
+
+				</div>
+			</div>
+		</header>
+		<div id="animalabusers">
+			<div class="panel-body">
+				<p class="text-center h4">
+					No Results
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- <nav class="text-center" aria-label="Page navigation">
+		<ul class="pagination pagination-sm" style="margin-top: 0;">
+			<li>
+				<a href="#" aria-label="Previous">
+					<span aria-hidden="true">&laquo;</span>
+				</a>
+			</li>
+			<li><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a href="#">4</a></li>
+			<li><a href="#">5</a></li>
+			<li>
+				<a href="#" aria-label="Next">
+					<span aria-hidden="true">&raquo;</span>
+				</a>
+			</li>
+		</ul>
+	</nav> -->
+</form>
 
 <!-- script -->
-<script type="text/javascript">
-var apexAPI = "/sitecore_designs/animalabusers/data.json";
-// var apexAPI = "https://apex-pub.hillsboroughcounty.org/apex/bocc.caar_get_json";
-
-$.getJSON( apexAPI ).always(function( data ) {
-	var abusers = data['abuser registry'].abusers;
-	$.get('/sitecore_designs/animalabusers/templates/abusers.html', function(templateData) {
-		var template = _.template(templateData);
-		var content = template({abusers: abusers});
-		$('#animalabusers').html(content);
-	}, 'html');
-});
-</script>
+<script src="{{ '/animalabusers/animalabusers.js' | prepend: site.baseurl }}"></script>

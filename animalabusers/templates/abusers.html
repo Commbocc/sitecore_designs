@@ -1,29 +1,21 @@
-<%
-_.each(abusers, function(abuser){
-	%>
-
-	<div class="row">
-		<div class="col-md-3">
-			<p>
-				<img src="<%= abuser['Head Photo'] %>" alt="<%= abuser.name %>" class="img-responsive center-block" />
-			</p>
-		</div>
-		<div class="col-md-9">
-			<dl class="dl-horizontal">
-				<dt>Name</dt>
-				<dd><%= abuser.name %></dd>
-				<dt>DOB</dt>
-				<dd><%= abuser.DOB %></dd>
-				<dt>Address</dt>
-				<dd><%= abuser.address %></dd>
-			</dl>
-			<dl class="dl-horizontal">
-				<dt>Offenses</dt>
-				<dd><%= abuser.offenses %></dd>
-			</dl>
-		</div>
+<div class="row">
+	<div class="col-md-3">
+		<p>
+			<img src="<%= abuser['Head Photo'] %>" alt="<%= abuser.name %>" class="img-responsive center-block" />
+		</p>
 	</div>
-
-	<%
-});
-%>
+	<div class="col-md-9">
+		<dl class="dl-horizontal">
+			<dt>Name</dt>
+			<dd><%= abuser.name %></dd>
+			<dt>DOB</dt>
+			<dd><%= abuser.DOB %></dd>
+			<dt>Address</dt>
+			<dd><%= abuser.address %></dd>
+		</dl>
+		<dl class="dl-horizontal">
+			<dt>Offenses</dt>
+			<dd><%= abuser.offenses %></dd>
+		</dl>
+	</div>
+</div>
