@@ -16,8 +16,8 @@
 			<dt>Name</dt>
 			<dd><%= abuser.name %></dd>
 
-			<% if (!_.isNull(abuser.alias)) { %>
-			<dt>Alias</dt>
+			<% if (!_.isEmpty(abuser.alias)) { %>
+			<dt>Alias(es)</dt>
 			<dd><%= abuser.alias %></dd>
 			<% } %>
 
