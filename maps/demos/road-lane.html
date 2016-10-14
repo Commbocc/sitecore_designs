@@ -7,8 +7,17 @@ permalink: /maps/demos/road-lane
 
 <div class="embed-responsive embed-responsive-16by9 thumbnail">
 	<figure class="hc-map-v2">
-		<layer data-list-elem="#list-road-lane" data-list-template="road-lane" data-name="Road & Lane Closures" data-color="#ff0000" data-template="road-lane" data-url="https://maps.hillsboroughcounty.org/arcgis/rest/services/CoinMap/CountyWebsiteRedesign_RoadClosures_20160817/MapServer/0"></layer>
+		<layer data-name="Detours" data-color="#0000ff" data-template="road-lane" data-url="https://services.arcgis.com/apTfC6SUmnNfnxuF/ArcGIS/rest/services/RoadClosuresService/FeatureServer/0"></layer>
+		<layer data-name="Road Closures" data-color="#ff0000" data-template="road-lane" data-url="https://services.arcgis.com/apTfC6SUmnNfnxuF/ArcGIS/rest/services/RoadClosuresService/FeatureServer/1"></layer>
+		<layer data-name="Lane Closures" data-color="#ffa500" data-template="road-lane" data-url="https://services.arcgis.com/apTfC6SUmnNfnxuF/ArcGIS/rest/services/RoadClosuresService/FeatureServer/2"></layer>
 	</figure>
 </div>
 
-<div id="list-road-lane" class="table-responsive"></div>
+<div class="well well-sm">
+	<h4>Map Key</h4>
+	<ul>
+		<li style="color: #ff0000;">Road Closures</li>
+		<li style="color: #ffa500;">Lane Closures</li>
+		<li style="color: #0000ff;">Detours</li>
+	</ul>
+</div>
