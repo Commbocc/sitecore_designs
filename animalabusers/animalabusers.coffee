@@ -22,7 +22,7 @@ $ ->
 
 		# format DOBs
 		abusers = _.map abusers, (x) ->
-			x.DOB = new Date(x.DOB)
+			x.DOB = new Date(x.DOB.replace(/-/g, '/'))
 			return x
 
 		# search filter
