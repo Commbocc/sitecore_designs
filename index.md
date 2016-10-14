@@ -19,4 +19,4 @@ layout: page
 * [County Projects]({{ '/county_projects/' | prepend: site.baseurl }})
 * [Media Directory Listing]({{ '/layouts/media-dir/' | prepend: site.baseurl }})
 * [Department]({{ '/layouts/department/' | prepend: site.baseurl }})
-* [Animal Abuse Registry]({{ '/animalabusers/' | prepend: site.baseurl }})
+* [Animal Abuser Registry]({{ '/animalabusers/' | prepend: site.baseurl }})
