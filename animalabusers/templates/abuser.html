@@ -32,14 +32,21 @@
 
 		<dl class="dl-horizontal">
 			<dt>Offenses</dt>
-			<dd><%= abuser.offenses %></dd>
-		</dl>
-
-		<dl class="dl-horizontal">
 			<dd>
-				<a href="#">
-					View Judgment and Sentence
-				</a>
+				<ul class="list-unstyled">
+					<% _.each(abuser.offenses, function(offence) { %>
+					<li>
+						<p>
+							<%= offence.Offense %><br>
+							Conviction Date: <%= offence['Conviction Date'] %><br>
+							Expires from Registry: <%= offence['Expires from Registry'] %><br>
+							<a href="#">
+								View Judgment and Sentence
+							</a>
+						</p>
+					</li>
+					<% }); %>
+				</ul>
 			</dd>
 		</dl>
 
