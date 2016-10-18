@@ -16,7 +16,7 @@ $ ->
 	unless _.isEmpty(url.params)
 		$('html, body').animate { scrollTop: $results_elem.offset().top }, 1000
 
-	$.getJSON(apexAPI).always (data) ->
+	$.getJSON(apexAPI).success (data) ->
 
 		abusers = data['abuser registry'].abusers
 
