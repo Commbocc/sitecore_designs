@@ -41,20 +41,15 @@
 							<%= offence.Offense %><br>
 							<em>Conviction Date:</em> <%= offence['Conviction Date'] %><br>
 							<em>Expires from Registry:</em> <%= offence['Expires from Registry'] %><br>
+							<% if (!_.isEmpty(offence.Judgment)) { %>
+							<a href="<%= offence.Judgment %>" target="_blank">
+								View Judgment and Sentence
+							</a>
+							<% } %>
 						</p>
 					</li>
 					<% }); %>
 				</ul>
-			</dd>
-		</dl>
-		<% } %>
-
-		<% if (!_.isEmpty(abuser.Judgment)) { %>
-		<dl class="dl-horizontal">
-			<dd>
-				<a href="<%= abuser.Judgment %>" target="_blank">
-					View Judgment and Sentence
-				</a>
 			</dd>
 		</dl>
 		<% } %>
