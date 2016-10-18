@@ -30,6 +30,7 @@
 			<dd><%= abuser.address %></dd>
 		</dl>
 
+		<% if (!_.isEmpty(abuser.offenses)) { %>
 		<dl class="dl-horizontal">
 			<dt>Offenses</dt>
 			<dd>
@@ -38,8 +39,8 @@
 					<li>
 						<p>
 							<%= offence.Offense %><br>
-							Conviction Date: <%= offence['Conviction Date'] %><br>
-							Expires from Registry: <%= offence['Expires from Registry'] %><br>
+							<em>Conviction Date:</em> <%= offence['Conviction Date'] %><br>
+							<em>Expires from Registry:</em> <%= offence['Expires from Registry'] %><br>
 							<a href="#">
 								View Judgment and Sentence
 							</a>
@@ -49,6 +50,7 @@
 				</ul>
 			</dd>
 		</dl>
+		<% } %>
 
 	</div>
 </div>
