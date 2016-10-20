@@ -34,19 +34,26 @@
 		<dl class="dl-horizontal">
 			<dt>Offenses</dt>
 			<dd>
-				<ul class="list-unstyled">
+				<ul class="list-unstyled offenses">
 					<% _.each(abuser.offenses, function(offence) { %>
 					<li>
 						<p>
+
+							<% if (!_.isEmpty(offence.Counts)) { %>
+								<%= offence.Counts %> count(s) of
+							<% } %>
+
 							<%= offence.Offense %><br>
 							<em>Conviction Date:</em> <%= offence['Conviction Date'] %><br>
-							<em>Expires from Registry:</em> <%= offence['Expires from Registry'] %><br>
-							<% if (!_.isEmpty(offence.Judgment)) { %>
+							<em>Expires from Registry:</em> <%= offence['Expires from Registry'] %>
+						</p>
+						<% if (!_.isEmpty(offence.Judgment)) { %>
+						<p>
 							<a href="<%= offence.Judgment %>" target="_blank">
 								View Judgment and Sentence
 							</a>
-							<% } %>
 						</p>
+						<% } %>
 					</li>
 					<% }); %>
 				</ul>
