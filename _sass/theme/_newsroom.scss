@@ -1,0 +1,12 @@
+.newsroom-thumb {
+	position: relative;
+	// margin-bottom: 25px;
+}
+
+.newsroom-category {
+	position: absolute;
+	bottom: 0;
+	background: rgba($brand-info, 0.85);
+	color: #fff;
+	padding: 3px 6px;
+}

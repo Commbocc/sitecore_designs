@@ -1,0 +1,92 @@
+---
+layout: newsroom
+title: Newsroom
+permalink: /layouts/newsroom/
+---
+
+<!-- first -->
+{% for post in site.posts | limit: 1 %}
+<div class="newsroom-thumb">
+	<a href="{{ post.url | prepend: site.baseurl }}">
+		<img src="{{ post.image_src }}" alt="{{ post.title }}" class="img-responsive center-block" />
+		<small class="newsroom-category">
+			<strong>
+				News
+			</strong>
+			Story
+		</small>
+	</a>
+</div>
+<h4 class="h3">
+	<a href="{{ post.url | prepend: site.baseurl }}">
+		{{ post.title }}
+	</a>
+	<br>
+	<small>
+		{% if post.subtitle %}
+		{{ post.subtitle }} -
+		{% endif %}
+		<em>{{ post.date | date: "%b %-d, %Y" }}</em>
+	</small>
+</h4>
+<div class="">
+	{{ post.excerpt }}
+</div>
+<hr>
+{% endfor %}
+
+<!-- offset 1 -->
+{% for post in site.posts | offset: 1 %}
+<div class="row">
+	<div class="col-sm-5">
+		<div class="newsroom-thumb">
+			<a href="{{ post.url | prepend: site.baseurl }}">
+				<img src="{{ post.image_src }}" alt="{{ post.title }}" class="img-responsive center-block" />
+				<small class="newsroom-category">
+					<strong>
+						News
+					</strong>
+					Story
+				</small>
+			</a>
+		</div>
+	</div>
+	<div class="col-sm-7">
+		<h4>
+			<a href="{{ post.url | prepend: site.baseurl }}">
+				{{ post.title }}
+			</a>
+			<br>
+			<small>
+				{% if post.subtitle %}
+				{{ post.subtitle }} -
+				{% endif %}
+				<em>{{ post.date | date: "%b %-d, %Y" }}</em>
+			</small>
+		</h4>
+		{{ post.excerpt }}
+	</div>
+</div>
+<hr>
+{% endfor %}
+
+<!-- pagination -->
+<nav class="text-center" aria-label="Page navigation">
+	<ul class="pagination pagination-sm">
+		<li>
+			<a href="#" aria-label="Previous">
+				<span aria-hidden="true">&laquo;</span>
+			</a>
+		</li>
+		<li><a href="#">1</a></li>
+		<li><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+		<li><a href="#">4</a></li>
+		<li><a href="#">5</a></li>
+		<li>
+			<a href="#" aria-label="Next">
+				<span aria-hidden="true">&raquo;</span>
+			</a>
+		</li>
+	</ul>
+</nav>

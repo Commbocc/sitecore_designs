@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Pet Resources Pet Spotlight: Meet Benji"
-subtitle: Find Your Perfect Match
-image_src: http://hcflgov.net/library/hillsborough/prc_pet-of-the-week_845x475.jpg
+title:  Surveys, Forums, Help Assess Recycling Habits
+subtitle: County hopes to learn more about residents' knowledge, behaviors, and attitudes
+image_src: http://hcflgov.net/library/hillsborough/recycling-machinery.jpg
 categories: jekyll update
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.

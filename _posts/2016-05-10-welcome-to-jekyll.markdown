@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Pet Resources Pet Spotlight: Meet Benji"
-subtitle: Find Your Perfect Match
-image_src: http://hcflgov.net/library/hillsborough/prc_pet-of-the-week_845x475.jpg
+title:  Stuffed Animals Train at County Fire Station
+subtitle: Fuzzy critters and their young owners tour station
+image_src: http://hcflgov.net/library/hillsborough/park-accreditation/newsomebandfinal/firestationbears.jpg
 categories: jekyll update
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.

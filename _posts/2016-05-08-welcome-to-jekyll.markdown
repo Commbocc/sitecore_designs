@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Pet Resources Pet Spotlight: Meet Benji"
-subtitle: Find Your Perfect Match
-image_src: http://hcflgov.net/library/hillsborough/prc_pet-of-the-week_845x475.jpg
+title:  Early Voting in Hillsborough County
+subtitle: Find locations, times and what to bring
+image_src: http://hcflgov.net/library/hillsborough/vote-early.jpg
 categories: jekyll update
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
