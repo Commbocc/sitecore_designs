@@ -2,10 +2,9 @@
 	<thead>
 		<tr>
 			<th>Street</th>
-			<th>From</th>
-			<th>To</th>
-			<th>Closed</th>
-			<th>Open</th>
+			<th>From/To</th>
+			<th>Closed/Open</th>
+			<th>Reason</th>
 		</tr>
 	</thead>
 
@@ -16,19 +15,20 @@
 			<tr>
 
 				<td>
-					<%= layer.feature.properties.Street %>
+					<%= layer.feature.properties.STREET %>
 				</td>
 				<td>
-					<%= layer.feature.properties.From_Street %>
-				</td>
-				<td>
-					<%= layer.feature.properties.To_Street %>
+					<%= layer.feature.properties.FROM_STREET %>
+					-
+					<%= layer.feature.properties.TO_STREET %>
 				</td>
 				<td>
 					<%= new Date(layer.feature.properties.Date_Closed).toDateString() %>
+					-
+					<%= new Date(layer.feature.properties.Date_Opened).toDateString() %>
 				</td>
 				<td>
-					<%= new Date(layer.feature.properties.Date_Opened).toDateString() %>
+					<%= layer.feature.properties.REASON %>
 				</td>
 
 			</tr>

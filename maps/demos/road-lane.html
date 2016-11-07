@@ -7,17 +7,46 @@ permalink: /maps/demos/road-lane
 
 <div class="embed-responsive embed-responsive-16by9 thumbnail">
 	<figure class="hc-map-v2">
-		<layer data-name="Detours" data-color="#0000ff" data-template="road-lane" data-url="https://services.arcgis.com/apTfC6SUmnNfnxuF/ArcGIS/rest/services/RoadClosuresService/FeatureServer/0"></layer>
-		<layer data-name="Road Closures" data-color="#ff0000" data-template="road-lane" data-url="https://services.arcgis.com/apTfC6SUmnNfnxuF/ArcGIS/rest/services/RoadClosuresService/FeatureServer/1"></layer>
-		<layer data-name="Lane Closures" data-color="#ffa500" data-template="road-lane" data-url="https://services.arcgis.com/apTfC6SUmnNfnxuF/ArcGIS/rest/services/RoadClosuresService/FeatureServer/2"></layer>
+		<layer data-name="Detours" data-list-elem="#list-detours" data-list-template="road-lane" data-color="#0000ff" data-template="road_lane" data-url="https://services.arcgis.com/apTfC6SUmnNfnxuF/ArcGIS/rest/services/RoadClosuresService/FeatureServer/0"></layer>
+		<layer data-name="Road Closures" data-list-elem="#list-roads" data-list-template="road-lane" data-color="#ff0000" data-template="road_lane" data-url="https://services.arcgis.com/apTfC6SUmnNfnxuF/ArcGIS/rest/services/RoadClosuresService/FeatureServer/1"></layer>
+		<layer data-name="Lane Closures" data-list-elem="#list-lanes" data-list-template="road-lane" data-color="#ffa500" data-template="road_lane" data-url="https://services.arcgis.com/apTfC6SUmnNfnxuF/ArcGIS/rest/services/RoadClosuresService/FeatureServer/2"></layer>
 	</figure>
 </div>
 
-<div class="well well-sm">
-	<h4>Map Key</h4>
-	<ul>
-		<li style="color: #ff0000;">Road Closures</li>
-		<li style="color: #ffa500;">Lane Closures</li>
-		<li style="color: #0000ff;">Detours</li>
+
+<div>
+	<!-- Nav tabs -->
+	<ul class="nav nav-tabs" role="tablist">
+		<li role="presentation" class="active">
+			<a href="#roads" aria-controls="roads" role="tab" data-toggle="tab">Roads</a>
+		</li>
+		<li role="presentation">
+			<a href="#lanes" aria-controls="lanes" role="tab" data-toggle="tab">Lanes</a>
+		</li>
+		<li role="presentation">
+			<a href="#detours" aria-controls="detours" role="tab" data-toggle="tab">Detours</a>
+		</li>
 	</ul>
+
+	<!-- Tab panes -->
+	<div class="tab-content">
+		<div role="tabpanel" class="tab-pane active" id="roads">
+			<div id="list-roads" class="table-responsive"></div>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="lanes">
+			<div id="list-lanes" class="table-responsive"></div>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="detours">
+			<div id="list-detours" class="table-responsive"></div>
+		</div>
+	</div>
 </div>
+
+<!-- <div class="well well-sm">
+<h4>Map Key</h4>
+<ul>
+<li style="color: #ff0000;">Road Closures</li>
+<li style="color: #ffa500;">Lane Closures</li>
+<li style="color: #0000ff;">Detours</li>
+</ul>
+</div> -->
