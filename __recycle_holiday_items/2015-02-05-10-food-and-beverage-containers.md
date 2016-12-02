@@ -8,4 +8,4 @@ param: "food-and-beverage-containers"
   * Aluminum, tin, and steel cans
   * Cartons, such as those for soy milk, juice boxes, chicken broth, etc.
   * Glass bottles and jars
-* Large volumes of recyclables that will not fit in the blue curbside cart may be recycled at any of the Community Collection Centers for no additional fee.
+* Large volumes of recyclables that will not fit in the blue curbside cart may be recycled at any of the [County Community Collection Centers](http://www.hillsboroughcounty.org/en/residents/property-owners-and-renters/trash-and-recycling/find-a-waste-facility) for no additional fee.
