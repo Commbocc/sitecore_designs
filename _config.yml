@@ -20,6 +20,8 @@ github_username:  jekyll
 collections:
    county_projects:
       output: true
+   _recycle_holiday_items:
+      output: false
 
 # Build settings
 markdown: kramdown

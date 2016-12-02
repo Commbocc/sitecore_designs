@@ -1,0 +1,47 @@
+---
+layout: hc-sidebar
+permalink: /recycle-the-holidays
+title: Trash & Recycling
+back: Property Owners & Renters
+---
+
+<style type="text/css">
+.img-swhg {
+	background: #F16F61;
+	border-radius: 50%;
+	margin: 10px auto;
+	max-width: 100%;
+}
+@media (max-width: 991px) {
+	.img-swhg {
+		max-width: 200px;
+	}
+}
+</style>
+
+<h2 class="text-primary">
+	Solid Waste Holiday Guide
+</h2>
+
+<div class="lead">
+	<p>
+		Tis' the season to recycle your leftover trash from the holidays. Below you will find information on holiday collection schedules, tips on how to dispose of unique holiday items, recycling options and more.
+	</p>
+</div>
+
+{% for item in site._recycle_holiday_items reversed %}
+<div class="thumbnail">
+	<div class="caption">
+		<div class="row">
+			<div class="col-md-4 col-lg-3">
+				<img class="img-responsive center-block img-swhg" src="{{ '/images/solid-waste-holiday-guide' | relative_url }}/{{ item.param }}.png" alt="{{ item.title }}">
+			</div>
+			<div class="col-md-8 col-lg-9">
+				<h4 class="">{{ item.title }}</h4>
+				{{ item.content }}
+			</div>
+		</div>
+	</div>
+</div>
+<!-- <hr> -->
+{% endfor %}
