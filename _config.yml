@@ -26,7 +26,7 @@ collections:
 # Build settings
 markdown: kramdown
 
-exclude: [maps/css, maps/js]
+exclude: [maps/css, maps/js, Gemfile, Gemfile.lock]
 
 gems:
  - jekyll-coffeescript
