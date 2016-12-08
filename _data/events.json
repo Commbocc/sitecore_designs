@@ -1,0 +1,32 @@
+{
+	"success": 1,
+	"result": [
+		{
+			"id": 1,
+			"title": "Event 1",
+			"url": "http://example.com",
+			"class": "event-important",
+			"start": 1480914000000,
+			"end": 1480996800000,
+			"image": "http://technext.github.io/Evento/images/demo/bg-slide-01.jpg"
+		},
+		{
+			"id": 2,
+			"title": "Event 2",
+			"url": "http://example.com",
+			"class": "event-important",
+			"start": 1480914000000,
+			"end": 1480996800000,
+			"image": "https://static.pexels.com/photos/5156/people-eiffel-tower-lights-night.jpg"
+		},
+		{
+			"id": 3,
+			"title": "Event 3",
+			"url": "http://example.com",
+			"class": "event-important",
+			"start": 1480914000000,
+			"end": 1480996800000,
+			"image": "http://technext.github.io/Evento/images/demo/bg-slide-01.jpg"
+		}
+	]
+}

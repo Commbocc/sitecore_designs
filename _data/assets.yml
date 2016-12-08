@@ -5,6 +5,9 @@ js:
   - src: bootstrap-3.3.6.min.js
   # - src: jquery.mobile.touch.min.js
   - src: theme.js
+  - src: vendor/bs-listgroup.min.js
+  - src: vendor/bs-calendar.min.js
+  - src: hc-calendar.js
 
 # will load from "{{site.baseurl}}/css/{{asset.src}}.css"
 css:

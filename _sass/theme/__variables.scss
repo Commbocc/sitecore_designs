@@ -125,7 +125,7 @@ $border-radius-large:       6px !default;
 $border-radius-small:       3px !default;
 
 //** Global color for active items (e.g., navs or dropdowns).
-$component-active-color:    #fff !default;
+$component-active-color:    $brand-secondary !default;
 //** Global background color for active items (e.g., navs or dropdowns).
 $component-active-bg:       lighten($brand-info, 25%) !default;
 
@@ -700,7 +700,7 @@ $list-group-active-color:       $component-active-color !default;
 //** Background color of active list items
 $list-group-active-bg:          $component-active-bg !default;
 //** Border color of active list elements
-$list-group-active-border:      $list-group-active-bg !default;
+$list-group-active-border:      $list-group-border !default;
 //** Text color for content within active list items
 $list-group-active-text-color:  lighten($list-group-active-bg, 40%) !default;
 
