@@ -7,7 +7,7 @@ permalink: /calendar/home/
 
 	<p>&nbsp;</p>
 
-	<div class="panel panel-default">
+	<div id="calendar-panel" class="panel panel-default">
 
 		<header class="panel-heading text-center">
 			<a href="#" class="btn btn-link pull-left calendar-nav" data-calendar-nav="prev">
@@ -22,31 +22,41 @@ permalink: /calendar/home/
 		</header>
 
 		<div class="panel-body">
-			<div id="calendar-calendar-filters" class="list-group small" data-toggle="items">
-				<a href="#" class="calendar-calendar-filter list-group-item" data-value="{00-00}">
-					<i class="event-cirlce fa fa-circle fa-fw" style="color:#f00;"></i>
-					County Events
-				</a>
-				<a href="#" class="calendar-calendar-filter list-group-item" data-value="{00-01}">
-					<i class="event-cirlce fa fa-circle fa-fw" style="color:#f00;"></i>
-					Commission Meetings
-				</a>
-				<a href="#" class="calendar-calendar-filter list-group-item" data-value="{00-02}">
-					<i class="event-cirlce fa fa-circle fa-fw" style="color:#f00;"></i>
-					Parks and Recreation
-				</a>
-				<a href="#" class="calendar-calendar-filter list-group-item" data-value="{00-03}">
-					<i class="event-cirlce fa fa-circle fa-fw" style="color:#f00;"></i>
-					Public Events
-				</a>
-				<a href="#" class="calendar-calendar-filter list-group-item" data-value="{00-04}">
-					<i class="event-cirlce fa fa-circle fa-fw" style="color:#f00;"></i>
-					Public Meetings
-				</a>
-				<a href="#" class="calendar-calendar-filter list-group-item" data-value="{00-05}">
-					<i class="event-cirlce fa fa-circle fa-fw" style="color:#f00;"></i>
-					Senior Centers
-				</a>
+			<div class="row">
+				<div class="col-md-2">
+					<h4>
+						<i class="fa fa-fw fa-calendar"></i>
+						Select Calendars
+					</h4>
+				</div>
+				<div class="col-md-10">
+					<div id="calendar-calendar-filters" class="list-group small" data-toggle="items">
+						<a href="#" class="calendar-calendar-filter list-group-item" data-value="{00-00}">
+							<i class="event-cirlce fa fa-circle fa-fw" style="color:#f00;"></i>
+							County Events
+						</a>
+						<a href="#" class="calendar-calendar-filter list-group-item" data-value="{00-01}">
+							<i class="event-cirlce fa fa-circle fa-fw" style="color:#f00;"></i>
+							Commission Meetings
+						</a>
+						<a href="#" class="calendar-calendar-filter list-group-item" data-value="{00-02}">
+							<i class="event-cirlce fa fa-circle fa-fw" style="color:#f00;"></i>
+							Parks and Recreation
+						</a>
+						<a href="#" class="calendar-calendar-filter list-group-item" data-value="{00-03}">
+							<i class="event-cirlce fa fa-circle fa-fw" style="color:#f00;"></i>
+							Public Events
+						</a>
+						<a href="#" class="calendar-calendar-filter list-group-item" data-value="{00-04}">
+							<i class="event-cirlce fa fa-circle fa-fw" style="color:#f00;"></i>
+							Public Meetings
+						</a>
+						<a href="#" class="calendar-calendar-filter list-group-item" data-value="{00-05}">
+							<i class="event-cirlce fa fa-circle fa-fw" style="color:#f00;"></i>
+							Senior Centers
+						</a>
+					</div>
+				</div>
 			</div>
 		</div>
 

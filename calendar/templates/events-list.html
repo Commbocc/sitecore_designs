@@ -1,6 +1,6 @@
-<!-- <span id="cal-slide-tick" style="display: none"></span> -->
-<div id="" class="cal-event-list panel panel-info">
+<span id="cal-slide-tick" style="display: none"></span>
 
+<section class="cal-event-list panel panel-info">
 	<header class="panel-heading">
 		<h4 class="panel-title">
 			<%= new Date(events[0].start).toDateString() %>
@@ -8,30 +8,35 @@
 	</header>
 
 	<div class="panel-body">
-
 		<div class="row">
 			<% _.each(events, function(event) { %>
-				<div class="col-sm-6">
-					<aside class="thumbnail">
+				<aside class="col-sm-6">
+					<div class="thumbnail">
 						<div class="row">
 							<div class="col-md-5">
-								<div class="embed-responsive embed-responsive-16by9">
+								<figure class="embed-responsive embed-responsive-16by9">
 									<img src="<%= event.image %>" alt="<%= event.title %>" class="img-responsive center-block">
-								</div>
+								</figure>
 							</div>
 							<div class="col-md-7">
 								<div class="caption">
-									<h5>
+									<h5 class="text-primary" style="margin-top:0;">
 										<%= event.title %>
+										<br>
+										<small>
+											<%= event.type %>
+										</small>
 									</h5>
+									<p class="small">
+										location<br>
+										time
+									</p>
 								</div>
 							</div>
 						</div>
-					</aside>
-				</div>
-				<% }) %>
-			</div>
-
+					</div>
+				</aside><%
+			}) %>
 		</div>
-
 	</div>
+</section>

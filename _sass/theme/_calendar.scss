@@ -18,14 +18,60 @@
 
 }
 
-.cal-day-tick {
-	display: none !important;
-	visibility: hidden;
-	z-index: -9999;
+.cal-month-day {
+	background: #fff;
+	cursor: pointer;
+	&:hover {
+		background: $gray-lighter;
+	}
+}
+
+.cal-month-box, .cal-year-box, .cal-week-box {
+	border: none !important;
+}
+
+.day-title {
+	font-size: 1.4em;
+	font-weight: bold;
+	color: $brand-secondary;
+	small {
+		font-size: 65%;
+		color: #777;
+		font-weight: normal;
+	}
+}
+
+.cal-day-today {
+	background-color: rgba($brand-info, 0.2) !important;
+}
+
+#cal-slide-tick {
+	border-left: 1.1em solid transparent;
+	border-right: 1.1em solid transparent;
+	border-bottom: 1.1em solid $brand-info;
+	top: -1em !important;
+	background: none !important;
 }
 
 .cal-day-outmonth {
 	.day-title {
-		@extend .text-muted;
+		color: rgba(#777, 0.3)
+	}
+}
+
+// panels
+.cal-event-list {
+	margin: 1em -1px;
+	border: solid 1px $brand-info;
+	border-radius: none;
+}
+
+#calendar-panel {
+	background: none;
+	box-shadow: none;
+	border: none;
+
+	> .panel-body {
+		padding-bottom: 0;
 	}
 }

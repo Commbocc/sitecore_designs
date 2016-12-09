@@ -4,6 +4,7 @@
 $ ->
 
 	calendar = $('#calendar').calendar new CalendarOptions()
+	# console.log calendar
 
 	# previous and next month navigation
 	$('.calendar-nav').click ->
@@ -29,7 +30,6 @@ class window.CalendarOptions
 		that = @
 		(next) ->
 			calendar = this
-
 			next()
 
 	onAfterEventsLoad: ->
@@ -44,27 +44,30 @@ class window.CalendarOptions
 		{
 			year: { enable: 0 },
 			month: {
-				slide_events: 1,
-				enable: 1
+				enable: 1,
+				slide_events: 1
 			},
 			week: { enable: 0 },
 			day: { enable: 0 }
 		}
 
-	getEventsSource: (params = {}) ->
+	getEventsSource: ->
+		# url = "/calendar/getevents"
 		url = "{{ '/calendar/events.json' | relative_url }}"
-		# url = "http://hcflgov.net/calendar/getevents"
 
-		# calndars
+		# active calndars
 		activeCalendars = []
 		$('.calendar-calendar-filter.active').each ->
 			activeCalendars.push "Calendars[]=" + $(this).data('value')
 			return
-		calendars = activeCalendars.join('&')
 
-		# locations
+		# active locations
 		activeLocations = []
-		locations = activeLocations.join('&')
+		# $('.calendar-location-filter.active').each ->
+		# 	activeLocations.push "Locations[]=" + $(this).data('value')
+		# 	return
 
-		url = url + '?' + [calendars, locations].join('&')
+		url = url + '?' + [activeCalendars.join('&'), activeLocations.join('&')].join('&')
+		# console.log url
+
 		return url

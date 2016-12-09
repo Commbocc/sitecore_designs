@@ -20,3 +20,5 @@ layout: page
 * [Media Directory Listing]({{ '/layouts/media-dir/' | prepend: site.baseurl }})
 * [Department]({{ '/layouts/department/' | prepend: site.baseurl }})
 * [Animal Abuser Registry]({{ '/animalabusers/' | prepend: site.baseurl }})
+* [Calendar - Home Tab]({{ '/calendar/home/' | prepend: site.baseurl }})
+<!-- * [Calendar]({{ '/calendar/' | prepend: site.baseurl }}) -->
