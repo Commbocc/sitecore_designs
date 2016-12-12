@@ -3,42 +3,47 @@
 
 $ ->
 
-	calendar = $('#calendar').calendar new CalendarOptions()
-	# console.log calendar
+	calendar = new HcCalendar()
+
+	# filter by calendar
+	$('.calendar-calendar-filter').blur ->
+		calendar = new HcCalendar()
 
 	# previous and next month navigation
 	$('.calendar-nav').click ->
 		calendar.navigate $(this).data('calendar-nav')
 
-	# filter by calendar
-	$('.calendar-calendar-filter').blur ->
-		newCalOptions = new CalendarOptions()
-		calendar.setOptions events_source: newCalOptions.events_source
-		calendar.view()
-
 #
-class window.CalendarOptions
+class window.HcCalendar
 	constructor: () ->
-		@tmpl_path = "{{ '/calendar/templates/' | relative_url }}"
-		@events_source = @getEventsSource()
-		@onBeforeEventsLoad = @onBeforeEventsLoad()
-		@onAfterEventsLoad = @onAfterEventsLoad()
-		@weekbox = false
-		@views = @setViews()
+		@activeCalendars = @getActiveCalendars()
+		return $('#calendar').calendar @params()
+
+	params: ->
+		tmpl_path: "{{ '/calendar/templates/' | relative_url }}"
+		events_source: @getEventsSource()
+		onBeforeEventsLoad: @onBeforeEventsLoad()
+		onAfterEventsLoad: @onAfterEventsLoad()
+		weekbox: false
+		views: @setViews()
+		day: @getDay()
 
 	onBeforeEventsLoad: ->
-		that = @
 		(next) ->
 			calendar = this
 			next()
 
 	onAfterEventsLoad: ->
-		that = @
 		(events) ->
+			# console.log events
 			calendar = this
 
 			# set title
 			$('#active-month').text calendar.getTitle()
+
+			# set active month
+			start_date = [calendar.options.position.start.getFullYear(), calendar.options.position.start.getMonthFormatted(), "01"].join('-')
+			$('#active-month').data('start-time', start_date)
 
 	setViews: ->
 		{
@@ -51,15 +56,20 @@ class window.CalendarOptions
 			day: { enable: 0 }
 		}
 
+	getDay: ->
+		start_time = $('#active-month').data('start-time')
+		if start_time
+			return start_time
+		else
+			return 'now'
+
 	getEventsSource: ->
 		# url = "/calendar/getevents"
 		url = "{{ '/calendar/events.json' | relative_url }}"
 
-		# active calndars
-		activeCalendars = []
-		$('.calendar-calendar-filter.active').each ->
-			activeCalendars.push "Calendars[]=" + $(this).data('value')
-			return
+		# active calendars
+		activeCalendars = $.map @activeCalendars, (ac, i) ->
+			return 'Calendars[]='+ac
 
 		# active locations
 		activeLocations = []
@@ -71,3 +81,10 @@ class window.CalendarOptions
 		# console.log url
 
 		return url
+
+	getActiveCalendars: ->
+		activeCalendars = []
+		$('.calendar-calendar-filter.active').each ->
+			activeCalendars.push $(this).data('value')
+			return
+		return activeCalendars

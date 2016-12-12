@@ -10,26 +10,29 @@
 	<div class="panel-body">
 		<div class="row">
 			<% _.each(events, function(event) { %>
-				<aside class="col-sm-6">
-					<div class="thumbnail">
+				<aside class="col-sm-6" data-event-id="<%= event.id %>">
+					<div class="thumbnail calendar-event-card">
 						<div class="row">
-							<div class="col-md-5">
-								<figure class="embed-responsive embed-responsive-16by9">
+							<div class="col-md-6">
+								<a href="<%= event.url %>" class="embed-responsive embed-responsive-16by9 hidden-xs" title="<%= event.title %> | <%= event.type %>">
 									<img src="<%= event.image %>" alt="<%= event.title %>" class="img-responsive center-block">
-								</figure>
+								</a>
 							</div>
-							<div class="col-md-7">
+							<div class="col-md-6">
 								<div class="caption">
-									<h5 class="text-primary" style="margin-top:0;">
-										<%= event.title %>
+									<h5 class="calendar-event-card-title text-primary">
+										<a href="<%= event.url %>" class="text-primary" title="<%= event.title %> | <%= event.type %>">
+											<%= event.title %>
+										</a>
 										<br>
 										<small>
 											<%= event.type %>
+											<span class="event event-important pull-left"></span>
 										</small>
 									</h5>
-									<p class="small">
-										location<br>
-										time
+									<p class="calendar-event-card-details">
+										Lorem ipsum dolor sit amet consectetur adipisicing elit<br>
+										12:59 PM
 									</p>
 								</div>
 							</div>

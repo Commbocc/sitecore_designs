@@ -64,6 +64,7 @@
 	margin: 1em -1px;
 	border: solid 1px $brand-info;
 	border-radius: none;
+	background: none;
 }
 
 #calendar-panel {
@@ -73,5 +74,30 @@
 
 	> .panel-body {
 		padding-bottom: 0;
+	}
+}
+
+// calendar event cards
+.calendar-event-card {
+	background: #fff;
+	border: none;
+	padding: 0;
+
+	.caption {
+		padding-bottom: 0;
+	}
+
+	.calendar-event-card-title {
+		margin-top: 0;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.calendar-event-card-details {
+		@extend .small;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 }
