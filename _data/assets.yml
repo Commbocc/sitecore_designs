@@ -8,6 +8,9 @@ js:
   - src: vendor/bs-listgroup.min.js
   - src: vendor/bs-calendar.min.js
   - src: hc-calendar.js
+  - src: road-lane.js
+  - src: https://spreadsheets.google.com/feeds/cells/1xX6b7VXC4JURquZcl4A1ploPjkhi4Ut65iJ2R33RUPQ/default/public/values?alt=json-in-script&callback=parseGoogleSheet
+    remote: true
 
 # will load from "{{site.baseurl}}/css/{{asset.src}}.css"
 css:
