@@ -191,7 +191,7 @@
           return $.get(self.templatesDir + '/lists/' + obj.listTemplate + '.html', function(templateData) {
             var template;
             template = _.template(templateData);
-            return $(obj.listElem).append(template({
+            return $(obj.listElem).html(template({
               layers: layers
             }));
           });
