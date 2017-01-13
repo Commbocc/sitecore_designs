@@ -6,6 +6,9 @@
 	@media (min-width: $screen-sm-min) {
 		width: 75px;
 	}
+	@media (min-width: $screen-md-min) {
+		width: 85px;
+	}
 
 	&::-webkit-input-placeholder {
 		color: $brand-secondary;
