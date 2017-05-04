@@ -23,9 +23,9 @@
 					<%= layer.feature.properties.TO_STREET %>
 				</td>
 				<td>
-					<%= new Date(layer.feature.properties.Date_Closed).toDateString() %>
+					<%= new Date(layer.feature.properties.Date_Closed).toLocaleString() %>
 					-
-					<%= new Date(layer.feature.properties.Date_Opened).toDateString() %>
+					<%= new Date(layer.feature.properties.Date_Opened).toLocaleString() %>
 				</td>
 				<td>
 					<%= layer.feature.properties.REASON %>
